@@ -1,7 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://iysllbq6upr7"]
+[gd_scene load_steps=13 format=3 uid="uid://iysllbq6upr7"]
 
 [ext_resource type="Script" uid="uid://sm1smey5c01l" path="res://Scenes/CharacterController.gd" id="1_a02cp"]
 [ext_resource type="PackedScene" uid="uid://bjooqpqmpiw7u" path="res://Scenes/interaction_box.tscn" id="2_go701"]
+[ext_resource type="Texture2D" uid="uid://xt1kphv5wclk" path="res://Assets/Textures/Concept_Chipper.png" id="3_5a7ea"]
+[ext_resource type="Script" uid="uid://dibcawln50b36" path="res://Scenes/npc_dialogue.gd" id="4_8j60k"]
+[ext_resource type="Resource" uid="uid://ds16jsq8mns1f" path="res://Dialogue/Test.dialogue" id="5_fo5ed"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_go701"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -69,8 +72,11 @@ shape = SubResource("ConvexPolygonShape3D_a02cp")
 [node name="InteractionBox" parent="." instance=ExtResource("2_go701")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8387604, 0.15866852, 2.5013564)
 
-[node name="InteractionBox2" parent="." instance=ExtResource("2_go701")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.399746, 0.15866804, -0.075871706)
+[node name="NPC" type="Sprite3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 1.5322657, 5.4287972)
+billboard = 1
+texture = ExtResource("3_5a7ea")
+script = ExtResource("4_8j60k")
+dialogue_resource = ExtResource("5_fo5ed")
 
-[node name="InteractionBox3" parent="." instance=ExtResource("2_go701")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0698885, 0.15866828, -4.566354)
+[connection signal="interacted" from="InteractionBox" to="NPC" method="speak"]
