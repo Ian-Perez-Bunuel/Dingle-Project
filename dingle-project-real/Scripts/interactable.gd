@@ -3,6 +3,10 @@ class_name Interactable
 
 @export var promptMessage := "Interact"
 @export var interactionUI: Sprite3D
+
+@export var dialogue_resource: DialogueResource
+@export var dialogue_start_node := "start"
+
 var player_inside := false
 
 signal interacted
@@ -34,3 +38,4 @@ func _on_body_exited(body: Node) -> void:
 func interact():
 	interacted.emit()
 	print("Basic Interact - Please link to a function")
+	DialogueManager.show_dialogue_balloon(dialogue_resource, "start");
