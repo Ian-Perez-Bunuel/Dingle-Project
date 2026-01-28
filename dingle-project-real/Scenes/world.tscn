@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://iysllbq6upr7"]
+[gd_scene load_steps=16 format=3 uid="uid://iysllbq6upr7"]
 
 [ext_resource type="Script" uid="uid://sm1smey5c01l" path="res://Scripts/CharacterController.gd" id="1_a02cp"]
 [ext_resource type="Texture2D" uid="uid://dmnucch5p364a" path="res://Assets/Textures/AnPhiastTemp.png" id="2_5ukr8"]
 [ext_resource type="PackedScene" uid="uid://bjooqpqmpiw7u" path="res://Scenes/interaction_box.tscn" id="2_go701"]
 [ext_resource type="PackedScene" uid="uid://bya28u4hoakii" path="res://Scenes/npc.tscn" id="4_8j60k"]
+[ext_resource type="PackedScene" uid="uid://884rhrdouvah" path="res://Assets/Models/World/Backstreetblockout1.glb" id="5_fo5ed"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_go701"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -50,6 +51,7 @@ shadow_enabled = true
 environment = SubResource("Environment_8j60k")
 
 [node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.800453, 1.1738062, -12.566364)
 collision_layer = 129
 script = ExtResource("1_a02cp")
 
@@ -61,8 +63,7 @@ shape = SubResource("ConvexPolygonShape3D_5ukr8")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7295505, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Player/Pivot"]
-transform = Transform3D(1, 0, 0, 0, 0.9063078, 0.4226183, 0, -0.4226183, 0.9063078, 0, 7.5264845, 16.653011)
-projection = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4602914, 7.5778885)
 size = 10.0
 far = 150.0
 
@@ -74,7 +75,7 @@ texture = ExtResource("2_5ukr8")
 [node name="Floor" type="StaticBody3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 0, 0, 0)
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
 mesh = SubResource("PlaneMesh_a02cp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
@@ -82,10 +83,10 @@ transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70
 shape = SubResource("ConvexPolygonShape3D_8j60k")
 
 [node name="InteractionBox" parent="." instance=ExtResource("2_go701")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8387604, 0.15866852, 2.5013564)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.146297, 0.60232925, -8.513998)
 
 [node name="NPC" parent="." instance=ExtResource("4_8j60k")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 1.5322657, 5.4287972)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 44.985058, 1.9759264, -5.586557)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.7071067, 0, -0.7071067, 0, 1, 0, 0.7071067, 0, 0.7071067, -8.004078, -8.8957815, 1.8261642)
@@ -103,5 +104,8 @@ shape = SubResource("ConvexPolygonShape3D_fo5ed")
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.7071067, 0, -0.7071067, 0, 1, 0, 0.7071067, 0, 0.7071067, 1.3488026, 0, -8.414277)
 mesh = SubResource("BoxMesh_8j60k")
+
+[node name="Backstreetblockout1" parent="." instance=ExtResource("5_fo5ed")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 43.589413, 0, -8.761587)
 
 [connection signal="interacted" from="InteractionBox" to="NPC" method="speak"]
