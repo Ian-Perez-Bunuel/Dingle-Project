@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://iysllbq6upr7"]
+[gd_scene load_steps=16 format=3 uid="uid://iysllbq6upr7"]
 
 [ext_resource type="Script" uid="uid://sm1smey5c01l" path="res://Scripts/CharacterController.gd" id="1_a02cp"]
 [ext_resource type="Texture2D" uid="uid://dmnucch5p364a" path="res://Assets/Textures/AnPhiastTemp.png" id="2_5ukr8"]
 [ext_resource type="PackedScene" uid="uid://bjooqpqmpiw7u" path="res://Scenes/interaction_box.tscn" id="2_go701"]
 [ext_resource type="PackedScene" uid="uid://bya28u4hoakii" path="res://Scenes/npc.tscn" id="4_8j60k"]
+[ext_resource type="Script" uid="uid://6gg37o3qvwxm" path="res://Scripts/inventory.gd" id="5_fo5ed"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_go701"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -104,4 +105,66 @@ shape = SubResource("ConvexPolygonShape3D_fo5ed")
 transform = Transform3D(0.7071067, 0, -0.7071067, 0, 1, 0, 0.7071067, 0, 0.7071067, 1.3488026, 0, -8.414277)
 mesh = SubResource("BoxMesh_8j60k")
 
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="UI"]
+layout_mode = 1
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 103.0
+offset_bottom = 41.0
+text = "Inv / Pause"
+
+[node name="PauseMenu" type="Control" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 110.0
+offset_top = 50.0
+offset_right = -110.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_fo5ed")
+
+[node name="Background" type="ColorRect" parent="UI/PauseMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.21568628)
+
+[node name="Inventory" type="ColorRect" parent="UI/PauseMenu/Background"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -441.0
+offset_top = 35.0
+offset_right = -140.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.31431612, 0.31431612, 0.3143161, 1)
+
+[node name="Slot Holder" type="GridContainer" parent="UI/PauseMenu/Background/Inventory"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 10
+
 [connection signal="interacted" from="InteractionBox" to="NPC" method="speak"]
+[connection signal="pressed" from="UI/Button" to="UI/PauseMenu" method="toggle_show"]
