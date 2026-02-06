@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://iysllbq6upr7"]
+[gd_scene load_steps=22 format=3 uid="uid://iysllbq6upr7"]
 
 [ext_resource type="Script" uid="uid://sm1smey5c01l" path="res://Scripts/CharacterController.gd" id="1_a02cp"]
 [ext_resource type="Texture2D" uid="uid://dmnucch5p364a" path="res://Assets/Textures/AnPhiastTemp.png" id="2_5ukr8"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://884rhrdouvah" path="res://Assets/Models/World/Backstreetblockout1.glb" id="5_fo5ed"]
 [ext_resource type="PackedScene" uid="uid://d0878m5i3mail" path="res://Assets/Models/World/Backstreetblockout3.glb" id="6_o06y3"]
 [ext_resource type="PackedScene" uid="uid://c2dejpm2lottk" path="res://Assets/Models/World/Backstreetblockout2.glb" id="7_k7acu"]
+[ext_resource type="Script" uid="uid://45pssicrscyg" path="res://Scenes/UIManager.gd" id="8_ikia7"]
 [ext_resource type="Script" uid="uid://pec5fvq7mcqp" path="res://Scenes/evidence_book.gd" id="8_k7acu"]
 [ext_resource type="Resource" uid="uid://158iwhq64cex" path="res://Resources/TestEvidence.tres" id="9_5v1tr"]
 [ext_resource type="Texture2D" uid="uid://cqrb0aqol3qk6" path="res://icon.svg" id="10_0fj1v"]
@@ -126,6 +127,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("8_ikia7")
 
 [node name="Background" type="ColorRect" parent="UI"]
 layout_mode = 1
