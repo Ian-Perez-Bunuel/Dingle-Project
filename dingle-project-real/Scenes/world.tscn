@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://iysllbq6upr7"]
+[gd_scene load_steps=20 format=3 uid="uid://iysllbq6upr7"]
 
 [ext_resource type="Script" uid="uid://sm1smey5c01l" path="res://Scripts/CharacterController.gd" id="1_a02cp"]
 [ext_resource type="Texture2D" uid="uid://dmnucch5p364a" path="res://Assets/Textures/AnPhiastTemp.png" id="2_5ukr8"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://884rhrdouvah" path="res://Assets/Models/World/Backstreetblockout1.glb" id="5_fo5ed"]
 [ext_resource type="PackedScene" uid="uid://d0878m5i3mail" path="res://Assets/Models/World/Backstreetblockout3.glb" id="6_o06y3"]
 [ext_resource type="PackedScene" uid="uid://c2dejpm2lottk" path="res://Assets/Models/World/Backstreetblockout2.glb" id="7_k7acu"]
+[ext_resource type="Script" uid="uid://pec5fvq7mcqp" path="res://Scenes/evidence_book.gd" id="8_k7acu"]
+[ext_resource type="Resource" uid="uid://158iwhq64cex" path="res://Resources/TestEvidence.tres" id="9_5v1tr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_go701"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -116,5 +118,62 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 108.
 [node name="Backstreetblockout2" parent="." instance=ExtResource("7_k7acu")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 183.48093, -0.4564437, -7.9923115)
 
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.60784316)
+
+[node name="EvidenceBook" type="Control" parent="UI/Background" node_paths=PackedStringArray("image1", "image2", "description")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("8_k7acu")
+image1 = NodePath("Image 1")
+image2 = NodePath("Image 2")
+description = NodePath("Label")
+evidence = ExtResource("9_5v1tr")
+
+[node name="Image 1" type="TextureRect" parent="UI/Background/EvidenceBook"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 281.0
+grow_vertical = 2
+
+[node name="Image 2" type="TextureRect" parent="UI/Background/EvidenceBook"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -334.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="UI/Background/EvidenceBook"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -159.0
+offset_right = 159.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [connection signal="interacted" from="InteractionBox" to="NPC" method="speak"]
-[connection signal="pressed" from="UI/Button" to="UI/PauseMenu" method="toggle_show"]
