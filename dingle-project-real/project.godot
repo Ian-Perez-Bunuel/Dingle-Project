@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+CutSceneManager="*res://Scripts/CutSceneManager.gd"
 
 [dialogue_manager]
 
@@ -26,6 +27,11 @@ runtime/balloon_path="uid://cc18vjnfvchia"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+
+[global_group]
+
+object="A object controlled by cutscenes"
+place="A point of interest for cutscenes"
 
 [input]
 

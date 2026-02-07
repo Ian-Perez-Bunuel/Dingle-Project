@@ -2,7 +2,8 @@
 Nathan: [[Hi|Hello|Howdy]], AN PHIAST!!!!!!!!!!!! this is some dialogue.
 Nathan: Here are some choices.
 - First one
-	Nathan: You picked the first one.
+	Nathan: Cutscene test?
+	do CutSceneManager.move_to("Player", "Test Place")
 - Second one
 	Nathan: You picked the second one.
 - Start again => start
