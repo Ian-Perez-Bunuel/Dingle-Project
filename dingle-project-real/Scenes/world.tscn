@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://iysllbq6upr7"]
+[gd_scene load_steps=20 format=3 uid="uid://iysllbq6upr7"]
 
 [ext_resource type="Script" uid="uid://sm1smey5c01l" path="res://Scripts/CharacterController.gd" id="1_a02cp"]
 [ext_resource type="Texture2D" uid="uid://dmnucch5p364a" path="res://Assets/Textures/AnPhiastTemp.png" id="2_5ukr8"]
@@ -11,6 +11,8 @@
 [ext_resource type="Script" uid="uid://pec5fvq7mcqp" path="res://Scenes/evidence_book.gd" id="8_k7acu"]
 [ext_resource type="Resource" uid="uid://158iwhq64cex" path="res://Resources/TestEvidence.tres" id="9_5v1tr"]
 [ext_resource type="Texture2D" uid="uid://cqrb0aqol3qk6" path="res://icon.svg" id="10_0fj1v"]
+[ext_resource type="Shader" uid="uid://bscb7e5fasq7w" path="res://Shaders/screen_transition.gdshader" id="12_7yui6"]
+[ext_resource type="Script" uid="uid://bwifi60ec7u1t" path="res://Scenes/scene_transition.gd" id="12_c5t2i"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_go701"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -27,6 +29,31 @@ tonemap_mode = 2
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5ukr8"]
 points = PackedVector3Array(-0.12520654, -0.532801, -0.4805069, 0.022783129, 0.4760704, 0.49888408, 0.16971254, 0.5591441, 0.46417162, 0.23105091, -0.8035912, 0.32045516, 0.40741014, 0.651043, -0.24352328, -0.4827893, 0.59484255, 0.082213186, -0.3628679, -0.68231165, 0.2896967, 0.46904355, -0.65452886, -0.06627126, -0.12744367, 0.8427015, -0.33810276, -0.39343542, -0.6839421, -0.24471663, 0.43825462, 0.62330925, 0.20084947, 0.0841477, 0.977454, 0.11479468, -0.06820232, -0.9764576, -0.12927033, 0.20054972, -0.56312895, -0.4514544, -0.18552664, 0.59545326, -0.4534751, -0.27336287, 0.59226835, 0.40775412, -0.0069364863, -0.47682306, 0.49966025, 0.37582088, -0.5886136, 0.31695515, 0.111579016, 0.5630594, -0.48117727, -0.41725034, 0.5278656, -0.27049688, -0.48454633, -0.59697217, -0.06650971, -0.27974695, 0.90856135, 0.05333608, -0.25019687, -0.8807117, 0.20531891, 0.263647, -0.90277094, -0.1273943, 0.29336792, 0.8715263, -0.15719566, 0.3734115, -0.5263189, -0.32824618, 0.4996626, 0.47664148, -0.0068885577, 0.053105574, 0.8750009, 0.32470253, -0.15454252, -0.5908538, 0.4658794, -0.09727988, -0.7823577, -0.39818847, -0.3876489, -0.49817133, 0.31564978, -0.30067965, -0.58799505, -0.38890144)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_e0ngr"]
+size = Vector3(5, 1, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c5t2i"]
+shader = ExtResource("12_7yui6")
+shader_parameter/use_sprite_alpha = true
+shader_parameter/use_transition_texture = false
+shader_parameter/transition_type = 0
+shader_parameter/position = Vector2(0.5, 0.5)
+shader_parameter/invert = true
+shader_parameter/grid_size = Vector2(5, 5)
+shader_parameter/rotation_angle = 0.0
+shader_parameter/stagger = Vector2(0, 0)
+shader_parameter/stagger_frequency = Vector2i(2, 2)
+shader_parameter/flip_frequency = Vector2i(1, 1)
+shader_parameter/basic_feather = 0.0
+shader_parameter/use_mask_size = false
+shader_parameter/mask_size = Vector2(100, 100)
+shader_parameter/edges = 6
+shader_parameter/shape_feather = 0.1
+shader_parameter/sectors = 1
+shader_parameter/clock_feather = 0.0
+shader_parameter/progress = 0.0
+shader_parameter/progress_bias = Vector2(10, 10)
+
 [node name="World" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -37,7 +64,7 @@ shadow_enabled = true
 environment = SubResource("Environment_8j60k")
 
 [node name="Player" type="CharacterBody3D" parent="." groups=["object"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.800453, 1.1738062, -12.566364)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 166.24248, -0.09342337, 8.8781395)
 collision_layer = 129
 script = ExtResource("1_a02cp")
 
@@ -68,10 +95,10 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 44.985058, 1.9759264, -
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 43.589413, 0, -8.761587)
 
 [node name="Backstreetblockout3" parent="." instance=ExtResource("6_o06y3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 108.3465, -0.1538539, -14.140644)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 260.7209, -0.1538539, -14.140644)
 
 [node name="Backstreetblockout2" parent="." instance=ExtResource("7_k7acu")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 183.48093, -0.4564437, -7.9923115)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 146.16711, -0.4564437, -7.9923115)
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -162,4 +189,36 @@ texture = ExtResource("10_0fj1v")
 [node name="Test Place" type="Node3D" parent="." groups=["place"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.79036, 1.4128742, -7.151163)
 
+[node name="Transitions" type="Node" parent="."]
+
+[node name="Street_To_Dock" type="Area3D" parent="Transitions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 166.48979, 0, 0)
+script = ExtResource("12_c5t2i")
+teleport = "street_to_dock"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Transitions/Street_To_Dock"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31463623, 0.26734436, 6.692626)
+shape = SubResource("BoxShape3D_e0ngr")
+debug_color = Color(0.9764706, 0, 0.41960785, 0.9843137)
+
+[node name="Dock_To_Street" type="Area3D" parent="Transitions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 264.5704, 1.2578077, -20.682608)
+script = ExtResource("12_c5t2i")
+teleport = "dock_to_street"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Transitions/Dock_To_Street"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31463623, 0.26734436, 6.692626)
+shape = SubResource("BoxShape3D_e0ngr")
+debug_color = Color(0.9764706, 0, 0.41960785, 0.9843137)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_c5t2i")
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.16862746, 0.19215687, 0.19607843, 1)
+
 [connection signal="interacted" from="InteractionBox" to="NPC" method="speak"]
+[connection signal="body_shape_entered" from="Transitions/Street_To_Dock" to="Transitions/Street_To_Dock" method="_on_body_shape_entered"]
+[connection signal="body_shape_entered" from="Transitions/Dock_To_Street" to="Transitions/Dock_To_Street" method="_on_body_shape_entered"]
