@@ -32,6 +32,7 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 object="A object controlled by cutscenes"
 place="A point of interest for cutscenes"
+player=""
 
 [input]
 

@@ -34,5 +34,6 @@ func move_to(t_objectName: String, t_placeName: String):
 		print("One of the parameters was not found")
 		return
 	
-	object.global_position = place.global_position
+	if object.has_method("set_target_pos"):
+		object.set_target_pos(place.global_position)
 	
