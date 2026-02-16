@@ -74,7 +74,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.146297, 0.60232925, -8.513
 [node name="NPC" parent="." instance=ExtResource("4_8j60k")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 44.985058, 1.9759264, -5.586557)
 
-[node name="SeagullGame" parent="." instance=ExtResource("13_c5t2i")]
+[node name="SeagullGame" parent="." groups=["minigame"] instance=ExtResource("13_c5t2i")]
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3

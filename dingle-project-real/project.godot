@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 CutSceneManager="*res://Scripts/CutSceneManager.gd"
+MinigameManager="*res://Scripts/MinigameManager.gd"
 
 [dialogue_manager]
 
@@ -33,6 +34,7 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 object="A object controlled by cutscenes"
 place="A point of interest for cutscenes"
 player=""
+minigame=""
 
 [input]
 

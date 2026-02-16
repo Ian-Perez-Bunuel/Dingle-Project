@@ -1,4 +1,5 @@
 extends Control
+class_name Seagull_Minigame
 
 var moving: bool = false
 
@@ -27,7 +28,11 @@ func _ready() -> void:
 	
 	visible = false
 
-
+func start():
+	visible = true
+	score = 0
+	scoreLabel.text = str(score)
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

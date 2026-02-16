@@ -1,11 +1,11 @@
 ~ start
 Nathan: [[Hi|Hello|Howdy]], AN PHIAST!!!!!!!!!!!! this is some dialogue.
 Nathan: Here are some choices.
-- First one
-	Nathan: Cutscene test?
+- Cutscene test
+	Nathan: GO!
 	do CutSceneManager.move_to("Player", "Test Place")
-- Second one
-	Nathan: You picked the second one.
+- Minigame Test
+	do MinigameManager.activate("SeagullGame")
 - Start again => start
 - End the conversation 
 	do Interactable.set_can_interact(true)
