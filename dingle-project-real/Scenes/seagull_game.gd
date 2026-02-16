@@ -30,6 +30,7 @@ func _ready() -> void:
 	seagull.position.x = screen_width
 	
 	visible = false
+	process_mode = Node.PROCESS_MODE_DISABLED
 
 func start():
 	visible = true
@@ -37,6 +38,7 @@ func start():
 	scoreLabel.text = str(score)
 	Player.set_can_move(false)
 	Interactable.set_can_interact(false)
+	process_mode = Node.PROCESS_MODE_INHERIT
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -80,3 +82,4 @@ func end():
 	
 	Player.set_can_move(true)
 	Interactable.set_can_interact(true)
+	process_mode = Node.PROCESS_MODE_DISABLED

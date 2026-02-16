@@ -1,15 +1,13 @@
-[gd_scene load_steps=20 format=3 uid="uid://iysllbq6upr7"]
+[gd_scene load_steps=18 format=3 uid="uid://iysllbq6upr7"]
 
 [ext_resource type="PackedScene" uid="uid://bpgfead5netw3" path="res://Scenes/player.tscn" id="1_7yui6"]
 [ext_resource type="PackedScene" uid="uid://bjooqpqmpiw7u" path="res://Scenes/interaction_box.tscn" id="2_go701"]
 [ext_resource type="PackedScene" uid="uid://bya28u4hoakii" path="res://Scenes/npc.tscn" id="4_8j60k"]
 [ext_resource type="PackedScene" uid="uid://884rhrdouvah" path="res://Assets/Models/World/Backstreetblockout1.glb" id="5_fo5ed"]
+[ext_resource type="PackedScene" uid="uid://bb61pavwemraa" path="res://Scenes/evidence_book.tscn" id="6_ikia7"]
 [ext_resource type="PackedScene" uid="uid://d0878m5i3mail" path="res://Assets/Models/World/Backstreetblockout3.glb" id="6_o06y3"]
 [ext_resource type="PackedScene" uid="uid://c2dejpm2lottk" path="res://Assets/Models/World/Backstreetblockout2.glb" id="7_k7acu"]
 [ext_resource type="Script" uid="uid://45pssicrscyg" path="res://Scripts/UIManager.gd" id="8_ikia7"]
-[ext_resource type="Script" uid="uid://pec5fvq7mcqp" path="res://Scripts/evidence_book.gd" id="8_k7acu"]
-[ext_resource type="Resource" uid="uid://158iwhq64cex" path="res://Resources/TestEvidence.tres" id="9_5v1tr"]
-[ext_resource type="Texture2D" uid="uid://cqrb0aqol3qk6" path="res://icon.svg" id="10_0fj1v"]
 [ext_resource type="Shader" uid="uid://bscb7e5fasq7w" path="res://Shaders/screen_transition.gdshader" id="12_7yui6"]
 [ext_resource type="Script" uid="uid://bwifi60ec7u1t" path="res://Scripts/scene_transition.gd" id="12_c5t2i"]
 [ext_resource type="PackedScene" uid="uid://ct3ngq0m2f83c" path="res://Scenes/seagull_game.tscn" id="13_c5t2i"]
@@ -86,82 +84,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("8_ikia7")
 
-[node name="EvidenceBook" type="Control" parent="UI" node_paths=PackedStringArray("image1", "image2", "description")]
+[node name="EvidenceBook" parent="UI" instance=ExtResource("6_ikia7")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("8_k7acu")
-image1 = NodePath("Background/Polaroid1/Image")
-image2 = NodePath("Background/Polaroid2/Image")
-description = NodePath("Background/Label")
-temp = ExtResource("9_5v1tr")
-
-[node name="Background" type="ColorRect" parent="UI/EvidenceBook"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.60784316)
-
-[node name="Label" type="Label" parent="UI/EvidenceBook/Background"]
-layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -206.0
-offset_top = 128.0
-offset_right = 180.0
-offset_bottom = -128.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Polaroid1" type="ColorRect" parent="UI/EvidenceBook/Background"]
-layout_mode = 1
-offset_left = 51.000008
-offset_top = 72.0
-offset_right = 301.0
-offset_bottom = 347.0
-rotation = -0.1308997
-
-[node name="Image" type="TextureRect" parent="UI/EvidenceBook/Background/Polaroid1"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 27.0
-offset_top = 26.0
-offset_right = -27.0
-offset_bottom = -59.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("10_0fj1v")
-
-[node name="Polaroid2" type="ColorRect" parent="UI/EvidenceBook/Background"]
-layout_mode = 1
-offset_left = 839.99994
-offset_top = 304.99997
-offset_right = 1090.0
-offset_bottom = 580.0
-rotation = 0.20071286
-
-[node name="Image" type="TextureRect" parent="UI/EvidenceBook/Background/Polaroid2"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 27.0
-offset_top = 26.0
-offset_right = -27.0
-offset_bottom = -59.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("10_0fj1v")
 
 [node name="Test Place" type="Node3D" parent="." groups=["place"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.79036, -28.266705, -7.151163)
