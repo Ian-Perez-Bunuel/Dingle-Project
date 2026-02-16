@@ -1,14 +1,15 @@
 extends CharacterBody3D
+class_name Player
 
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
-var canMove = true
+static var canMove = true
 var hasTarget = false
 
-func set_can_move(b: bool):
+static func set_can_move(b: bool):
 	canMove = b
 
 func _physics_process(delta: float) -> void:
@@ -49,4 +50,5 @@ func controlled_movement(delta: float):
 		velocity = Vector3.ZERO
 		
 	move_and_slide()
+
 	

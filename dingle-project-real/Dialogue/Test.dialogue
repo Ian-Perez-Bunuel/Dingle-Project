@@ -7,6 +7,11 @@ Nathan: Here are some choices.
 - Second one
 	Nathan: You picked the second one.
 - Start again => start
-- End the conversation => END
+- End the conversation 
+	do Interactable.set_can_interact(true)
+	do Player.set_can_move(true) 
+	=> END
 Nathan: For more information see the online documentation.
+do Interactable.set_can_interact(true)
+do Player.set_can_move(true)
 => END

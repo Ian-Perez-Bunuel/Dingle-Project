@@ -5,8 +5,12 @@ class_name Interactable
 @export var interactionUI: Sprite3D
 
 var player_inside := false
+static var canInteract: bool = true
 
 signal interacted
+
+static func set_can_interact(b: bool):
+	canInteract = b
 
 func _ready() -> void:
 	if interactionUI == null:
@@ -18,8 +22,9 @@ func _ready() -> void:
 	body_exited.connect(_on_body_exited)
 	
 func _process(delta: float) -> void:
-	if player_inside && Input.is_action_just_pressed("ui_accept"):
-		interact()
+	if canInteract:
+		if player_inside && Input.is_action_just_pressed("ui_accept"):
+			interact()
 
 func _on_body_entered(body: Node) -> void:
 	if interactionUI:
@@ -33,5 +38,7 @@ func _on_body_exited(body: Node) -> void:
 	
 	
 func interact():
+	Player.set_can_move(false)
+	canInteract = false
 	interacted.emit()
 	print("Basic Interact - Please link to a function")
