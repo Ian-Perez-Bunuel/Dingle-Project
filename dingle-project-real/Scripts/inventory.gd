@@ -1,12 +1,10 @@
-extends Control
-@onready var inventory_panel := $"."
+extends Node
 
+var ownedEvidence: Array[Evidence]
+
+# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	inventory_panel.visible = false
-	
-func toggle_show():
-	inventory_panel.visible = !inventory_panel.visible
-	
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("ui_cancel"):
-		toggle_show()
+	pass # Replace with function body.
+
+func add_evidence(e: Evidence):
+	ownedEvidence.push_back(e)

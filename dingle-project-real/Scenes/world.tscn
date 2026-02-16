@@ -75,6 +75,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.146297, 0.60232925, -8.513
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 44.985058, 1.9759264, -5.586557)
 
 [node name="SeagullGame" parent="." groups=["minigame"] instance=ExtResource("13_c5t2i")]
+visible = false
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -96,7 +97,7 @@ script = ExtResource("8_k7acu")
 image1 = NodePath("Background/Polaroid1/Image")
 image2 = NodePath("Background/Polaroid2/Image")
 description = NodePath("Background/Label")
-evidence = ExtResource("9_5v1tr")
+temp = ExtResource("9_5v1tr")
 
 [node name="Background" type="ColorRect" parent="UI/EvidenceBook"]
 layout_mode = 1

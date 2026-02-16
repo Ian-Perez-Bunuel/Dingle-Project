@@ -1,8 +1,9 @@
 extends Control
 class_name Seagull_Minigame
 
-var moving: bool = false
+@export var reward: Evidence
 
+var moving: bool = false
 var direction: int = 1
 var speed: int = 500
 
@@ -14,6 +15,8 @@ var score: int = 0
 
 var screen_height: float = 0
 var screen_width: float = 0
+
+var WIN_CON: int = 5
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -32,6 +35,8 @@ func start():
 	visible = true
 	score = 0
 	scoreLabel.text = str(score)
+	Player.set_can_move(false)
+	Interactable.set_can_interact(false)
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -64,3 +69,14 @@ func score_point(area: Area2D) -> void:
 	print("Collided")
 	score += 1
 	scoreLabel.text = str(score)
+	
+	if score >= WIN_CON:
+		end()
+	
+func end():
+	print("ENDED")
+	visible = false
+	Inventory.add_evidence(reward)
+	
+	Player.set_can_move(true)
+	Interactable.set_can_interact(true)

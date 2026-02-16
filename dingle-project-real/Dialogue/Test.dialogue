@@ -6,6 +6,7 @@ Nathan: Here are some choices.
 	do CutSceneManager.move_to("Player", "Test Place")
 - Minigame Test
 	do MinigameManager.activate("SeagullGame")
+	=> END
 - Start again => start
 - End the conversation 
 	do Interactable.set_can_interact(true)
