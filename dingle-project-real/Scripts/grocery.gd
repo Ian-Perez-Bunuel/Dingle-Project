@@ -5,7 +5,7 @@ class_name Grocery
 var speed: float = 5
 var canMove: bool = false
 
-func reset(delay: int = 0):
+func reset(delay: float = 0.0):
 	canMove = false
 	var random_item = possibleItems.pick_random()
 	icon = random_item
@@ -14,6 +14,7 @@ func reset(delay: int = 0):
 	var cooldown = randf_range(0.0, 2.5)
 	await get_tree().create_timer(cooldown + delay).timeout
 	canMove = true
+	visible = true
 
 func move():
 	if !canMove:
@@ -23,3 +24,6 @@ func move():
 	
 	if position.x < -200:
 		reset()
+		
+func collect():
+	visible = false

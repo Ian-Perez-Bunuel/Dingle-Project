@@ -13,6 +13,9 @@ offset_right = 216.0
 offset_bottom = 295.0
 scale = Vector2(0.5, 0.5)
 theme_type_variation = &"FlatButton"
+action_mode = 0
 icon = ExtResource("1_oqa34")
 script = ExtResource("2_oh3w4")
 possibleItems = Array[Texture2D]([ExtResource("1_oqa34"), ExtResource("3_apiu5"), ExtResource("4_5jdee"), ExtResource("5_5ce7y")])
+
+[connection signal="pressed" from="." to="." method="collect"]

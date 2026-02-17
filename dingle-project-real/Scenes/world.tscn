@@ -56,10 +56,6 @@ size = Vector3(140.26624, 1, 24.473633)
 
 [node name="groceriesGame" parent="." instance=ExtResource("1_ikia7")]
 visible = false
-offset_left = 51.132385
-offset_top = 38.413193
-offset_right = 51.132324
-offset_bottom = 38.413208
 
 [node name="SeagullGame" parent="." groups=["minigame"] instance=ExtResource("13_c5t2i")]
 visible = false

@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://ds1das1xkbdv4"]
+[gd_scene load_steps=4 format=3 uid="uid://ds1das1xkbdv4"]
 
 [ext_resource type="Script" uid="uid://dsus20cdlh47i" path="res://Scripts/groceries_game.gd" id="1_p7vbo"]
+[ext_resource type="Texture2D" uid="uid://cbr2ra760t7a8" path="res://Assets/Textures/minigames/minigame_shopping_background.png" id="2_5braf"]
 [ext_resource type="PackedScene" uid="uid://jselvbci477g" path="res://Scenes/grocery.tscn" id="2_p7vbo"]
 
-[node name="groceriesGame" type="Control" node_paths=PackedStringArray("grocery_holders") groups=["minigame"]]
+[node name="groceriesGame" type="Control" node_paths=PackedStringArray("grocery_holders", "backgrounds") groups=["minigame"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,268 +12,217 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_p7vbo")
-grocery_holders = [NodePath("Row1"), NodePath("Row2"), NodePath("Row3"), NodePath("Row4"), NodePath("Row5"), NodePath("Row6")]
+grocery_holders = [NodePath("Shelf1"), NodePath("Shelf2"), NodePath("Shelf3"), NodePath("Shelf4"), NodePath("Shelf5"), NodePath("Shelf6")]
+backgrounds = [NodePath("Background1"), NodePath("Background2")]
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Background1" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_5braf")
+
+[node name="Background2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1152.0
+offset_right = 2304.0
+offset_bottom = 648.0
+texture = ExtResource("2_5braf")
+
+[node name="Shelf1" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.19607843, 0.11372549, 0.11372549, 1)
+mouse_filter = 1
 
-[node name="TempShelf1" type="ColorRect" parent="."]
+[node name="grocery" parent="Shelf1" instance=ExtResource("2_p7vbo")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0
+
+[node name="grocery2" parent="Shelf1" instance=ExtResource("2_p7vbo")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0
+
+[node name="grocery3" parent="Shelf1" instance=ExtResource("2_p7vbo")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0
+
+[node name="Shelf2" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = 114.0
-offset_bottom = 122.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
-[node name="TempShelf2" type="ColorRect" parent="."]
+[node name="grocery" parent="Shelf2" instance=ExtResource("2_p7vbo")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0
+
+[node name="grocery2" parent="Shelf2" instance=ExtResource("2_p7vbo")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0
+
+[node name="grocery3" parent="Shelf2" instance=ExtResource("2_p7vbo")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0
+
+[node name="Shelf3" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 1.0
-offset_top = -138.0
-offset_right = 1.0
-offset_bottom = -130.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
-[node name="TempShelf3" type="ColorRect" parent="."]
+[node name="grocery" parent="Shelf3" instance=ExtResource("2_p7vbo")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0
+
+[node name="grocery2" parent="Shelf3" instance=ExtResource("2_p7vbo")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0
+
+[node name="grocery3" parent="Shelf3" instance=ExtResource("2_p7vbo")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0
+
+[node name="Shelf4" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -1.0
-offset_top = -232.0
-offset_right = -1.0
-offset_bottom = -224.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
-[node name="TempShelf4" type="ColorRect" parent="."]
+[node name="grocery" parent="Shelf4" instance=ExtResource("2_p7vbo")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0
+
+[node name="grocery2" parent="Shelf4" instance=ExtResource("2_p7vbo")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0
+
+[node name="grocery3" parent="Shelf4" instance=ExtResource("2_p7vbo")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0
+
+[node name="Shelf5" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -2.0
-offset_top = -9.0
-offset_right = -2.0
-offset_bottom = -1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
-[node name="TempShelf5" type="ColorRect" parent="."]
+[node name="grocery" parent="Shelf5" instance=ExtResource("2_p7vbo")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0
+
+[node name="grocery2" parent="Shelf5" instance=ExtResource("2_p7vbo")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0
+
+[node name="grocery3" parent="Shelf5" instance=ExtResource("2_p7vbo")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0
+
+[node name="Shelf6" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -4.0
-offset_top = 218.0
-offset_right = -4.0
-offset_bottom = 226.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
-[node name="Row1" type="Node" parent="."]
-
-[node name="grocery" parent="Row1" instance=ExtResource("2_p7vbo")]
+[node name="grocery" parent="Shelf6" instance=ExtResource("2_p7vbo")]
+layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 213.0
 offset_bottom = 213.0
 
-[node name="grocery2" parent="Row1" instance=ExtResource("2_p7vbo")]
+[node name="grocery2" parent="Shelf6" instance=ExtResource("2_p7vbo")]
+layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 213.0
 offset_bottom = 213.0
 
-[node name="grocery3" parent="Row1" instance=ExtResource("2_p7vbo")]
+[node name="grocery3" parent="Shelf6" instance=ExtResource("2_p7vbo")]
+layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 213.0
 offset_bottom = 213.0
 
-[node name="grocery4" parent="Row1" instance=ExtResource("2_p7vbo")]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 213.0
-offset_bottom = 213.0
-
-[node name="grocery5" parent="Row1" instance=ExtResource("2_p7vbo")]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 213.0
-offset_bottom = 213.0
-
-[node name="Row2" type="Node" parent="."]
-
-[node name="grocery" parent="Row2" instance=ExtResource("2_p7vbo")]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 213.0
-offset_bottom = 213.0
-
-[node name="grocery2" parent="Row2" instance=ExtResource("2_p7vbo")]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 213.0
-offset_bottom = 213.0
-
-[node name="grocery3" parent="Row2" instance=ExtResource("2_p7vbo")]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 213.0
-offset_bottom = 213.0
-
-[node name="grocery4" parent="Row2" instance=ExtResource("2_p7vbo")]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 213.0
-offset_bottom = 213.0
-
-[node name="grocery5" parent="Row2" instance=ExtResource("2_p7vbo")]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 213.0
-offset_bottom = 213.0
-
-[node name="Row3" type="Node" parent="."]
-
-[node name="grocery" parent="Row3" instance=ExtResource("2_p7vbo")]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 213.0
-offset_bottom = 213.0
-
-[node name="grocery2" parent="Row3" instance=ExtResource("2_p7vbo")]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 213.0
-offset_bottom = 213.0
-
-[node name="grocery3" parent="Row3" instance=ExtResource("2_p7vbo")]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 213.0
-offset_bottom = 213.0
-
-[node name="grocery4" parent="Row3" instance=ExtResource("2_p7vbo")]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 213.0
-offset_bottom = 213.0
-
-[node name="grocery5" parent="Row3" instance=ExtResource("2_p7vbo")]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 213.0
-offset_bottom = 213.0
-
-[node name="Row4" type="Node" parent="."]
-
-[node name="grocery" parent="Row4" instance=ExtResource("2_p7vbo")]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 213.0
-offset_bottom = 213.0
-
-[node name="grocery2" parent="Row4" instance=ExtResource("2_p7vbo")]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 213.0
-offset_bottom = 213.0
-
-[node name="grocery3" parent="Row4" instance=ExtResource("2_p7vbo")]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 213.0
-offset_bottom = 213.0
-
-[node name="grocery4" parent="Row4" instance=ExtResource("2_p7vbo")]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 213.0
-offset_bottom = 213.0
-
-[node name="grocery5" parent="Row4" instance=ExtResource("2_p7vbo")]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 213.0
-offset_bottom = 213.0
-
-[node name="Row5" type="Node" parent="."]
-
-[node name="grocery" parent="Row5" instance=ExtResource("2_p7vbo")]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 213.0
-offset_bottom = 213.0
-
-[node name="grocery2" parent="Row5" instance=ExtResource("2_p7vbo")]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 213.0
-offset_bottom = 213.0
-
-[node name="grocery3" parent="Row5" instance=ExtResource("2_p7vbo")]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 213.0
-offset_bottom = 213.0
-
-[node name="grocery4" parent="Row5" instance=ExtResource("2_p7vbo")]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 213.0
-offset_bottom = 213.0
-
-[node name="grocery5" parent="Row5" instance=ExtResource("2_p7vbo")]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 213.0
-offset_bottom = 213.0
-
-[node name="Row6" type="Node" parent="."]
-
-[node name="grocery" parent="Row6" instance=ExtResource("2_p7vbo")]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 213.0
-offset_bottom = 213.0
-
-[node name="grocery2" parent="Row6" instance=ExtResource("2_p7vbo")]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 213.0
-offset_bottom = 213.0
-
-[node name="grocery3" parent="Row6" instance=ExtResource("2_p7vbo")]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 213.0
-offset_bottom = 213.0
-
-[node name="grocery4" parent="Row6" instance=ExtResource("2_p7vbo")]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 213.0
-offset_bottom = 213.0
-
-[node name="grocery5" parent="Row6" instance=ExtResource("2_p7vbo")]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 213.0
-offset_bottom = 213.0
+[connection signal="pressed" from="Shelf1/grocery" to="." method="collect"]
+[connection signal="pressed" from="Shelf1/grocery2" to="." method="collect"]
+[connection signal="pressed" from="Shelf1/grocery3" to="." method="collect"]
+[connection signal="pressed" from="Shelf2/grocery" to="." method="collect"]
+[connection signal="pressed" from="Shelf2/grocery2" to="." method="collect"]
+[connection signal="pressed" from="Shelf2/grocery3" to="." method="collect"]
+[connection signal="pressed" from="Shelf3/grocery" to="." method="collect"]
+[connection signal="pressed" from="Shelf3/grocery2" to="." method="collect"]
+[connection signal="pressed" from="Shelf3/grocery3" to="." method="collect"]
+[connection signal="pressed" from="Shelf4/grocery" to="." method="collect"]
+[connection signal="pressed" from="Shelf4/grocery2" to="." method="collect"]
+[connection signal="pressed" from="Shelf4/grocery3" to="." method="collect"]
+[connection signal="pressed" from="Shelf5/grocery" to="." method="collect"]
+[connection signal="pressed" from="Shelf5/grocery2" to="." method="collect"]
+[connection signal="pressed" from="Shelf5/grocery3" to="." method="collect"]
+[connection signal="pressed" from="Shelf6/grocery" to="." method="collect"]
+[connection signal="pressed" from="Shelf6/grocery2" to="." method="collect"]
+[connection signal="pressed" from="Shelf6/grocery3" to="." method="collect"]

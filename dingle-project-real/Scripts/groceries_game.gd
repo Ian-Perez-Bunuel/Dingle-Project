@@ -1,6 +1,7 @@
 extends Control
 
 @export var grocery_holders: Array[Node]
+@export var backgrounds: Array[TextureRect]
 
 @export var reward: Evidence
 var started: bool = false
@@ -12,15 +13,15 @@ func start():
 	var invervals: float = get_viewport().get_visible_rect().size.y / grocery_holders.size()
 	
 	var h: int = 0
-	var i: int = 0
+	var d: float = 0
 	for holder in grocery_holders:
-		h += 1
 		for item in holder.get_children():
 			if item is Grocery:
-				item.reset(i)
+				item.reset(d)
 				item.position.y = h * invervals
-				i += 1
-		i = 0
+				d += 2.5
+		h += 1
+		d = 0
 	
 	await get_tree().create_timer(2.0).timeout
 	started = true
@@ -34,6 +35,9 @@ func end():
 	Inventory.add_evidence(reward)
 	
 
+func collect():
+	print("Collected")
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if !started:
@@ -43,3 +47,12 @@ func _process(delta: float) -> void:
 		for item in holder.get_children():
 			if item is Grocery:
 				item.move()
+				
+	for bg in backgrounds:
+		bg.position.x -= 5
+		
+	if backgrounds[0].position.x <= -backgrounds[0].texture.get_width():
+		backgrounds[0].position.x = backgrounds[1].position.x + backgrounds[1].texture.get_width()
+
+	if backgrounds[1].position.x <= -backgrounds[1].texture.get_width():
+		backgrounds[1].position.x = backgrounds[0].position.x + backgrounds[0].texture.get_width()
