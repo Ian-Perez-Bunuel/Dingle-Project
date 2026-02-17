@@ -8,11 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://d0878m5i3mail" path="res://Assets/Models/World/Backstreetblockout3.glb" id="6_o06y3"]
 [ext_resource type="PackedScene" uid="uid://c2dejpm2lottk" path="res://Assets/Models/World/Backstreetblockout2.glb" id="7_k7acu"]
 [ext_resource type="Script" uid="uid://45pssicrscyg" path="res://Scripts/UIManager.gd" id="8_ikia7"]
-[ext_resource type="PackedScene" uid="uid://va7yg4gniy78" path="res://Assets/Models/World/Backstreetblockout1.blend" id="11_7yui6"]
+[ext_resource type="PackedScene" uid="uid://d2brxt1exs5ed" path="res://Assets/Models/World/Backstreet1.glb" id="11_c5t2i"]
 [ext_resource type="Script" uid="uid://bwifi60ec7u1t" path="res://Scripts/scene_transition.gd" id="12_c5t2i"]
-[ext_resource type="PackedScene" uid="uid://dae8m8uw4ifks" path="res://Assets/Models/World/Frontstreetblockout1.blend" id="12_e0ngr"]
 [ext_resource type="PackedScene" path="res://Scenes/seagull_game.tscn" id="13_c5t2i"]
 [ext_resource type="Shader" uid="uid://bscb7e5fasq7w" path="res://Shaders/screen_transition.gdshader" id="13_e0ngr"]
+[ext_resource type="PackedScene" uid="uid://0mxgro5v3yf8" path="res://Assets/Models/World/Docks1.glb" id="13_kn0ld"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_go701"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -126,11 +126,8 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 260.
 [node name="Backstreetblockout2" parent="NavigationRegion3D" instance=ExtResource("7_k7acu")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 146.16711, -0.4564437, -7.9923115)
 
-[node name="Backstreetblockout1" parent="." instance=ExtResource("11_7yui6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -98.63444, 0.25828323, -8.676177)
-
-[node name="Frontstreetblockout1" parent="." instance=ExtResource("12_e0ngr")]
-transform = Transform3D(1, 0, -0.00012217305, 0, 1, 0, 0.00012217305, 0, 1, 98.24636, -0.76797724, 7.3489428)
+[node name="Backstreet1" parent="." instance=ExtResource("11_c5t2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -98.62516, 0.3153448, -8.646477)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -3
@@ -140,6 +137,9 @@ material = SubResource("ShaderMaterial_kn0ld")
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0.12591085, 0.12591085, 0.12591082, 1)
+
+[node name="Docks1" parent="." instance=ExtResource("13_kn0ld")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 98.15458, -0.23300028, 9.105511)
 
 [connection signal="interacted" from="InteractionBox" to="NPC" method="speak"]
 [connection signal="body_shape_entered" from="Transitions/Street_To_Dock" to="Transitions/Street_To_Dock" method="_on_body_shape_entered"]
