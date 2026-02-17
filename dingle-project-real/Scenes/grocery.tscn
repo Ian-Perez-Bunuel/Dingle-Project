@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://jselvbci477g"]
+
+[ext_resource type="Texture2D" uid="uid://458jdclapqaa" path="res://Assets/Textures/minigames/Tomato.png" id="1_oqa34"]
+[ext_resource type="Script" uid="uid://dw8vx7ewxgcol" path="res://Scripts/grocery.gd" id="2_oh3w4"]
+
+[node name="grocery" type="Button"]
+offset_left = 3.0
+offset_top = 82.0
+offset_right = 216.0
+offset_bottom = 295.0
+scale = Vector2(0.5, 0.5)
+theme_type_variation = &"FlatButton"
+icon = ExtResource("1_oqa34")
+script = ExtResource("2_oh3w4")

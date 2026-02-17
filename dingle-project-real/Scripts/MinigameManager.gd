@@ -19,5 +19,9 @@ func activate(t_minigame: String):
 		if m.name == t_minigame:
 			minigame = m
 	
+	if minigame == null:
+		print("None found names: ",t_minigame)
+		return
+	
 	if minigame.has_method("start"):
 		minigame.start()

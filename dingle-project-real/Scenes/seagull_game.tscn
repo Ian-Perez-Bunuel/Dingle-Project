@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://ct3ngq0m2f83c"]
 
 [ext_resource type="Texture2D" uid="uid://cqrb0aqol3qk6" path="res://icon.svg" id="1_0183m"]
-[ext_resource type="Script" uid="uid://njn2syb7k1ap" path="res://Scenes/seagull_game.gd" id="1_wfp23"]
+[ext_resource type="Script" uid="uid://njn2syb7k1ap" path="res://Scripts/seagull_game.gd" id="1_wfp23"]
 [ext_resource type="Resource" uid="uid://bn3cp1bn3tvi7" path="res://Resources/SeagullReward.tres" id="2_p5bjh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0183m"]

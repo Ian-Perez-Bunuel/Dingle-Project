@@ -1,0 +1,92 @@
+[gd_scene load_steps=3 format=3 uid="uid://ds1das1xkbdv4"]
+
+[ext_resource type="Script" uid="uid://dsus20cdlh47i" path="res://Scripts/groceries_game.gd" id="1_p7vbo"]
+[ext_resource type="PackedScene" uid="uid://jselvbci477g" path="res://Scenes/grocery.tscn" id="2_p7vbo"]
+
+[node name="groceriesGame" type="Control" groups=["minigame"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p7vbo")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.19607843, 0.11372549, 0.11372549, 1)
+
+[node name="TempShelf1" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 114.0
+offset_bottom = 122.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TempShelf2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 1.0
+offset_top = -138.0
+offset_right = 1.0
+offset_bottom = -130.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TempShelf3" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = -232.0
+offset_right = -1.0
+offset_bottom = -224.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TempShelf4" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -9.0
+offset_right = -2.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TempShelf5" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = 218.0
+offset_right = -4.0
+offset_bottom = 226.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="grocery" parent="." instance=ExtResource("2_p7vbo")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0

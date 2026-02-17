@@ -5,7 +5,7 @@ Nathan: Here are some choices.
 	Nathan: GO!
 	do CutSceneManager.move_to("Player", "Test Place")
 - Minigame Test
-	do MinigameManager.activate("SeagullGame")
+	do MinigameManager.activate("groceriesGame")
 	=> END
 - Start again => start
 - End the conversation 

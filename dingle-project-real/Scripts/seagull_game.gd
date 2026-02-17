@@ -34,11 +34,11 @@ func _ready() -> void:
 
 func start():
 	visible = true
+	process_mode = Node.PROCESS_MODE_INHERIT
 	score = 0
 	scoreLabel.text = str(score)
 	Player.set_can_move(false)
 	Interactable.set_can_interact(false)
-	process_mode = Node.PROCESS_MODE_INHERIT
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
