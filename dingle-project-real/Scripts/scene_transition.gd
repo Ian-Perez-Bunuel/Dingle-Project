@@ -9,11 +9,11 @@ func _on_body_shape_entered(body_rid: RID, body: Node3D, body_shape_index: int, 
 	match teleport:
 		"street_to_dock":
 			await transition_stage_1()
-			player.global_position = Vector3(264.0,0.0,-8.0)
+			player.global_position = Vector3(100.0,1.0,0.0)
 			transition_stage_2()
 		"dock_to_street":
 			await transition_stage_1()
-			player.global_position = Vector3(166.0,0.0,9.0)
+			player.global_position = Vector3(100.0,1.0,0.0)
 			transition_stage_2()
 
 func transition_stage_1():
