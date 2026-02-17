@@ -59,6 +59,7 @@ offset_right = 213.0
 offset_bottom = 213.0
 
 [node name="Shelf2" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -89,6 +90,7 @@ offset_right = 213.0
 offset_bottom = 213.0
 
 [node name="Shelf3" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -119,6 +121,7 @@ offset_right = 213.0
 offset_bottom = 213.0
 
 [node name="Shelf4" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -149,6 +152,7 @@ offset_right = 213.0
 offset_bottom = 213.0
 
 [node name="Shelf5" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -179,6 +183,7 @@ offset_right = 213.0
 offset_bottom = 213.0
 
 [node name="Shelf6" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
