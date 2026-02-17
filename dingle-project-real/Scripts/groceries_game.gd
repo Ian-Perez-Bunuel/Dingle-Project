@@ -1,25 +1,29 @@
 extends Control
 
-@export var rowsItems: Array[Grocery]
+@export var grocery_holders: Array[Node]
 
 @export var reward: Evidence
-var canMove: bool = false
+var started: bool = false
 
 func start():
 	visible = true
 	process_mode = Node.PROCESS_MODE_INHERIT
 	
-	var invervals: float = get_viewport().get_visible_rect().size.y
-	var startingX: float = get_viewport().get_visible_rect().size.x + 100
+	var invervals: float = get_viewport().get_visible_rect().size.y / grocery_holders.size()
 	
-	var i: int
-	for item in rowsItems:
-		item.position.x = startingX
-		item.position.y = i * invervals
-		i += 1
+	var h: int = 0
+	var i: int = 0
+	for holder in grocery_holders:
+		h += 1
+		for item in holder.get_children():
+			if item is Grocery:
+				item.reset(i)
+				item.position.y = h * invervals
+				i += 1
+		i = 0
 	
 	await get_tree().create_timer(2.0).timeout
-	canMove = true
+	started = true
 
 func end():
 	Player.set_can_move(true)
@@ -32,8 +36,10 @@ func end():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if !canMove:
+	if !started:
 		return
 		
-	for item in rowsItems:
-		item.move()
+	for holder in grocery_holders:
+		for item in holder.get_children():
+			if item is Grocery:
+				item.move()

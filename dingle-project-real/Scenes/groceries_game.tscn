@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dsus20cdlh47i" path="res://Scripts/groceries_game.gd" id="1_p7vbo"]
 [ext_resource type="PackedScene" uid="uid://jselvbci477g" path="res://Scenes/grocery.tscn" id="2_p7vbo"]
 
-[node name="groceriesGame" type="Control" groups=["minigame"]]
+[node name="groceriesGame" type="Control" node_paths=PackedStringArray("grocery_holders") groups=["minigame"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,6 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_p7vbo")
+grocery_holders = [NodePath("Row1"), NodePath("Row2"), NodePath("Row3"), NodePath("Row4"), NodePath("Row5"), NodePath("Row6")]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -84,8 +85,193 @@ offset_bottom = 226.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="grocery" parent="." instance=ExtResource("2_p7vbo")]
-layout_mode = 0
+[node name="Row1" type="Node" parent="."]
+
+[node name="grocery" parent="Row1" instance=ExtResource("2_p7vbo")]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0
+
+[node name="grocery2" parent="Row1" instance=ExtResource("2_p7vbo")]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0
+
+[node name="grocery3" parent="Row1" instance=ExtResource("2_p7vbo")]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0
+
+[node name="grocery4" parent="Row1" instance=ExtResource("2_p7vbo")]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0
+
+[node name="grocery5" parent="Row1" instance=ExtResource("2_p7vbo")]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0
+
+[node name="Row2" type="Node" parent="."]
+
+[node name="grocery" parent="Row2" instance=ExtResource("2_p7vbo")]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0
+
+[node name="grocery2" parent="Row2" instance=ExtResource("2_p7vbo")]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0
+
+[node name="grocery3" parent="Row2" instance=ExtResource("2_p7vbo")]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0
+
+[node name="grocery4" parent="Row2" instance=ExtResource("2_p7vbo")]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0
+
+[node name="grocery5" parent="Row2" instance=ExtResource("2_p7vbo")]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0
+
+[node name="Row3" type="Node" parent="."]
+
+[node name="grocery" parent="Row3" instance=ExtResource("2_p7vbo")]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0
+
+[node name="grocery2" parent="Row3" instance=ExtResource("2_p7vbo")]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0
+
+[node name="grocery3" parent="Row3" instance=ExtResource("2_p7vbo")]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0
+
+[node name="grocery4" parent="Row3" instance=ExtResource("2_p7vbo")]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0
+
+[node name="grocery5" parent="Row3" instance=ExtResource("2_p7vbo")]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0
+
+[node name="Row4" type="Node" parent="."]
+
+[node name="grocery" parent="Row4" instance=ExtResource("2_p7vbo")]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0
+
+[node name="grocery2" parent="Row4" instance=ExtResource("2_p7vbo")]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0
+
+[node name="grocery3" parent="Row4" instance=ExtResource("2_p7vbo")]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0
+
+[node name="grocery4" parent="Row4" instance=ExtResource("2_p7vbo")]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0
+
+[node name="grocery5" parent="Row4" instance=ExtResource("2_p7vbo")]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0
+
+[node name="Row5" type="Node" parent="."]
+
+[node name="grocery" parent="Row5" instance=ExtResource("2_p7vbo")]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0
+
+[node name="grocery2" parent="Row5" instance=ExtResource("2_p7vbo")]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0
+
+[node name="grocery3" parent="Row5" instance=ExtResource("2_p7vbo")]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0
+
+[node name="grocery4" parent="Row5" instance=ExtResource("2_p7vbo")]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0
+
+[node name="grocery5" parent="Row5" instance=ExtResource("2_p7vbo")]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0
+
+[node name="Row6" type="Node" parent="."]
+
+[node name="grocery" parent="Row6" instance=ExtResource("2_p7vbo")]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0
+
+[node name="grocery2" parent="Row6" instance=ExtResource("2_p7vbo")]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0
+
+[node name="grocery3" parent="Row6" instance=ExtResource("2_p7vbo")]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0
+
+[node name="grocery4" parent="Row6" instance=ExtResource("2_p7vbo")]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 213.0
+offset_bottom = 213.0
+
+[node name="grocery5" parent="Row6" instance=ExtResource("2_p7vbo")]
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 213.0
