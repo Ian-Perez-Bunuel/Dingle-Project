@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://iysllbq6upr7"]
+[gd_scene load_steps=19 format=3 uid="uid://iysllbq6upr7"]
 
 [ext_resource type="PackedScene" uid="uid://bpgfead5netw3" path="res://Scenes/player.tscn" id="1_7yui6"]
+[ext_resource type="PackedScene" uid="uid://8t4uq2rp4c1o" path="res://Scenes/snap_game.tscn" id="1_c5t2i"]
 [ext_resource type="PackedScene" uid="uid://ds1das1xkbdv4" path="res://Scenes/groceries_game.tscn" id="1_ikia7"]
 [ext_resource type="PackedScene" uid="uid://bjooqpqmpiw7u" path="res://Scenes/interaction_box.tscn" id="2_go701"]
 [ext_resource type="PackedScene" uid="uid://bya28u4hoakii" path="res://Scenes/npc.tscn" id="4_8j60k"]
@@ -8,7 +9,7 @@
 [ext_resource type="Script" uid="uid://45pssicrscyg" path="res://Scripts/UIManager.gd" id="8_ikia7"]
 [ext_resource type="PackedScene" uid="uid://bm4hj1y0q254c" path="res://Assets/Models/World/Backstreet1.glb" id="11_c5t2i"]
 [ext_resource type="Script" uid="uid://bwifi60ec7u1t" path="res://Scripts/scene_transition.gd" id="12_c5t2i"]
-[ext_resource type="PackedScene" path="res://Scenes/seagull_game.tscn" id="13_c5t2i"]
+[ext_resource type="PackedScene" uid="uid://ct3ngq0m2f83c" path="res://Scenes/seagull_game.tscn" id="13_c5t2i"]
 [ext_resource type="Shader" uid="uid://bscb7e5fasq7w" path="res://Shaders/screen_transition.gdshader" id="13_e0ngr"]
 [ext_resource type="PackedScene" uid="uid://cgyu3kxkm4rs8" path="res://Assets/Models/World/Docks1.glb" id="13_kn0ld"]
 
@@ -53,6 +54,9 @@ shader_parameter/progress_bias = Vector2(10, 10)
 size = Vector3(140.26624, 0.99609375, 24.473633)
 
 [node name="World" type="Node3D"]
+
+[node name="snapGame" parent="." instance=ExtResource("1_c5t2i")]
+visible = false
 
 [node name="groceriesGame" parent="." instance=ExtResource("1_ikia7")]
 visible = false

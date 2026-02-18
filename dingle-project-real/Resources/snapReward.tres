@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Evidence" load_steps=3 format=3 uid="uid://c552a8h85i2vn"]
+
+[ext_resource type="Script" uid="uid://i65gfwen11r0" path="res://Resources/EvidenceResource.gd" id="1_4sf7h"]
+[ext_resource type="Texture2D" uid="uid://cqrb0aqol3qk6" path="res://icon.svg" id="1_e4pkg"]
+
+[resource]
+script = ExtResource("1_4sf7h")
+description = "I AM SO GOOD AT SNAP"
+image1 = ExtResource("1_e4pkg")
+metadata/_custom_type_script = "uid://i65gfwen11r0"
