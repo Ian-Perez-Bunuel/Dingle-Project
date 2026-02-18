@@ -31,6 +31,8 @@ var captainScore: int = 0
 var counter: int = 0
 @export var MAX_COUNT: int = 10
 
+var playing: bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	values = Card.values()
@@ -41,21 +43,24 @@ func _ready() -> void:
 func start():
 	visible = true
 	process_mode = Node.PROCESS_MODE_INHERIT
+	playing = true
 	
 	startGameLoop()
 	
 	
 func end():
+	StoryFlags.playedSnap = true
 	Player.set_can_move(true)
 	Interactable.set_can_interact(true)
 	process_mode = Node.PROCESS_MODE_DISABLED
 	visible = false
+	playing = false
 	
 	Inventory.add_evidence(reward)
 	
 	
 func startGameLoop() -> void:
-	while true:
+	while playing:
 		await get_tree().create_timer(timeBetweenCards).timeout
 		addCard()
 
@@ -106,10 +111,11 @@ func reset_pile():
 
 func _process(delta: float) -> void:
 	if playerScore >= WIN_CON:
+		StoryFlags.wonSnap = true
 		end()
 	
 	if captainScore >= WIN_CON:
-		# Give tag of lost to captain
+		StoryFlags.lostSnap = true
 		end()
 	
 	if Input.is_action_just_pressed("minigameAction"):

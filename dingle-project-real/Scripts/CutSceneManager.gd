@@ -16,7 +16,11 @@ func _ready() -> void:
 	for n in get_tree().get_nodes_in_group("place"):
 		if n is Node3D:
 			allPlaces.append(n as Node3D)
-	
+
+func end():
+	Interactable.set_can_interact(true)
+	Player.set_can_move(true)
+
 func move_to(t_objectName: String, t_placeName: String):
 	var place = null
 	var object = null

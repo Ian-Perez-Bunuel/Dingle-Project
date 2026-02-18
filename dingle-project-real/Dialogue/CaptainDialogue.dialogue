@@ -1,0 +1,49 @@
+~ start
+if StoryFlags.playedSnap
+	=> postGame
+else
+	=> firstMeeting
+	
+~ postGame
+Captain: You already played against me... => END
+
+~ firstMeeting
+Captain: Hey Buddy! 
+Captain: Wanna play my game?
+Captain: If you win I'll give you a ride on my boat to those dumbass seagulls...
+
+- YESSS!!!
+	Captain: That's the spirit! Lets play some snap!
+	
+- Nah, I'm good!
+	Captain: Stop fooling around...
+	Captain: Of course you do!
+
+Captain: Have you played snap before?
+- Yes
+	=> minigame
+- No
+	Captain: It's simple!
+	Captain: Just say when there have been 2 of the same card in a row
+	Captain: If you get it first you get 1 point.
+	Captain: First to 5 wins!
+
+~ minigame
+Captain: Perfect lets start!
+do MinigameManager.activate("snapGame") 
+=> END
+
+~ explainSnap
+Captain: It's simple!
+Captain: Just say when there have been 2 of the same card in a row
+Captain: If you get it first you get 1 point.
+Captain: First to 5 wins!
+	
+Captain: Does that make sense?
+	
+- Yes
+	=> minigame
+- No
+	Captain: Ok, I'll explain again cause you're clearly dense. 
+	=> explainSnap
+=> END

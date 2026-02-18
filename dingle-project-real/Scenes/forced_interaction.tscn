@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm6hvsn33lcas"]
+
+[ext_resource type="Script" uid="uid://c06ufarqntnp0" path="res://Scripts/forced_interaction.gd" id="1_2ei6c"]
+
+[node name="ForcedInteraction" type="Area3D"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+collision_layer = 0
+collision_mask = 128
+script = ExtResource("1_2ei6c")

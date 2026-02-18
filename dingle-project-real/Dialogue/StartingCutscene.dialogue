@@ -1,0 +1,16 @@
+~ start
+???: OH GOD NOT AGAIN! 
+do CutSceneManager.move_to("Chippy", "RightOfAlley")
+do wait(1.0)
+Chippy: [wave]YOU GOTTA HELP ME GET ALL THE DIALOGUE CORRECT PLEASE![/wave]
+
+- Oh boy can't wait!
+	Chippy: YIPEEEE!!!
+	
+- Nah, I'm good!
+	Chippy: Well... [speed=0.2] This is due tommorow sooooo...
+	do wait(0.5)
+	Chippy: You gotta do it anyway :D
+
+do CutSceneManager.end()
+=> END

@@ -2,12 +2,11 @@ extends CharacterBody3D
 class_name Player
 
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
+var hasTarget = false
 
 const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
 
 static var canMove = true
-var hasTarget = false
 
 static func set_can_move(b: bool):
 	canMove = b

@@ -1,7 +1,7 @@
 extends Area3D
 
 @export var teleport : String
-@onready var screen_effect = $"../../CanvasLayer/ColorRect"
+@onready var screen_effect = $"../../TransitionShader/ColorRect"
 @onready var player = $"../../Player"
 
 func _on_body_shape_entered(body_rid: RID, body: Node3D, body_shape_index: int, local_shape_index: int) -> void:
