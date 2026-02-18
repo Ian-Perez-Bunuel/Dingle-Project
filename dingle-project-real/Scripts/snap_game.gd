@@ -15,14 +15,21 @@ var currentCard: Card = Card.None
 var called: bool = false
 @export var cardTextures: Array[Texture2D]
 
-@export var bottomCard: TextureRect
-@export var topCard: TextureRect
-
 @export var timeBetweenCards: float
 @export var captainReactionTime: float
 
 @export var reward: Evidence
 
+@onready var pile: Control = $Pile
+@onready var playerLabel: Label = $PlayerScore
+@onready var captainLabel: Label = $CaptainScore
+
+@export var WIN_CON: int = 5
+var playerScore: int = 0
+var captainScore: int = 0
+
+var counter: int = 0
+@export var MAX_COUNT: int = 10
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -54,14 +61,29 @@ func startGameLoop() -> void:
 
 
 func addCard():
+	counter += 1
+	
 	called = false
 	previousCard = currentCard
-	bottomCard.texture = cardTextures[previousCard-1]
 	
-	var randCard = values[randi() % values.size()]
+	var randCard: Card 
+	# Stops it from going too long
+	if counter >= MAX_COUNT:
+		randCard = previousCard
+		counter = 0
+	else:
+		randCard = values[randi() % values.size()]
+		
 	currentCard = randCard
-	topCard.texture = cardTextures[currentCard-1]
 	
+	var newCard = TextureRect.new()
+	newCard.texture = cardTextures[currentCard-1]
+	newCard.stretch_mode = TextureRect.STRETCH_SCALE
+	newCard.size = newCard.texture.get_size()
+	newCard.pivot_offset = Vector2(newCard.size.x / 2.0, newCard.size.y / 2.0)
+	newCard.rotation = randf_range(0.0, 180.0)
+	pile.add_child(newCard)
+
 	print(previousCard)
 	print(currentCard)
 	
@@ -69,11 +91,32 @@ func addCard():
 		await get_tree().create_timer(captainReactionTime).timeout
 		if !called:
 			print("SNAP CAP")
+			captainScore += 1
+			captainLabel.text = "Captain's Score: " + str(captainScore)
+			reset_pile()
 			
-			
+
+func reset_pile():
+	previousCard = Card.None
+	currentCard = Card.None
+	counter = 0
+	
+	for child in pile.get_children():
+		child.queue_free()
+
 func _process(delta: float) -> void:
+	if playerScore >= WIN_CON:
+		end()
+	
+	if captainScore >= WIN_CON:
+		# Give tag of lost to captain
+		end()
+	
 	if Input.is_action_just_pressed("minigameAction"):
-		if currentCard == previousCard:
+		if currentCard == previousCard && previousCard != Card.None:
 			called = true
+			reset_pile()
+			playerScore += 1
+			playerLabel.text = "An Phiast's Score: " + str(playerScore)
 			print("SNAP ME!!!!")
 		

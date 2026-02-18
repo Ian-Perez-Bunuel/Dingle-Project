@@ -1,19 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://8t4uq2rp4c1o"]
+[gd_scene load_steps=8 format=3 uid="uid://8t4uq2rp4c1o"]
 
 [ext_resource type="Script" uid="uid://c20i7ib43fxb8" path="res://Scripts/snap_game.gd" id="1_h2w27"]
 [ext_resource type="Resource" uid="uid://c552a8h85i2vn" path="res://Resources/snapReward.tres" id="2_cjdk3"]
-[ext_resource type="Texture2D" uid="uid://458jdclapqaa" path="res://Assets/Textures/minigames/Tomato.png" id="3_h48p2"]
-[ext_resource type="Texture2D" uid="uid://b3ec8a2mpggc8" path="res://Assets/Textures/minigames/Salt.png" id="4_5osm8"]
-[ext_resource type="Texture2D" uid="uid://cvwoebyxpr4nk" path="res://Assets/Textures/minigames/Potato.png" id="4_nhngk"]
-[ext_resource type="Texture2D" uid="uid://co25msvfle356" path="res://Assets/Textures/minigames/Oil.png" id="5_nnxbc"]
+[ext_resource type="Texture2D" uid="uid://dxq813tg4kg58" path="res://Assets/Textures/minigames/minigame_cardgame_blue.png" id="2_nhngk"]
+[ext_resource type="Texture2D" uid="uid://cm7c5aq5bri8e" path="res://Assets/Textures/minigames/minigame_cardgame_green.png" id="3_nnxbc"]
+[ext_resource type="Texture2D" uid="uid://c5lvhgxm638pg" path="res://Assets/Textures/minigames/minigame_cardgame_red.png" id="4_t6tl8"]
+[ext_resource type="Texture2D" uid="uid://h0md6brhlvjj" path="res://Assets/Textures/minigames/minigame_cardgame_yellow.png" id="5_0dkby"]
+[ext_resource type="Texture2D" uid="uid://bnm1smande6f5" path="res://Assets/Textures/minigames/minigame_cardgame_background.png" id="7_nnxbc"]
 
-[sub_resource type="Gradient" id="Gradient_bnceg"]
-colors = PackedColorArray(0.3024257, 0.14166528, 0, 1, 0.2580546, 0.0893235, 4.813075e-08, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_h2w27"]
-gradient = SubResource("Gradient_bnceg")
-
-[node name="snap_game" type="Control" node_paths=PackedStringArray("bottomCard", "topCard") groups=["minigame"]]
+[node name="snap_game" type="Control" groups=["minigame"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,12 +16,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_h2w27")
-cardTextures = Array[Texture2D]([ExtResource("3_h48p2"), ExtResource("4_5osm8"), ExtResource("4_nhngk"), ExtResource("5_nnxbc")])
-bottomCard = NodePath("BottomCard")
-topCard = NodePath("TopCard")
-timeBetweenCards = 3.0
-captainReactionTime = 2.5
+cardTextures = Array[Texture2D]([ExtResource("2_nhngk"), ExtResource("3_nnxbc"), ExtResource("4_t6tl8"), ExtResource("5_0dkby")])
+timeBetweenCards = 2.0
+captainReactionTime = 1.75
 reward = ExtResource("2_cjdk3")
+MAX_COUNT = 7
 
 [node name="Table" type="TextureRect" parent="."]
 layout_mode = 1
@@ -41,34 +35,35 @@ offset_right = 200.0
 offset_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 2
-rotation = 0.7853982
-pivot_offset = Vector2(200, 200)
-texture = SubResource("GradientTexture1D_h2w27")
+texture = ExtResource("7_nnxbc")
 
-[node name="BottomCard" type="TextureRect" parent="."]
+[node name="Pile" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -75.0
+offset_top = -115.0
+offset_right = 75.0
+offset_bottom = 115.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(75, 115)
 
-[node name="TopCard" type="TextureRect" parent="."]
+[node name="PlayerScore" type="Label" parent="."]
+layout_mode = 0
+offset_right = 166.0
+offset_bottom = 58.0
+text = "An Phiast's Score: 0"
+
+[node name="CaptainScore" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -166.0
+offset_bottom = 58.0
+grow_horizontal = 0
+text = "Captain's Score: 0"
