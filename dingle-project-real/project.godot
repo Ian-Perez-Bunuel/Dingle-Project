@@ -21,6 +21,7 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 CutSceneManager="*res://Scripts/CutSceneManager.gd"
 MinigameManager="*res://Scripts/MinigameManager.gd"
 Inventory="*res://Scripts/Inventory.gd"
+StoryFlags="*res://Scripts/StoryFlags.gd"
 
 [dialogue_manager]
 

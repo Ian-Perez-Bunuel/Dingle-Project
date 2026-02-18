@@ -1,15 +1,13 @@
-[gd_scene load_steps=43 format=3 uid="uid://iysllbq6upr7"]
+[gd_scene load_steps=41 format=3 uid="uid://iysllbq6upr7"]
 
 [ext_resource type="PackedScene" uid="uid://bpgfead5netw3" path="res://Scenes/player.tscn" id="1_7yui6"]
 [ext_resource type="PackedScene" uid="uid://8t4uq2rp4c1o" path="res://Scenes/snap_game.tscn" id="1_c5t2i"]
 [ext_resource type="PackedScene" uid="uid://ds1das1xkbdv4" path="res://Scenes/groceries_game.tscn" id="1_ikia7"]
-[ext_resource type="PackedScene" uid="uid://bjooqpqmpiw7u" path="res://Scenes/interaction_box.tscn" id="2_go701"]
-[ext_resource type="PackedScene" uid="uid://bya28u4hoakii" path="res://Scenes/npc.tscn" id="4_8j60k"]
 [ext_resource type="PackedScene" uid="uid://bb61pavwemraa" path="res://Scenes/evidence_book.tscn" id="6_ikia7"]
 [ext_resource type="Script" uid="uid://45pssicrscyg" path="res://Scripts/UIManager.gd" id="8_ikia7"]
 [ext_resource type="PackedScene" uid="uid://bm4hj1y0q254c" path="res://Assets/Models/World/Backstreet1.glb" id="11_c5t2i"]
 [ext_resource type="Script" uid="uid://bwifi60ec7u1t" path="res://Scripts/scene_transition.gd" id="12_c5t2i"]
-[ext_resource type="PackedScene" path="res://Scenes/seagull_game.tscn" id="13_c5t2i"]
+[ext_resource type="PackedScene" uid="uid://ct3ngq0m2f83c" path="res://Scenes/seagull_game.tscn" id="13_c5t2i"]
 [ext_resource type="Shader" uid="uid://bscb7e5fasq7w" path="res://Shaders/screen_transition.gdshader" id="13_e0ngr"]
 [ext_resource type="PackedScene" uid="uid://cgyu3kxkm4rs8" path="res://Assets/Models/World/Docks1.glb" id="13_kn0ld"]
 
@@ -144,13 +142,7 @@ shadow_enabled = true
 environment = SubResource("Environment_8j60k")
 
 [node name="Player" parent="." instance=ExtResource("1_7yui6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -106.822784, 1.3002219, 9.55067)
-
-[node name="InteractionBox" parent="." instance=ExtResource("2_go701")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -107.387634, 0.60232925, 9.657297)
-
-[node name="NPC" parent="." instance=ExtResource("4_8j60k")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -114.83954, 1.9759264, 3.261047)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -105.1021, 0.6140232, -13.848663)
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -207,7 +199,6 @@ color = Color(0.12591085, 0.12591085, 0.12591082, 1)
 
 [node name="Docks" parent="." instance=ExtResource("13_kn0ld")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 0, 9.106)
-visible = false
 
 [node name="Backstreet" parent="." instance=ExtResource("11_c5t2i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -98.62516, 0.3153448, -8.646477)
@@ -253,23 +244,23 @@ transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -117.35854, 1
 shape = SubResource("BoxShape3D_o2rbt")
 
 [node name="Ramp1" type="CollisionShape3D" parent="Hitboxes/BackstreetCollision"]
-transform = Transform3D(1, 0, 0, 0, 0.628737, 0.77761805, 0, -0.77761805, 0.628737, -76.099785, -0.46513826, -0.3158674)
+transform = Transform3D(1, 0, 0, 0, 0.628737, 0.77761805, 0, -0.77761805, 0.628737, -76.099785, -0.7016744, -0.2147887)
 shape = SubResource("BoxShape3D_3ua1v")
 
 [node name="Ramp2" type="CollisionShape3D" parent="Hitboxes/BackstreetCollision"]
-transform = Transform3D(1, 0, 0, 0, 0.64114153, -0.76742256, 0, 0.76742256, 0.64114153, -76.099785, -1.0513588, 6.2851057)
+transform = Transform3D(1, 0, 0, 0, 0.64114153, -0.76742256, 0, 0.76742256, 0.64114153, -76.099785, -1.101789, 6.3339887)
 shape = SubResource("BoxShape3D_r0ikl")
 
 [node name="Ramp3" type="CollisionShape3D" parent="Hitboxes/BackstreetCollision"]
-transform = Transform3D(1, 0, 0, 0, 0.9837913, -0.17931733, 0, 0.17931733, 0.9837913, -84.332535, 0.120513916, -5.923312)
+transform = Transform3D(1, 0, 0, 0, 0.9837913, -0.17931733, 0, 0.17931733, 0.9837913, -84.332535, 0.109867394, -5.923312)
 shape = SubResource("BoxShape3D_opbav")
 
 [node name="Ramp4" type="CollisionShape3D" parent="Hitboxes/BackstreetCollision"]
-transform = Transform3D(1, 0, 0, 0, 0.9918211, -0.12763585, 0, 0.12763585, 0.9918211, -74.23262, 0.0072974563, -5.923312)
+transform = Transform3D(1, 0, 0, 0, 0.9918211, -0.12763585, 0, 0.12763585, 0.9918211, -74.23262, 0.023476541, -5.923312)
 shape = SubResource("BoxShape3D_coyub")
 
 [node name="Ramp5" type="CollisionShape3D" parent="Hitboxes/BackstreetCollision"]
-transform = Transform3D(1, 0, 0, 0, 0.9918211, -0.12763585, 0, 0.12763585, 0.9918211, -54.697113, 0.007297337, -5.923312)
+transform = Transform3D(1, 0, 0, 0, 0.9918211, -0.12763585, 0, 0.12763585, 0.9918211, -54.697113, 0.025932252, -5.923312)
 shape = SubResource("BoxShape3D_ochwf")
 
 [node name="DockCollision" type="StaticBody3D" parent="Hitboxes"]
@@ -339,6 +330,5 @@ shape = SubResource("BoxShape3D_no8kt")
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 15.864876, 10.285858, 11.710211)
 shape = SubResource("BoxShape3D_xbk3s")
 
-[connection signal="interacted" from="InteractionBox" to="NPC" method="speak"]
 [connection signal="body_shape_entered" from="Transitions/Street_To_Dock" to="Transitions/Street_To_Dock" method="_on_body_shape_entered"]
 [connection signal="body_shape_entered" from="Transitions/Dock_To_Street" to="Transitions/Dock_To_Street" method="_on_body_shape_entered"]
