@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://iysllbq6upr7"]
+[gd_scene load_steps=43 format=3 uid="uid://iysllbq6upr7"]
 
 [ext_resource type="PackedScene" uid="uid://bpgfead5netw3" path="res://Scenes/player.tscn" id="1_7yui6"]
 [ext_resource type="PackedScene" uid="uid://8t4uq2rp4c1o" path="res://Scenes/snap_game.tscn" id="1_c5t2i"]
@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://45pssicrscyg" path="res://Scripts/UIManager.gd" id="8_ikia7"]
 [ext_resource type="PackedScene" uid="uid://bm4hj1y0q254c" path="res://Assets/Models/World/Backstreet1.glb" id="11_c5t2i"]
 [ext_resource type="Script" uid="uid://bwifi60ec7u1t" path="res://Scripts/scene_transition.gd" id="12_c5t2i"]
-[ext_resource type="PackedScene" uid="uid://ct3ngq0m2f83c" path="res://Scenes/seagull_game.tscn" id="13_c5t2i"]
+[ext_resource type="PackedScene" path="res://Scenes/seagull_game.tscn" id="13_c5t2i"]
 [ext_resource type="Shader" uid="uid://bscb7e5fasq7w" path="res://Shaders/screen_transition.gdshader" id="13_e0ngr"]
 [ext_resource type="PackedScene" uid="uid://cgyu3kxkm4rs8" path="res://Assets/Models/World/Docks1.glb" id="13_kn0ld"]
 
@@ -50,8 +50,80 @@ shader_parameter/clock_feather = 0.0
 shader_parameter/progress = 0.0
 shader_parameter/progress_bias = Vector2(10, 10)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_axeuq"]
+size = Vector3(67.63613, 21.571716, 12.251465)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i4fjy"]
+size = Vector3(65.762, 21.571716, 12.251465)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pt3ps"]
+size = Vector3(16.827644, 21.571716, 8.984802)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hmc15"]
+size = Vector3(16.093996, 21.571716, 8.980408)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dt0r1"]
+size = Vector3(7.0452576, 21.571716, 9.002869)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qebug"]
+size = Vector3(17.730368, 21.571716, 23.543549)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o2rbt"]
+size = Vector3(17.219336, 21.571716, 16.803146)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1vso6"]
+size = Vector3(9.829016, 21.571716, 5.961899)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3ua1v"]
+size = Vector3(141.94824, 2.0582275, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r0ikl"]
+size = Vector3(141.94824, 3.250885, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_opbav"]
+size = Vector3(2.3753662, 1, 3.2270508)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_coyub"]
+size = Vector3(3.9534302, 1, 3.2270508)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ochwf"]
+size = Vector3(3.9534302, 1, 3.2270508)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_0fj1v"]
 size = Vector3(140.26624, 0.99609375, 24.473633)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7yui6"]
+size = Vector3(8.182129, 1.002594, 4.574463)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c5t2i"]
+size = Vector3(15.137283, 0.99609375, 6.2547913)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kn0ld"]
+size = Vector3(6.374653, 0.99609375, 11.575478)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hgpy0"]
+size = Vector3(54.625977, 21.571716, 11.4140625)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t2t4p"]
+size = Vector3(41.27321, 21.571716, 11.4140625)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0pcbe"]
+size = Vector3(8.7164955, 21.571716, 7.234375)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1cojt"]
+size = Vector3(11.076611, 21.571716, 14.5217285)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yq1aw"]
+size = Vector3(6.721301, 21.571716, 14.5217285)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pyn1s"]
+size = Vector3(19.479322, 21.571716, 26.250305)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_no8kt"]
+size = Vector3(4.1820865, 21.571716, 10.409988)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xbk3s"]
+size = Vector3(4.1820865, 21.571716, 1.8265762)
 
 [node name="World" type="Node3D"]
 
@@ -102,6 +174,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.79036, -28.266705, -7.1511
 
 [node name="Street_To_Dock" type="Area3D" parent="Transitions"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74.79445, 0.8436403, 21.693098)
+collision_layer = 0
+collision_mask = 128
 script = ExtResource("12_c5t2i")
 teleport = "street_to_dock"
 
@@ -111,6 +185,8 @@ debug_color = Color(0.9764706, 0, 0.41960785, 0.9843137)
 
 [node name="Dock_To_Street" type="Area3D" parent="Transitions"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97.94511, 0.57394505, -9.427431)
+collision_layer = 0
+collision_mask = 128
 script = ExtResource("12_c5t2i")
 teleport = "dock_to_street"
 
@@ -131,18 +207,137 @@ color = Color(0.12591085, 0.12591085, 0.12591082, 1)
 
 [node name="Docks" parent="." instance=ExtResource("13_kn0ld")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 0, 9.106)
+visible = false
 
 [node name="Backstreet" parent="." instance=ExtResource("11_c5t2i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -98.62516, 0.3153448, -8.646477)
 
 [node name="Hitboxes" type="Node3D" parent="."]
 
-[node name="DockPlane" type="StaticBody3D" parent="Hitboxes"]
+[node name="BackstreetCollision" type="StaticBody3D" parent="Hitboxes"]
+
+[node name="Wall1" type="CollisionShape3D" parent="Hitboxes/BackstreetCollision"]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -112.59231, 10.285858, 18.45068)
+shape = SubResource("BoxShape3D_axeuq")
+
+[node name="Wall2" type="CollisionShape3D" parent="Hitboxes/BackstreetCollision"]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -37.925575, 10.285858, 18.45068)
+shape = SubResource("BoxShape3D_i4fjy")
+
+[node name="Wall3" type="CollisionShape3D" parent="Hitboxes/BackstreetCollision"]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -63.768093, 10.285858, -8.753212)
+shape = SubResource("BoxShape3D_pt3ps")
+
+[node name="Wall4" type="CollisionShape3D" parent="Hitboxes/BackstreetCollision"]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -44.74112, 10.285858, -8.755409)
+shape = SubResource("BoxShape3D_hmc15")
+
+[node name="Wall5" type="CollisionShape3D" parent="Hitboxes/BackstreetCollision"]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -79.75709, 10.285858, -8.744179)
+shape = SubResource("BoxShape3D_dt0r1")
+
+[node name="Wall6" type="CollisionShape3D" parent="Hitboxes/BackstreetCollision"]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -94.14807, 10.285858, -15.799096)
+shape = SubResource("BoxShape3D_qebug")
+
+[node name="Wall7" type="CollisionShape3D" parent="Hitboxes/BackstreetCollision"]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -117.10303, 10.285858, -15.47178)
+shape = SubResource("BoxShape3D_o2rbt")
+
+[node name="Wall8" type="CollisionShape3D" parent="Hitboxes/BackstreetCollision"]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -106.45418, 10.285858, -26.083101)
+shape = SubResource("BoxShape3D_1vso6")
+
+[node name="Wall9" type="CollisionShape3D" parent="Hitboxes/BackstreetCollision"]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -117.35854, 10.285858, 3.9050913)
+shape = SubResource("BoxShape3D_o2rbt")
+
+[node name="Ramp1" type="CollisionShape3D" parent="Hitboxes/BackstreetCollision"]
+transform = Transform3D(1, 0, 0, 0, 0.628737, 0.77761805, 0, -0.77761805, 0.628737, -76.099785, -0.46513826, -0.3158674)
+shape = SubResource("BoxShape3D_3ua1v")
+
+[node name="Ramp2" type="CollisionShape3D" parent="Hitboxes/BackstreetCollision"]
+transform = Transform3D(1, 0, 0, 0, 0.64114153, -0.76742256, 0, 0.76742256, 0.64114153, -76.099785, -1.0513588, 6.2851057)
+shape = SubResource("BoxShape3D_r0ikl")
+
+[node name="Ramp3" type="CollisionShape3D" parent="Hitboxes/BackstreetCollision"]
+transform = Transform3D(1, 0, 0, 0, 0.9837913, -0.17931733, 0, 0.17931733, 0.9837913, -84.332535, 0.120513916, -5.923312)
+shape = SubResource("BoxShape3D_opbav")
+
+[node name="Ramp4" type="CollisionShape3D" parent="Hitboxes/BackstreetCollision"]
+transform = Transform3D(1, 0, 0, 0, 0.9918211, -0.12763585, 0, 0.12763585, 0.9918211, -74.23262, 0.0072974563, -5.923312)
+shape = SubResource("BoxShape3D_coyub")
+
+[node name="Ramp5" type="CollisionShape3D" parent="Hitboxes/BackstreetCollision"]
+transform = Transform3D(1, 0, 0, 0, 0.9918211, -0.12763585, 0, 0.12763585, 0.9918211, -54.697113, 0.007297337, -5.923312)
+shape = SubResource("BoxShape3D_ochwf")
+
+[node name="DockCollision" type="StaticBody3D" parent="Hitboxes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.277557, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitboxes/DockPlane"]
+[node name="Plane1" type="CollisionShape3D" parent="Hitboxes/DockCollision"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.638855, -0.49859643, -1.4536133)
 shape = SubResource("BoxShape3D_0fj1v")
+
+[node name="Plane2" type="CollisionShape3D" parent="Hitboxes/DockCollision"]
+transform = Transform3D(0.6340694, 0, -0.77327615, 0, 1, 0, 0.77327615, 0, 0.6340694, 22.91066, -0.5049896, 12.762951)
+shape = SubResource("BoxShape3D_7yui6")
+
+[node name="Plane3" type="CollisionShape3D" parent="Hitboxes/DockCollision"]
+transform = Transform3D(0.5828181, 0, 0.8126027, 0, 1, 0, -0.8126027, 0, 0.5828181, 38.80729, -0.5049896, 12.917267)
+shape = SubResource("BoxShape3D_7yui6")
+
+[node name="Plane4" type="CollisionShape3D" parent="Hitboxes/DockCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.060188, -0.49859643, 13.944565)
+shape = SubResource("BoxShape3D_c5t2i")
+
+[node name="Plane5" type="CollisionShape3D" parent="Hitboxes/DockCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.751762, -0.49859643, 16.604908)
+shape = SubResource("BoxShape3D_kn0ld")
+
+[node name="Wall1" type="CollisionShape3D" parent="Hitboxes/DockCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.84094, 10.285858, -5.013672)
+shape = SubResource("BoxShape3D_hgpy0")
+
+[node name="Wall2" type="CollisionShape3D" parent="Hitboxes/DockCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.089851, 10.285858, -5.013672)
+shape = SubResource("BoxShape3D_t2t4p")
+
+[node name="Wall3" type="CollisionShape3D" parent="Hitboxes/DockCollision"]
+transform = Transform3D(0.6243705, 0, -0.7811283, 0, 1, 0, 0.7811283, 0, 0.6243705, 18.013832, 10.285858, 16.42815)
+shape = SubResource("BoxShape3D_0pcbe")
+
+[node name="Wall4" type="CollisionShape3D" parent="Hitboxes/DockCollision"]
+transform = Transform3D(0.60896915, 0, 0.79319406, 0, 1, 0, -0.79319406, 0, 0.60896915, 43.38124, 10.285858, 16.42815)
+shape = SubResource("BoxShape3D_0pcbe")
+
+[node name="Wall5" type="CollisionShape3D" parent="Hitboxes/DockCollision"]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 30.80571, 10.285858, 21.29847)
+shape = SubResource("BoxShape3D_axeuq")
+
+[node name="Wall6" type="CollisionShape3D" parent="Hitboxes/DockCollision"]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 49.0688, 10.285858, 17.888979)
+shape = SubResource("BoxShape3D_1cojt")
+
+[node name="Wall7" type="CollisionShape3D" parent="Hitboxes/DockCollision"]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 57.7509, 10.285858, 29.70542)
+shape = SubResource("BoxShape3D_yq1aw")
+
+[node name="Wall8" type="CollisionShape3D" parent="Hitboxes/DockCollision"]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 70.757324, 10.285858, 23.841131)
+shape = SubResource("BoxShape3D_pyn1s")
+
+[node name="Wall9" type="CollisionShape3D" parent="Hitboxes/DockCollision"]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 66.64085, 10.285858, 5.7546196)
+shape = SubResource("BoxShape3D_no8kt")
+
+[node name="Wall10" type="CollisionShape3D" parent="Hitboxes/DockCollision"]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 14.430252, 10.285858, 5.7546196)
+shape = SubResource("BoxShape3D_no8kt")
+
+[node name="Wall11" type="CollisionShape3D" parent="Hitboxes/DockCollision"]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 15.864876, 10.285858, 11.710211)
+shape = SubResource("BoxShape3D_xbk3s")
 
 [connection signal="interacted" from="InteractionBox" to="NPC" method="speak"]
 [connection signal="body_shape_entered" from="Transitions/Street_To_Dock" to="Transitions/Street_To_Dock" method="_on_body_shape_entered"]
