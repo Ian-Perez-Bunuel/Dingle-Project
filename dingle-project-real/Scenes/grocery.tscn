@@ -16,6 +16,11 @@ theme_type_variation = &"FlatButton"
 action_mode = 0
 icon = ExtResource("1_oqa34")
 script = ExtResource("2_oh3w4")
-possibleItems = Array[Texture2D]([ExtResource("1_oqa34"), ExtResource("3_apiu5"), ExtResource("4_5jdee"), ExtResource("5_5ce7y")])
+itemMap = Dictionary[int, Texture2D]({
+0: ExtResource("1_oqa34"),
+1: ExtResource("3_apiu5"),
+2: ExtResource("4_5jdee"),
+3: ExtResource("5_5ce7y")
+})
 
 [connection signal="pressed" from="." to="." method="collect"]

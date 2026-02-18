@@ -1,14 +1,31 @@
 extends Button
 class_name Grocery
 
-@export var possibleItems: Array[Texture2D]
 var speed: float = 5
 var canMove: bool = false
 
+enum Type 
+{
+	Tomato,
+	Salt,
+	Potato,
+	Oil
+}
+
+var type: Type = Type.Tomato
+@export var itemMap: Dictionary[Type, Texture2D]
+
 func reset(delay: float = 0.0):
 	canMove = false
-	var random_item = possibleItems.pick_random()
-	icon = random_item
+	
+	var keys := itemMap.keys()
+	if keys.is_empty():
+		push_warning("itemMap is empty")
+		return
+	var key: Type = keys[randi_range(0, keys.size() - 1)]
+	type = key
+	icon = itemMap[key]
+	
 	position.x = get_viewport().get_visible_rect().size.x + 100
 	
 	var cooldown = randf_range(0.0, 2.5)

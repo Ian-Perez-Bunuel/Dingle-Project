@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ds1das1xkbdv4"]
+[gd_scene load_steps=5 format=3 uid="uid://ds1das1xkbdv4"]
 
 [ext_resource type="Script" uid="uid://dsus20cdlh47i" path="res://Scripts/groceries_game.gd" id="1_p7vbo"]
 [ext_resource type="Texture2D" uid="uid://cbr2ra760t7a8" path="res://Assets/Textures/minigames/minigame_shopping_background.png" id="2_5braf"]
 [ext_resource type="PackedScene" uid="uid://jselvbci477g" path="res://Scenes/grocery.tscn" id="2_p7vbo"]
+[ext_resource type="Resource" uid="uid://bp17rgifua47x" path="res://Resources/LesserValue Reward.tres" id="2_wqem1"]
 
 [node name="groceriesGame" type="Control" node_paths=PackedStringArray("grocery_holders", "backgrounds") groups=["minigame"]]
 layout_mode = 3
@@ -14,6 +15,13 @@ grow_vertical = 2
 script = ExtResource("1_p7vbo")
 grocery_holders = [NodePath("Shelf1"), NodePath("Shelf2"), NodePath("Shelf3"), NodePath("Shelf4"), NodePath("Shelf5"), NodePath("Shelf6")]
 backgrounds = [NodePath("Background1"), NodePath("Background2")]
+reward = ExtResource("2_wqem1")
+winCons = Dictionary[int, int]({
+0: 0,
+1: 1,
+2: 2,
+3: 0
+})
 
 [node name="Background1" type="TextureRect" parent="."]
 layout_mode = 0
@@ -33,25 +41,28 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+offset_bottom = -545.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="grocery" parent="Shelf1" instance=ExtResource("2_p7vbo")]
+[node name="grocery" parent="Shelf1" groups=["Buttons"] instance=ExtResource("2_p7vbo")]
 layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 213.0
 offset_bottom = 213.0
 
-[node name="grocery2" parent="Shelf1" instance=ExtResource("2_p7vbo")]
+[node name="grocery2" parent="Shelf1" groups=["Buttons"] instance=ExtResource("2_p7vbo")]
 layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 213.0
 offset_bottom = 213.0
 
-[node name="grocery3" parent="Shelf1" instance=ExtResource("2_p7vbo")]
+[node name="grocery3" parent="Shelf1" groups=["Buttons"] instance=ExtResource("2_p7vbo")]
 layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
@@ -63,25 +74,27 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 108.0
+offset_bottom = -437.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="grocery" parent="Shelf2" instance=ExtResource("2_p7vbo")]
+[node name="grocery" parent="Shelf2" groups=["Buttons"] instance=ExtResource("2_p7vbo")]
 layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 213.0
 offset_bottom = 213.0
 
-[node name="grocery2" parent="Shelf2" instance=ExtResource("2_p7vbo")]
+[node name="grocery2" parent="Shelf2" groups=["Buttons"] instance=ExtResource("2_p7vbo")]
 layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 213.0
 offset_bottom = 213.0
 
-[node name="grocery3" parent="Shelf2" instance=ExtResource("2_p7vbo")]
+[node name="grocery3" parent="Shelf2" groups=["Buttons"] instance=ExtResource("2_p7vbo")]
 layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
@@ -93,25 +106,27 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 215.0
+offset_bottom = -330.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="grocery" parent="Shelf3" instance=ExtResource("2_p7vbo")]
+[node name="grocery" parent="Shelf3" groups=["Buttons"] instance=ExtResource("2_p7vbo")]
 layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 213.0
 offset_bottom = 213.0
 
-[node name="grocery2" parent="Shelf3" instance=ExtResource("2_p7vbo")]
+[node name="grocery2" parent="Shelf3" groups=["Buttons"] instance=ExtResource("2_p7vbo")]
 layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 213.0
 offset_bottom = 213.0
 
-[node name="grocery3" parent="Shelf3" instance=ExtResource("2_p7vbo")]
+[node name="grocery3" parent="Shelf3" groups=["Buttons"] instance=ExtResource("2_p7vbo")]
 layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
@@ -123,25 +138,27 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 324.0
+offset_bottom = -221.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="grocery" parent="Shelf4" instance=ExtResource("2_p7vbo")]
+[node name="grocery" parent="Shelf4" groups=["Buttons"] instance=ExtResource("2_p7vbo")]
 layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 213.0
 offset_bottom = 213.0
 
-[node name="grocery2" parent="Shelf4" instance=ExtResource("2_p7vbo")]
+[node name="grocery2" parent="Shelf4" groups=["Buttons"] instance=ExtResource("2_p7vbo")]
 layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 213.0
 offset_bottom = 213.0
 
-[node name="grocery3" parent="Shelf4" instance=ExtResource("2_p7vbo")]
+[node name="grocery3" parent="Shelf4" groups=["Buttons"] instance=ExtResource("2_p7vbo")]
 layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
@@ -153,25 +170,27 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 433.0
+offset_bottom = -112.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="grocery" parent="Shelf5" instance=ExtResource("2_p7vbo")]
+[node name="grocery" parent="Shelf5" groups=["Buttons"] instance=ExtResource("2_p7vbo")]
 layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 213.0
 offset_bottom = 213.0
 
-[node name="grocery2" parent="Shelf5" instance=ExtResource("2_p7vbo")]
+[node name="grocery2" parent="Shelf5" groups=["Buttons"] instance=ExtResource("2_p7vbo")]
 layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 213.0
 offset_bottom = 213.0
 
-[node name="grocery3" parent="Shelf5" instance=ExtResource("2_p7vbo")]
+[node name="grocery3" parent="Shelf5" groups=["Buttons"] instance=ExtResource("2_p7vbo")]
 layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
@@ -183,46 +202,29 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 539.0
+offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="grocery" parent="Shelf6" instance=ExtResource("2_p7vbo")]
+[node name="grocery" parent="Shelf6" groups=["Buttons"] instance=ExtResource("2_p7vbo")]
 layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 213.0
 offset_bottom = 213.0
 
-[node name="grocery2" parent="Shelf6" instance=ExtResource("2_p7vbo")]
+[node name="grocery2" parent="Shelf6" groups=["Buttons"] instance=ExtResource("2_p7vbo")]
 layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 213.0
 offset_bottom = 213.0
 
-[node name="grocery3" parent="Shelf6" instance=ExtResource("2_p7vbo")]
+[node name="grocery3" parent="Shelf6" groups=["Buttons"] instance=ExtResource("2_p7vbo")]
 layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 213.0
 offset_bottom = 213.0
-
-[connection signal="pressed" from="Shelf1/grocery" to="." method="collect"]
-[connection signal="pressed" from="Shelf1/grocery2" to="." method="collect"]
-[connection signal="pressed" from="Shelf1/grocery3" to="." method="collect"]
-[connection signal="pressed" from="Shelf2/grocery" to="." method="collect"]
-[connection signal="pressed" from="Shelf2/grocery2" to="." method="collect"]
-[connection signal="pressed" from="Shelf2/grocery3" to="." method="collect"]
-[connection signal="pressed" from="Shelf3/grocery" to="." method="collect"]
-[connection signal="pressed" from="Shelf3/grocery2" to="." method="collect"]
-[connection signal="pressed" from="Shelf3/grocery3" to="." method="collect"]
-[connection signal="pressed" from="Shelf4/grocery" to="." method="collect"]
-[connection signal="pressed" from="Shelf4/grocery2" to="." method="collect"]
-[connection signal="pressed" from="Shelf4/grocery3" to="." method="collect"]
-[connection signal="pressed" from="Shelf5/grocery" to="." method="collect"]
-[connection signal="pressed" from="Shelf5/grocery2" to="." method="collect"]
-[connection signal="pressed" from="Shelf5/grocery3" to="." method="collect"]
-[connection signal="pressed" from="Shelf6/grocery" to="." method="collect"]
-[connection signal="pressed" from="Shelf6/grocery2" to="." method="collect"]
-[connection signal="pressed" from="Shelf6/grocery3" to="." method="collect"]

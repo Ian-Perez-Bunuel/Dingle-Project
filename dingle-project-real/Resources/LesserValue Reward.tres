@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Evidence" load_steps=3 format=3 uid="uid://bp17rgifua47x"]
+
+[ext_resource type="Script" uid="uid://i65gfwen11r0" path="res://Resources/EvidenceResource.gd" id="1_d7v16"]
+[ext_resource type="Texture2D" uid="uid://cqrb0aqol3qk6" path="res://icon.svg" id="1_n2icb"]
+
+[resource]
+script = ExtResource("1_d7v16")
+description = "Lesser value win"
+image1 = ExtResource("1_n2icb")
+image2 = ExtResource("1_n2icb")
+metadata/_custom_type_script = "uid://i65gfwen11r0"

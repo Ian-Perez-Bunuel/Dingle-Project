@@ -6,11 +6,21 @@ extends Control
 @export var reward: Evidence
 var started: bool = false
 
+@export var winCons: Dictionary[Grocery.Type, int] # type, amount needed
+var currentScore: Dictionary[Grocery.Type, int] # type, amount
+
+func _ready() -> void:
+	for node in get_tree().get_nodes_in_group("Buttons"):
+		var grocery := node as Grocery
+		if grocery:
+			grocery.pressed.connect(collect.bind(grocery))
+	
+	for i in winCons:
+		currentScore[i] = 0
+
 func start():
 	visible = true
 	process_mode = Node.PROCESS_MODE_INHERIT
-	
-	var invervals: float = get_viewport().get_visible_rect().size.y / grocery_holders.size()
 	
 	var h: int = 0
 	var d: float = 0
@@ -18,7 +28,6 @@ func start():
 		for item in holder.get_children():
 			if item is Grocery:
 				item.reset(d)
-				item.position.y = h * invervals
 				d += 2.5
 		h += 1
 		d = 0
@@ -35,8 +44,10 @@ func end():
 	Inventory.add_evidence(reward)
 	
 
-func collect():
-	print("Collected")
+func collect(grocery: Grocery):
+	print("Button: ", grocery.type)
+	currentScore[grocery.type] += 1
+	checkForWin()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -47,7 +58,18 @@ func _process(delta: float) -> void:
 		for item in holder.get_children():
 			if item is Grocery:
 				item.move()
-				
+	
+	scrollingBG()
+
+func checkForWin():
+	for i in winCons:
+		if currentScore[i] < winCons[i]: # Didnt win here
+			return
+	
+	end()
+
+
+func scrollingBG():
 	for bg in backgrounds:
 		bg.position.x -= 5
 		

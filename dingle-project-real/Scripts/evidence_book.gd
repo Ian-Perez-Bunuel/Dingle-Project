@@ -26,7 +26,7 @@ func toggle():
 		
 func open():
 	print("Open")
-	if Inventory.ownedEvidence.size() > 0:
+	if !Inventory.ownedEvidence.is_empty():
 		var firstEvidence = Inventory.ownedEvidence[0]
 		
 		image1.texture = firstEvidence.image1

@@ -2,8 +2,7 @@ extends Control
 
 @onready var evidenceBook := $EvidenceBook
 
-func _ready() -> void:
-	evidenceBook.visible = false
+
 	
 func toggle_show():
 	evidenceBook.toggle()
