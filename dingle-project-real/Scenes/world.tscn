@@ -230,6 +230,16 @@ size = Vector3(1.187968, 7.9906006, 2.3759723)
 [sub_resource type="BoxShape3D" id="BoxShape3D_0sgyr"]
 size = Vector3(3.156306, 7.9906006, 0.5942979)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t2t4p"]
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_0pcbe"]
+material = SubResource("StandardMaterial3D_t2t4p")
+radius = 50.0
+height = 100.0
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_l33cg"]
 size = Vector3(12.854492, 99.648315, 427.40186)
 
@@ -244,16 +254,6 @@ size = Vector3(4.741211, 1, 5.776367)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_36g3o"]
 size = Vector3(4.9505615, 1, 7.5333786)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t2t4p"]
-cull_mode = 2
-shading_mode = 0
-albedo_color = Color(0, 0, 0, 1)
-
-[sub_resource type="SphereMesh" id="SphereMesh_0pcbe"]
-material = SubResource("StandardMaterial3D_t2t4p")
-radius = 50.0
-height = 100.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_hmc15"]
 size = Vector3(65, 20, 25)
@@ -584,6 +584,10 @@ shape = SubResource("BoxShape3D_te07t")
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 8.569847, 3.99469, -4.459778)
 shape = SubResource("BoxShape3D_0sgyr")
 
+[node name="VoidSphere" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -249.81097, 0, 0)
+mesh = SubResource("SphereMesh_0pcbe")
+
 [node name="Cutscene collisions" type="Node" parent="."]
 
 [node name="StartingCutscene" type="Node" parent="Cutscene collisions"]
@@ -619,7 +623,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74, 0, -1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -245.23166, 0, 6.6966457)
 
 [node name="Dock" type="Node3D" parent="Cutscene collisions" groups=["place"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112.475044, 1.338644, 14.523953)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112.81296, 1.338644, 14.523953)
+
+[node name="Sea1" type="Node3D" parent="Cutscene collisions" groups=["place"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 445.35425, 2.3339992, -0.42939878)
+
+[node name="Sea2" type="Node3D" parent="Cutscene collisions" groups=["place"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 452.49777, 2.3339992, 0)
 
 [node name="Main_NPCs" type="Node" parent="."]
 
@@ -673,10 +683,6 @@ texture = ExtResource("26_pt3ps")
 [node name="Singer" parent="Random_NPCs" instance=ExtResource("4_8j60k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -253.9847, 1.831208, -5.3057685)
 texture = ExtResource("27_hmc15")
-
-[node name="VoidSphere" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -249.81097, 0, 0)
-mesh = SubResource("SphereMesh_0pcbe")
 
 [node name="VoidBlockers" type="Node" parent="."]
 

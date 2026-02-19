@@ -29,9 +29,9 @@ func resetFlags():
 
 # Captain flags
 var beerEvidence: Evidence = load("res://Resources/beer.tres")
-var hasBeer: bool = true
+var hasBeer: bool = false
 var capTalkNoBeer: bool = false
-var playedSnap: bool = true
+var playedSnap: bool = false
 var wonSnap: bool = false
 var lostSnap: bool = false
 var capAtBoat: bool = false
@@ -42,7 +42,7 @@ var capAtBoat: bool = false
 # Evil Chippy flags
 var evilChippyEvidence: Evidence = load("res://Resources/evilChippyEvidence.tres")
 var talkedToEvilChippy: bool = false
-var completedGroceries: bool = true
+var completedGroceries: bool = false
 
 # Seagull flags
 

@@ -81,7 +81,25 @@ do CutSceneManager.teleport_to("Captain", "Dock")
 Captain: Are you ready to go get those seagulls?
 - Yes, lets go!
 	Captain: Alright lets go get those bastards!
+	do CutSceneManager.transition_stage_1()
+	do wait(0.55)
+	do CutSceneManager.teleport_to("Player", "Sea1")
+	do CutSceneManager.teleport_to("Captain", "Sea2")
+	do CutSceneManager.transition_stage_2()
+	=> end
+	
+- Wait a second
+	Captain: Okay I'll just wait here for you!
+	=> end
+
+~ atSea
+Captain: Would you like to try catch them?
+- Of course
+	Captain: Good luck!
 	do MinigameManager.activate("SeagullGame")
+- Nah
+	Captain: Oh ok...
+	=> end
 
 ~ end
 do CutSceneManager.end()
