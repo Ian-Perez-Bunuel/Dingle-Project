@@ -27,6 +27,10 @@ StoryFlags="*res://Scripts/StoryFlags.gd"
 
 runtime/balloon_path="uid://cc18vjnfvchia"
 
+[display]
+
+window/size/resizable=false
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
