@@ -40,4 +40,22 @@ func move_to(t_objectName: String, t_placeName: String):
 	
 	if object.has_method("set_target_pos"):
 		object.set_target_pos(place.global_position)
+
+func teleport_to(t_objectName: String, t_placeName: String):
+	var place = null
+	var object = null
 	
+	for p in allPlaces:
+		if p.name == t_placeName:
+			place = p
+	
+	for o in allObjects:
+		if o.name == t_objectName:
+			object = o
+	
+	# Check if found
+	if (place == null or object == null):
+		print("One of the parameters was not found")
+		return
+	
+	object.position = place.position

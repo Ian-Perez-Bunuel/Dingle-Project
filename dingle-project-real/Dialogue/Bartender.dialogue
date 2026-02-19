@@ -1,0 +1,20 @@
+~ start
+Bartender: Hey man, what would you like?
+
+- Beer
+	An Phiast: I'd like a beer please.
+	Bartender: Coming right up!
+	do StoryFlags.hasBeer = true
+	do Inventory.add_evidence(StoryFlags.beerEvidence)
+
+- Martini
+	An Phiast: I'd like a Martini please.
+	Bartender: Coming right up!
+
+- Water
+	An Phiast: I'd like a glass of water please.
+	Bartender: Coming right up!
+
+- Nothing I'm good
+	Bartender: Why did you even talk to me then?
+=> END

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Evidence" load_steps=2 format=3 uid="uid://wtatq7frsh28"]
+
+[ext_resource type="Script" uid="uid://i65gfwen11r0" path="res://Resources/EvidenceResource.gd" id="1_5k3n6"]
+
+[resource]
+script = ExtResource("1_5k3n6")
+description = "Beer"
+metadata/_custom_type_script = "uid://i65gfwen11r0"

@@ -1,10 +1,15 @@
 extends CharacterBody3D
 
 @export var dialogue_resource: DialogueResource
+@export var texture: Texture2D
 
+@onready var sprite: Sprite3D = $Sprite3D
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 var hasTarget = false
 const SPEED = 5.0
+
+func _ready() -> void:
+	sprite.texture = texture
 
 func speak():
 	DialogueManager.show_dialogue_balloon(dialogue_resource, "start");

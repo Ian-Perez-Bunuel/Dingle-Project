@@ -1,5 +1,7 @@
 ~ start
-if StoryFlags.completedGroceries and StoryFlags.playedSnap
+if StoryFlags.capAtBoat
+	=> atDock
+elif StoryFlags.completedGroceries and StoryFlags.playedSnap
 	=> boatTalk
 elif StoryFlags.playedSnap
 	=> postGame
@@ -7,41 +9,38 @@ else
 	=> firstMeeting
 	
 ~ postGame
-Captain: You already played against me... => END
+Captain: Ahhh, good game!
+Captain: By the way you can call me "Captain".
+Captain: Looking forward to talking with you again!
 
 ~ firstMeeting
-Captain: Hey Buddy! 
-Captain: Wanna play my game?
-Captain: If you win I'll give you a ride on my boat to those dumbass seagulls...
+???: Hey Buddy! 
+???: Wanna play a game?
 
 - YESSS!!!
-	Captain: That's the spirit! Lets play some snap!
+	???: That's the spirit! Lets play some snap!
 	
 - Nah, I'm good!
-	Captain: Stop fooling around...
-	Captain: Of course you do!
+	???: Oh... Okay...
 
-Captain: Have you played snap before?
+???: Have you played snap before?
 - Yes
 	=> minigame
 - No
-	Captain: It's simple!
-	Captain: Just say when there have been 2 of the same card in a row
-	Captain: If you get it first you get 1 point.
-	Captain: First to 5 wins!
+	=> explainSnap
 
 ~ minigame
-Captain: Perfect lets start!
+???: Perfect lets start!
 do MinigameManager.activate("snapGame") 
 => END
 
 ~ explainSnap
-Captain: It's simple!
-Captain: Just say when there have been 2 of the same card in a row
-Captain: If you get it first you get 1 point.
-Captain: First to 5 wins!
+???: It's simple!
+???: Just say when there have been 2 of the same card in a row
+???: If you get it first you get 1 point.
+???: First to 5 wins!
 	
-Captain: Does that make sense?
+???: Does that make sense?
 	
 - Yes
 	=> minigame
@@ -49,8 +48,41 @@ Captain: Does that make sense?
 	Captain: Ok, I'll explain again cause you're clearly dense. 
 	=> explainSnap
 
+
 ~ boatTalk
 Captain: So you need my boat?
-Captain: Meet me at the docks and I'll get you to where you need to be.
 
+elif StoryFlags.hasBeer
+	Captain: I see you got a beer...
+	Captain: Give me that beer and I'll give you a ride on my boat.
+	- Here you go!
+		=> giveBeer
+	- Nah
+		Captain: Let me know if you change your mind!
+		=> end
+else
+	Captain: Get me a beer and I'll give you a ride on my boat.
+	do StoryFlags.capTalkNoBeer = true
+	=> end
+
+~ giveBeer
+Captain: That hit the spot!
+Captain: Meet me at the dock, I'll take you to those damn seagulls
+do StoryFlags.capAtBoat = true
+=> goToBoat
+
+~ goToBoat
+do CutSceneManager.move_to("Captain", "BarDoor")
+do wait(2.0)
+do CutSceneManager.teleport_to("Captain", "Dock")
+=> end
+
+~ atDock
+Captain: Are you ready to go get those seagulls?
+- Yes, lets go!
+	Captain: Alright lets go get those bastards!
+	do MinigameManager.activate("SeagullGame")
+
+~ end
+do CutSceneManager.end()
 => END

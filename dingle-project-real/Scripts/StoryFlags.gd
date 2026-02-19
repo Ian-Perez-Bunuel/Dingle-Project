@@ -8,9 +8,12 @@ extends Node
 
 func resetFlags():
 	# Captain flags
+	hasBeer = false
 	playedSnap = false
 	wonSnap = false
 	lostSnap = false
+	capTalkNoBeer = false
+	capAtBoat = false
 	
 	# Chippy flags
 	
@@ -25,9 +28,13 @@ func resetFlags():
 ################### End of Reset Function ###################
 
 # Captain flags
-var playedSnap: bool = false
+var beerEvidence: Evidence = load("res://Resources/beer.tres")
+var hasBeer: bool = true
+var capTalkNoBeer: bool = false
+var playedSnap: bool = true
 var wonSnap: bool = false
 var lostSnap: bool = false
+var capAtBoat: bool = false
 
 # Chippy flags
 
@@ -35,7 +42,7 @@ var lostSnap: bool = false
 # Evil Chippy flags
 var evilChippyEvidence: Evidence = load("res://Resources/evilChippyEvidence.tres")
 var talkedToEvilChippy: bool = false
-var completedGroceries: bool = false
+var completedGroceries: bool = true
 
 # Seagull flags
 
