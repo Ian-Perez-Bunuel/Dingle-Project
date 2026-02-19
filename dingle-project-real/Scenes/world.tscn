@@ -347,18 +347,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6418686, 0, 0)
 shape = SubResource("BoxShape3D_e0ngr")
 debug_color = Color(0.9764706, 0, 0.41960785, 0.9843137)
 
-[node name="Dock_To_Sea" type="Area3D" parent="Transitions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 113.22998, 0.73473454, 20.726965)
-collision_layer = 0
-collision_mask = 128
-script = ExtResource("12_c5t2i")
-teleport = "dock_to_sea"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Transitions/Dock_To_Sea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6418686, 0, 0)
-shape = SubResource("BoxShape3D_e0ngr")
-debug_color = Color(0.9764706, 0, 0.41960785, 0.9843137)
-
 [node name="TransitionShader" type="CanvasLayer" parent="."]
 layer = -3
 
@@ -715,7 +703,6 @@ skeleton = NodePath("../..")
 [connection signal="body_shape_entered" from="Transitions/Street_To_Bar" to="Transitions/Street_To_Bar" method="_on_body_shape_entered"]
 [connection signal="body_shape_entered" from="Transitions/Bar_To_Street" to="Transitions/Bar_To_Street" method="_on_body_shape_entered"]
 [connection signal="body_shape_entered" from="Transitions/Dock_To_Street" to="Transitions/Dock_To_Street" method="_on_body_shape_entered"]
-[connection signal="body_shape_entered" from="Transitions/Dock_To_Sea" to="Transitions/Dock_To_Sea" method="_on_body_shape_entered"]
 [connection signal="interacted" from="Cutscene collisions/StartingCutscene/StartingBox" to="Main_NPCs/Chippy" method="speak"]
 [connection signal="interacted" from="Cutscene collisions/LesserValueMinigame/ObjectDialogue/ForcedInteraction" to="Cutscene collisions/LesserValueMinigame/ObjectDialogue" method="speak"]
 [connection signal="interacted" from="Main_NPCs/Captain/InteractionBox" to="Main_NPCs/Captain" method="speak"]

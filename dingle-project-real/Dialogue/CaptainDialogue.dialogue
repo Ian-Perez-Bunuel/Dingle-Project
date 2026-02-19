@@ -1,5 +1,7 @@
 ~ start
-if StoryFlags.capAtBoat
+if StoryFlags.capAtSea
+	=> atSea
+elif StoryFlags.capAtBoat
 	=> atDock
 elif StoryFlags.completedGroceries and StoryFlags.playedSnap
 	=> boatTalk
@@ -85,6 +87,7 @@ Captain: Are you ready to go get those seagulls?
 	do wait(0.55)
 	do CutSceneManager.teleport_to("Player", "Sea1")
 	do CutSceneManager.teleport_to("Captain", "Sea2")
+	do StoryFlags.capAtSea = true
 	do CutSceneManager.transition_stage_2()
 	=> end
 	

@@ -14,6 +14,7 @@ func resetFlags():
 	lostSnap = false
 	capTalkNoBeer = false
 	capAtBoat = false
+	capAtSea = false
 	
 	# Chippy flags
 	
@@ -35,6 +36,7 @@ var playedSnap: bool = false
 var wonSnap: bool = false
 var lostSnap: bool = false
 var capAtBoat: bool = false
+var capAtSea: bool = false
 
 # Chippy flags
 
