@@ -1,5 +1,7 @@
 ~ start
-if StoryFlags.playedSnap
+if StoryFlags.completedGroceries and StoryFlags.playedSnap
+	=> boatTalk
+elif StoryFlags.playedSnap
 	=> postGame
 else
 	=> firstMeeting
@@ -46,4 +48,9 @@ Captain: Does that make sense?
 - No
 	Captain: Ok, I'll explain again cause you're clearly dense. 
 	=> explainSnap
+
+~ boatTalk
+Captain: So you need my boat?
+Captain: Meet me at the docks and I'll get you to where you need to be.
+
 => END

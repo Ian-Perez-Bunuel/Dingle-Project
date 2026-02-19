@@ -41,6 +41,7 @@ func end():
 	process_mode = Node.PROCESS_MODE_DISABLED
 	visible = false
 	
+	StoryFlags.completedGroceries = true
 	Inventory.add_evidence(reward)
 	
 

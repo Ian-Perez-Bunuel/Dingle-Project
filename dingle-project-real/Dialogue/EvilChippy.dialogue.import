@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://ioa4olik8tbw"
+path="res://.godot/imported/EvilChippy.dialogue-12f7b897ff15c410ec8fd26397bbb675.tres"
+
+[deps]
+
+source_file="res://Dialogue/EvilChippy.dialogue"
+dest_files=["res://.godot/imported/EvilChippy.dialogue-12f7b897ff15c410ec8fd26397bbb675.tres"]
+
+[params]
+
+defaults=true

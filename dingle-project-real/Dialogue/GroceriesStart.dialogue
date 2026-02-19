@@ -1,0 +1,23 @@
+~ start
+if StoryFlags.talkedToEvilChippy:
+	=> minigame
+else
+	=> preEvilChippy
+
+~ preEvilChippy
+An Phiast: Seems closed for now...
+=> moveAway
+
+~ minigame
+Welcome to LesserValue!
+- Get groceries
+	do MinigameManager.activate("groceriesGame")
+- I'll do it later...
+	=> moveAway
+	
+~ moveAway
+do CutSceneManager.move_to("Player", "OutsideLesserValue")
+do wait(0.5)
+do CutSceneManager.end()
+	
+=> END

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bqvugdxj615a3"
+path="res://.godot/imported/GroceriesStart.dialogue-1daf270ceae9d18ddfda4d7fa89b85ef.tres"
+
+[deps]
+
+source_file="res://Dialogue/GroceriesStart.dialogue"
+dest_files=["res://.godot/imported/GroceriesStart.dialogue-1daf270ceae9d18ddfda4d7fa89b85ef.tres"]
+
+[params]
+
+defaults=true

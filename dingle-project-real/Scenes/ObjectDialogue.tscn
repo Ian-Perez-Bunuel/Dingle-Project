@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://crte5pffhmvf5"]
+
+[ext_resource type="Script" uid="uid://dxvbyurp0qxmc" path="res://Scripts/object_dialogue.gd" id="1_7y2nn"]
+
+[node name="ObjectDialogue" type="Node3D"]
+script = ExtResource("1_7y2nn")

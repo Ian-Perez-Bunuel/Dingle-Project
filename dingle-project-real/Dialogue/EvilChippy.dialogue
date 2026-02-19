@@ -1,0 +1,24 @@
+~ start
+if not StoryFlags.talkedToEvilChippy
+	=> firstConvo
+elif not StoryFlags.completedGroceries
+	=> beforeMinigame
+else
+	=> 
+	
+~ firstConvo
+An Phiast: Hey! You got any info?
+Evil Chippy: Maybe if you get my groceries...
+do StoryFlags.talkedToEvilChippy = true
+=> ending
+
+~ beforeMinigame
+Evil Chippy: Go get the groceries already!! => ending
+
+~ afterMinigame
+Evil Chippy: Find heres the evidence => ending
+do Inventory.add_evidence(StoryFlags.evilChippyEvidence)
+
+~ ending
+do CutSceneManager.end() 
+=> END
