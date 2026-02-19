@@ -207,7 +207,10 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 
 
 func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
+	$Balloon/ResponsesMenu.visible = false
+	await %AudioStreamPlayer.play_select_sound()
+	$Balloon/ResponsesMenu.visible = true
 	next(response.next_id)
-
+	
 
 #endregion
