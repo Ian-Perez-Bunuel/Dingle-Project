@@ -7,14 +7,17 @@ var textureRect: TextureRect
 var fadeAnimation: AnimationPlayer
 var openBadge: TextureRect
 
+var endCard: TextureRect
+var endCardFadeAnimation: AnimationPlayer
+
 enum FlashBack
 {
 	PreClothes,
 	ClothesFalling,
 	Sleeping,
 	Bar,
-	Running,
 	Smelling,
+	Running,
 	Eating,
 }
 var nameToFrames: Dictionary
@@ -41,6 +44,9 @@ func _ready() -> void:
 	textureRect = world.get_node("FlashbackDisplay/frameTexture") as TextureRect
 	fadeAnimation = world.get_node("FlashbackDisplay/AnimationPlayer") as AnimationPlayer
 	openBadge = world.get_node("FlashbackDisplay/BadgeOpen") as TextureRect
+	
+	endCardFadeAnimation = world.get_node("FlashbackDisplay/AnimationPlayerEnding") as AnimationPlayer
+	endCard = world.get_node("FlashbackDisplay/EndScene") as TextureRect
 	
 	# Opening
 	preClothesFrames.append(load("res://Assets/Textures/Flashbacks/intro_part1_0000.png"))
@@ -87,6 +93,19 @@ func show_badge():
 	await fadeAnimation.animation_finished
 	
 	openBadge.visible = false
+
+func show_end_card():
+	endCard.visible = true
+	
+	endCardFadeAnimation.play("ShowEndCard")
+	await endCardFadeAnimation.animation_finished
+	
+	await get_tree().create_timer(4.0).timeout
+	
+	# BACK TO MENU
+	# RESET
+	
+	endCard.visible = false
 
 func display(fb: FlashBack, hasFollowing: bool = false, startBlack: bool = false):
 	if not startBlack:

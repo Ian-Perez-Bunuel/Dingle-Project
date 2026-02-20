@@ -100,7 +100,16 @@ do wait(0.5)
 Noel: Well Detective, spit it out!
 do wait(0.5)
 An Phiast: The culprit is....
+
 # play all flashbacks here in order
+# do FlashbackManager.display(FlashbackManager.FlashBack.PreClothes, true, true)
+# do FlashbackManager.display(FlashbackManager.FlashBack.ClothesFalling, true)
+# do FlashbackManager.display(FlashbackManager.FlashBack.Sleeping)
+do FlashbackManager.display(FlashbackManager.FlashBack.Bar, true)
+do FlashbackManager.display(FlashbackManager.FlashBack.Smelling, true)
+do FlashbackManager.display(FlashbackManager.FlashBack.Running)
+# do FlashbackManager.display(FlashbackManager.FlashBack.Eating)
+
 An Phiast: Me.
 do wait(0.5)
 Leon: What!!!???
@@ -122,7 +131,11 @@ do wait(0.5)
 An Phiast: I don't know. I woke up in these clothes and the badge- it had my name on it.
 do wait(0.5)
 ???: Finally you figured it out!
+
 # detective walks up
+do CutSceneManager.move_to("Detective", "AnnePos")
+do wait(1.0)
+
 ???: Because it isn't your name, An Phiast. Read it again.
 do wait(0.5)
 An Phiast: Huh?
@@ -164,7 +177,8 @@ do wait(0.5)
 An Phiast: Sounds perfect!
 
 # fade to end screen / credits
-# return to main menu
+do FlashbackManager.show_end_card()
+# return to main menu in ^
 
 do CutSceneManager.end()
 => END

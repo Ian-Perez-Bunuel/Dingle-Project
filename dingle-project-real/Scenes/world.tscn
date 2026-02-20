@@ -1,4 +1,4 @@
-[gd_scene load_steps=148 format=3 uid="uid://iysllbq6upr7"]
+[gd_scene load_steps=156 format=3 uid="uid://iysllbq6upr7"]
 
 [ext_resource type="PackedScene" uid="uid://bpgfead5netw3" path="res://Scenes/player.tscn" id="1_7yui6"]
 [ext_resource type="PackedScene" uid="uid://8t4uq2rp4c1o" path="res://Scenes/snap_game.tscn" id="1_c5t2i"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bljo4ns7o8y6e" path="res://Scenes/music.tscn" id="1_kwnki"]
 [ext_resource type="PackedScene" uid="uid://bjooqpqmpiw7u" path="res://Scenes/interaction_box.tscn" id="2_go701"]
 [ext_resource type="PackedScene" uid="uid://captr67lb13cl" path="res://Scenes/npc.tscn" id="4_8j60k"]
+[ext_resource type="Texture2D" uid="uid://bp32xgao0lnb3" path="res://Assets/Textures/EndScreen.png" id="4_eskoj"]
 [ext_resource type="PackedScene" uid="uid://cvuenej67dy73" path="res://Scenes/UI/evidence_book.tscn" id="6_ikia7"]
 [ext_resource type="Texture2D" uid="uid://770oby06nayx" path="res://Assets/Textures/UI/ui_bookmark_evidence1.png" id="7_te07t"]
 [ext_resource type="Texture2D" uid="uid://ctdspuvkpjns7" path="res://Assets/Textures/UI/ui_bookmark_evidence2.png" id="8_b4e6k"]
@@ -58,6 +59,7 @@
 [ext_resource type="Texture2D" uid="uid://txjxxd6mty8p" path="res://Assets/Textures/Characters/Band_Saxophonist.png" id="52_13n8b"]
 [ext_resource type="Resource" uid="uid://cjx3ouadj6dq8" path="res://Dialogue/Children.dialogue" id="53_gwaj6"]
 [ext_resource type="Texture2D" uid="uid://b1bmr5sh54wnv" path="res://Assets/Textures/Characters/Kids.png" id="53_uqdn7"]
+[ext_resource type="Texture2D" uid="uid://b3ci8dd6vk83y" path="res://Assets/Textures/Characters/Anne.png" id="59_cvubk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kn0ld"]
 shader = ExtResource("13_e0ngr")
@@ -193,6 +195,42 @@ _data = {
 &"fade_to_invis": SubResource("Animation_p5wkl"),
 &"remove_badge": SubResource("Animation_t6yt7"),
 &"show_badge": SubResource("Animation_jwdyn")
+}
+
+[sub_resource type="Animation" id="Animation_eskoj"]
+resource_name = "ShowEndCard"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EndScene:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5kw24"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EndScene:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dsm2w"]
+_data = {
+&"RESET": SubResource("Animation_5kw24"),
+&"ShowEndCard": SubResource("Animation_eskoj")
 }
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ochwf"]
@@ -510,6 +548,17 @@ size = Vector3(8.155, 1, 20)
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_w5giw"]
 points = PackedVector3Array(4.142222, 0.6002777, 3.9883327, -4.142222, -0.56472224, -4.037222, -4.142222, -0.56472224, 3.9883327, -4.142222, 0.6002777, -4.037222, 4.142222, -0.56472224, -4.037222, -4.142222, 0.6002777, 3.9883327, 4.142222, -0.56472224, 3.9883327, 4.142222, 0.6002777, -4.037222)
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_kwnki"]
+vertices = PackedVector3Array(-247.09052, -24.411148, -0.44942856, -246.59052, -24.411148, -0.19942856, -246.09052, -24.411148, -0.69942856, -247.84052, -24.411148, -3.6994286, -248.59052, -24.411148, -3.1994286, -249.34052, -22.731148, -1.6994286, -248.59052, -22.691147, -0.69942856, -248.84052, -22.731148, -1.6994286, -251.09052, -24.411148, 10.800571, -250.59052, -24.411148, 11.550571, -250.59052, -24.411148, 9.550571, -253.84052, -24.411148, 11.050571, -253.84052, -24.411148, 11.800571, -252.34052, -24.411148, 10.800571, -252.34052, -24.411148, 10.300571, -250.09052, -24.411148, 1.3005714, -250.59052, -24.411148, 0.80057144, -251.59052, -24.411148, 1.8005714, -258.0905, -24.411148, 7.0505714, -257.5905, -24.411148, 8.550571, -256.8405, -24.411148, 8.050571, -240.34052, -24.411148, 9.300571, -240.84052, -24.411148, 7.8005714, -241.59052, -24.411148, 8.300571, -252.34052, -24.411148, 8.050571, -247.34052, -24.411148, 9.300571, -246.84052, -24.411148, 10.800571, -245.84052, -24.411148, 10.550571, -243.34052, -24.411148, 8.300571, -245.59052, -24.411148, 6.3005714, -245.59052, -24.411148, 3.5505714, -244.34052, -24.411148, 2.3005714, -244.59052, -24.411148, 1.5505714, -246.84052, -24.411148, 2.8005714, -251.59052, -24.411148, 3.3005714, -254.59052, -24.411148, 7.5505714, -252.84052, -24.411148, 7.5505714, -255.59052, -24.411148, 8.300571, -245.09052, -24.411148, 12.050571, -242.71552, -24.331146, 10.675571, -241.52802, -24.331146, 9.988071, -242.46552, -24.331146, 8.300571, -247.84052, -24.411148, 2.8005714, -249.84052, -24.411148, 8.800571, -248.84052, -24.411148, 1.3005714, -251.09052, -24.411148, -1.4494286, -253.09052, -24.411148, -0.44942856, -260.0905, -23.411148, 3.5505714, -260.0905, -23.411148, 4.3005714, -258.5905, -23.411148, 6.3005714, -252.59052, -23.411148, 2.5505714, -254.34052, -23.411148, 0.05057144, -247.59052, -22.691147, 1.0505714, -247.59052, -22.721148, 1.5505714, -246.09052, -22.761147, 1.0505714, -242.84052, -22.911148, 7.0505714, -241.84052, -22.911148, 6.5505714, -243.34052, -22.911148, 3.8005714, -244.59052, -22.911148, 4.3005714, -254.34052, -22.911148, 9.800571, -253.34052, -22.911148, 9.800571, -254.09052, -22.911148, 8.800571, -249.59052, -22.911148, 10.800571, -248.34052, -22.911148, 10.800571, -248.84052, -22.911148, 10.050571, -252.59052, -22.911148, 13.050571, -251.34052, -22.911148, 12.550571, -252.09052, -22.911148, 12.050571, -252.84052, -22.911148, 12.550571)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 4), PackedInt32Array(2, 4, 3), PackedInt32Array(7, 6, 5), PackedInt32Array(10, 9, 8), PackedInt32Array(14, 13, 11), PackedInt32Array(11, 13, 12), PackedInt32Array(17, 16, 15), PackedInt32Array(8, 13, 14), PackedInt32Array(20, 19, 18), PackedInt32Array(23, 22, 21), PackedInt32Array(8, 14, 10), PackedInt32Array(10, 14, 24), PackedInt32Array(26, 25, 27), PackedInt32Array(27, 25, 28), PackedInt32Array(28, 25, 29), PackedInt32Array(31, 30, 32), PackedInt32Array(32, 30, 33), PackedInt32Array(35, 18, 36), PackedInt32Array(36, 18, 34), PackedInt32Array(37, 20, 35), PackedInt32Array(35, 20, 18), PackedInt32Array(21, 40, 23), PackedInt32Array(23, 40, 41), PackedInt32Array(41, 40, 28), PackedInt32Array(28, 40, 39), PackedInt32Array(28, 39, 27), PackedInt32Array(27, 39, 38), PackedInt32Array(33, 30, 42), PackedInt32Array(42, 30, 29), PackedInt32Array(10, 24, 43), PackedInt32Array(43, 24, 36), PackedInt32Array(17, 15, 34), PackedInt32Array(34, 15, 44), PackedInt32Array(34, 44, 42), PackedInt32Array(17, 46, 16), PackedInt32Array(16, 46, 45), PackedInt32Array(25, 43, 29), PackedInt32Array(29, 43, 42), PackedInt32Array(42, 43, 34), PackedInt32Array(34, 43, 36), PackedInt32Array(48, 47, 49), PackedInt32Array(49, 47, 51), PackedInt32Array(49, 51, 50), PackedInt32Array(54, 53, 52), PackedInt32Array(56, 55, 57), PackedInt32Array(57, 55, 58), PackedInt32Array(61, 60, 59), PackedInt32Array(63, 62, 64), PackedInt32Array(68, 67, 65), PackedInt32Array(65, 67, 66)]
+cell_height = 0.01
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s73dv"]
+size = Vector3(19.055664, 1, 18.50879)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lxtj3"]
+size = Vector3(22.498047, 1.4355469, 19.134766)
+
 [node name="World" type="Node3D"]
 
 [node name="Music" parent="." instance=ExtResource("1_kwnki")]
@@ -573,6 +622,22 @@ texture = ExtResource("1_jwdyn")
 root_node = NodePath("../FadeColor")
 libraries = {
 &"": SubResource("AnimationLibrary_ochwf")
+}
+
+[node name="EndScene" type="TextureRect" parent="FlashbackDisplay"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_eskoj")
+
+[node name="AnimationPlayerEnding" type="AnimationPlayer" parent="FlashbackDisplay"]
+libraries = {
+&"": SubResource("AnimationLibrary_dsm2w")
 }
 
 [node name="snapGame" parent="." instance=ExtResource("1_c5t2i")]
@@ -650,7 +715,7 @@ shadow_normal_bias = 3.0
 environment = SubResource("Environment_8j60k")
 
 [node name="Player" parent="." instance=ExtResource("1_7yui6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.438522, 0.5666692, 4.9385166)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -250.84515, -24.102251, 3.325657)
 
 [node name="Transitions" type="Node" parent="."]
 
@@ -1361,6 +1426,85 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 121.
 [node name="ManHole5" parent="." instance=ExtResource("17_g44x5")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 107.7913, 0.33469653, -28.044157)
 
+[node name="FinalEncounterNavMesh" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_kwnki")
+
+[node name="FinalenCounter" parent="FinalEncounterNavMesh" instance=ExtResource("14_e0ngr")]
+transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, -250.3622, -24.430807, 6.3046455)
+
+[node name="Singer" parent="FinalEncounterNavMesh/FinalenCounter" instance=ExtResource("4_8j60k")]
+transform = Transform3D(0.01926717, 0, -0.99981415, 0, 1, 0, 0.99981415, 0, 0.01926717, -5.492989, 1.5350323, 0.9730072)
+dialogue_resource = ExtResource("39_lkcvt")
+texture = ExtResource("27_hmc15")
+
+[node name="Sax Guy" type="Sprite3D" parent="FinalEncounterNavMesh/FinalenCounter"]
+transform = Transform3D(0.0017340517, 0, -0.08998328, 0, 0.089999996, 0, 0.08998328, 0, 0.0017340517, -7.2888494, 2.536356, 2.5653229)
+billboard = 1
+texture = ExtResource("52_13n8b")
+
+[node name="Floor2" type="StaticBody3D" parent="FinalEncounterNavMesh/FinalenCounter"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FinalEncounterNavMesh/FinalenCounter/Floor2"]
+shape = SubResource("BoxShape3D_s73dv")
+
+[node name="Chippy" type="Sprite3D" parent="FinalEncounterNavMesh/FinalenCounter"]
+transform = Transform3D(0.14813735, 0, -0.98896676, 0, 1, 0, 0.98896676, 0, 0.14813735, -3.0905073, 1.732048, 3.3478546)
+billboard = 1
+shaded = true
+texture = ExtResource("21_i4fjy")
+
+[node name="EvilChippy" type="Sprite3D" parent="FinalEncounterNavMesh/FinalenCounter"]
+transform = Transform3D(0.14813735, 0, -0.98896676, 0, 1, 0, 0.98896676, 0, 0.14813735, -3.675102, 1.7292862, -1.2060852)
+billboard = 1
+shaded = true
+texture = ExtResource("22_i4fjy")
+
+[node name="AGull" type="Sprite3D" parent="FinalEncounterNavMesh/FinalenCounter"]
+transform = Transform3D(0.11110303, 0, -0.7417251, 0, 0.75, 0, 0.7417251, 0, 0.11110303, -3.6278, 0.49172783, -0.22705078)
+flip_h = true
+billboard = 1
+shaded = true
+texture = ExtResource("27_o2rbt")
+
+[node name="Gull1" type="Sprite3D" parent="FinalEncounterNavMesh/FinalenCounter"]
+transform = Transform3D(0.07406868, 0, -0.4944834, 0, 0.5, 0, 0.4944834, 0, 0.07406868, -4.7319717, 1.2833195, 0.40748596)
+flip_h = true
+billboard = 1
+shaded = true
+texture = ExtResource("26_qebug")
+
+[node name="Captain" type="Sprite3D" parent="FinalEncounterNavMesh/FinalenCounter"]
+transform = Transform3D(0.14813733, 0, -0.9889667, 0, 1, 0, 0.9889667, 0, 0.14813733, -3.883194, 1.7713795, 2.7312012)
+billboard = 1
+shaded = true
+texture = ExtResource("18_xbk3s")
+
+[node name="FinalPlace" type="Node3D" parent="FinalEncounterNavMesh/FinalenCounter" groups=["place"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.315277, 0.7048626, 0.7939148)
+
+[node name="AnnePos" type="Node3D" parent="FinalEncounterNavMesh/FinalenCounter" groups=["place"]]
+transform = Transform3D(0.9999998, 0, 3.5527137e-15, 0, 1, 0, -3.5527137e-15, 0, 0.9999998, -1.4364529, 0.7048626, 1.8914185)
+
+[node name="Detective" parent="FinalEncounterNavMesh/FinalenCounter" groups=["object"] instance=ExtResource("4_8j60k")]
+transform = Transform3D(0.37347358, 0, 0.9276407, 0, 1, 0, -0.9276407, 0, 0.37347358, 4.2993016, 0.24899292, -3.8368835)
+
+[node name="Sprite3D2" type="Sprite3D" parent="FinalEncounterNavMesh/FinalenCounter/Detective"]
+transform = Transform3D(0.08000001, 0, 1.8626451e-09, 0, 0.08, 0, -1.8626451e-09, 0, 0.08000001, 0, 1.0404968, 0)
+flip_h = true
+texture = ExtResource("59_cvubk")
+
+[node name="ObjectDialogue" parent="." instance=ExtResource("14_axeuq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -252.06915, -23.930807, 6.1879253)
+dialogue_resource = ExtResource("30_w5giw")
+
+[node name="ForcedInteraction" parent="ObjectDialogue" instance=ExtResource("14_kn0ld")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.6378937, 0.9017925, 0.3044157)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ObjectDialogue/ForcedInteraction"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6624756, -3.5251389, -12.756836)
+shape = SubResource("BoxShape3D_lxtj3")
+debug_color = Color(13.502251, 0, 0.7927084, 0.41960785)
+
 [connection signal="pressed" from="UI/EvidenceButton" to="UI" method="show_evidence"]
 [connection signal="pressed" from="UI/SettingsButton" to="UI" method="show_settings"]
 [connection signal="body_shape_entered" from="Transitions/Street_To_Dock" to="Transitions/Street_To_Dock" method="_on_body_shape_entered"]
@@ -1381,3 +1525,4 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 107.
 [connection signal="interacted" from="Random_NPCs/Singer/InteractionBox" to="Random_NPCs/Singer" method="speak"]
 [connection signal="interacted" from="Random_NPCs/Fungie/ObjectDialogue/InteractionBox" to="Random_NPCs/Fungie/ObjectDialogue" method="speak"]
 [connection signal="interacted" from="Random_NPCs/Children/ForcedInteraction" to="Random_NPCs/Children" method="speak"]
+[connection signal="interacted" from="ObjectDialogue/ForcedInteraction" to="ObjectDialogue" method="speak"]
