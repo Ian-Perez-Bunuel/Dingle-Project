@@ -9,13 +9,16 @@ elif StoryFlags.alertGiven
 	=> postAlert
 
 ~ intro
-???: OH GOD NOT AGAIN! 
+???: [wave]WHERE IS IT!?![/wave]
 do CutSceneManager.move_to("Chippy", "RightOfAlley")
 do wait(1.0)
-???: [wave]YOU GOTTA HELP ME GET ALL THE DIALOGUE CORRECT PLEASE![/wave]
-
-- Oh boy can't wait!
-	Chippy: YIPEEEE!!!
+Noel: YOU! DID YOU STEAL MY FISH AND CHIPS?!
+An Phiast: Me? No! I'm just a humble detective
+Noel: A detective you say? Well you've gotta help me!
+do wait(0.5)
+Noel: I've been working hard to make the Perfect Fish and Chips, and I finally did it!
+do wait(0.5)
+Noel: I've been working hard to make the Perfect Fish and Chips, and I finally did it!
 	
 - Nah, I'm good!
 	Chippy: Well... [speed=0.2] This is due tommorow sooooo...
@@ -26,7 +29,7 @@ do StoryFlags.completedIntro = true
 => end
 
 ~ postIntro
-Chippy: Have you found the culprit yet???
+Chippy: Have you found the culprit yet?
 => end
 
 ~ allDoneAlert

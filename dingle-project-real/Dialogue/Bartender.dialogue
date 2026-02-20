@@ -1,22 +1,23 @@
 ~ start
-Bartender: Hey man, what would you like?
+Bartender: Heya sleuth, what can I get ya?
 
 - Beer
-	An Phiast: I'd like a beer please.
-	Bartender: Coming right up!
+	An Phiast: One beer please!
+	Bartender: Coming right up.
 	do StoryFlags.hasBeer = true
 	do Inventory.add_evidence(StoryFlags.beerEvidence)
 
 - Martini
-	An Phiast: I'd like a Martini please.
-	Bartender: Coming right up!
+	An Phiast: One glass martini please!
+	Bartender: Sorry we're all out of olives, impossible to make without 'em.
 
 - Water
-	An Phiast: I'd like a glass of water please.
-	Bartender: Coming right up!
+	An Phiast: One glass of water please!
+	Bartender: Coming right up.
 
-- Nothing I'm good
-	Bartender: Why did you even talk to me then?
+- Nothing
+	An Phiast: I need another minute to decide.
+	Bartender: Take your time.
 => end
 
 ~ end

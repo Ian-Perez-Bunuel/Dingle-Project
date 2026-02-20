@@ -1,5 +1,11 @@
 ~ start
-An Phiast: Huh, my badge!
+An Phiast: Huh, a badge...
+do wait(0.5)
+An Phiast: And it has my name on it!
+do wait(0.5)
+An Phiast: I think it now... I must be...
+do wait(0.8)
+An Phiast: [wave]A DETECTIVE!!![/wave]
 
 do Inventory.add_evidence(StoryFlags.badgeEvidence)
 do StoryFlags.hasBadge = true
