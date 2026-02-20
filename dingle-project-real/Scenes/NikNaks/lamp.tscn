@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0jryqh2qw82a"]
+
+[ext_resource type="Texture2D" uid="uid://b4idaljyle3pw" path="res://Assets/Textures/Lamp.png" id="1_3b5q5"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5vngr"]
+radius = 0.734375
+height = 2.5026855
+
+[node name="Lamp" type="Sprite3D"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+shaded = true
+texture = ExtResource("1_3b5q5")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.4837465, 0)
+shape = SubResource("CapsuleShape3D_5vngr")

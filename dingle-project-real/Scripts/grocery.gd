@@ -4,6 +4,8 @@ class_name Grocery
 var speed: float = 5
 var canMove: bool = false
 
+@onready var shadow: TextureRect = $Shadow
+
 enum Type 
 {
 	Tomato,
@@ -25,6 +27,7 @@ func reset(delay: float = 0.0):
 	var key: Type = keys[randi_range(0, keys.size() - 1)]
 	type = key
 	icon = itemMap[key]
+	shadow.texture = icon
 	
 	position.x = get_viewport().get_visible_rect().size.x + 100
 	

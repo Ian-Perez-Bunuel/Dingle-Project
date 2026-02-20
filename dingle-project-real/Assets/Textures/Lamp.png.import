@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1bmr5sh54wnv"
-path.s3tc="res://.godot/imported/Kids.png-0d13b6dd721bd73953f4e40e3300a304.s3tc.ctex"
+uid="uid://b4idaljyle3pw"
+path.s3tc="res://.godot/imported/Lamp.png-54e791798a7ae46dc10e1c56622c6df2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/Characters/Kids.png"
-dest_files=["res://.godot/imported/Kids.png-0d13b6dd721bd73953f4e40e3300a304.s3tc.ctex"]
+source_file="res://Assets/Textures/Lamp.png"
+dest_files=["res://.godot/imported/Lamp.png-54e791798a7ae46dc10e1c56622c6df2.s3tc.ctex"]
 
 [params]
 

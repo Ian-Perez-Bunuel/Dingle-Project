@@ -9,6 +9,12 @@ var started: bool = false
 @export var winCons: Dictionary[Grocery.Type, int] # type, amount needed
 var currentScore: Dictionary[Grocery.Type, int] # type, amount
 
+# Score
+@onready var TomatoLabel: Label = $List/Tomato/Label
+@onready var PotatoLabel: Label = $List/Potato/Label
+@onready var OilLabel: Label = $List/Oil/Label
+@onready var SaltLabel: Label = $List/Salt/Label
+
 func _ready() -> void:
 	for node in get_tree().get_nodes_in_group("Buttons"):
 		var grocery := node as Grocery
@@ -36,6 +42,8 @@ func start():
 	started = true
 
 func end():
+	await CutSceneManager.transition_stage_1()
+	
 	Player.set_can_move(true)
 	Interactable.set_can_interact(true)
 	UI.canOpen = true
@@ -45,11 +53,24 @@ func end():
 	StoryFlags.completedGroceries = true
 	Inventory.add_evidence(reward)
 	
+	await CutSceneManager.transition_stage_2()
 
 func collect(grocery: Grocery):
 	print("Button: ", grocery.type)
 	currentScore[grocery.type] += 1
+	incrementScoreText(grocery)
+	
 	checkForWin()
+
+func incrementScoreText(g: Grocery):
+	if g.type == Grocery.Type.Tomato:
+		TomatoLabel.text = ": " + str(currentScore[g.type]) + "/" + str(winCons[g.type])
+	if g.type == Grocery.Type.Potato:
+		PotatoLabel.text = ": " + str(currentScore[g.type]) + "/" + str(winCons[g.type])
+	if g.type == Grocery.Type.Oil:
+		OilLabel.text = ": " + str(currentScore[g.type]) + "/" + str(winCons[g.type])
+	if g.type == Grocery.Type.Salt:
+		SaltLabel.text = ": " + str(currentScore[g.type]) + "/" + str(winCons[g.type])
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1bmr5sh54wnv"
-path.s3tc="res://.godot/imported/Kids.png-0d13b6dd721bd73953f4e40e3300a304.s3tc.ctex"
+uid="uid://bdmxsv6nm2qjj"
+path.s3tc="res://.godot/imported/FireHydrant.png-11b9c5545c10b3299711c91ec446b217.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/Characters/Kids.png"
-dest_files=["res://.godot/imported/Kids.png-0d13b6dd721bd73953f4e40e3300a304.s3tc.ctex"]
+source_file="res://Assets/Textures/FireHydrant.png"
+dest_files=["res://.godot/imported/FireHydrant.png-11b9c5545c10b3299711c91ec446b217.s3tc.ctex"]
 
 [params]
 
