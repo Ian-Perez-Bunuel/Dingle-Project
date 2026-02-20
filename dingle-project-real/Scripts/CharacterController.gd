@@ -9,7 +9,7 @@ var facing_left = false
 const FLIP_SPEED = 0.15
 const BASE_SCALE = 0.5
 
-const SPEED = 5.0
+const SPEED = 8.0
 
 @onready var sprite: Sprite3D = $Sprite3D
 @onready var animationPlayer: AnimationPlayer = $AnimationPlayer
@@ -25,7 +25,7 @@ func _physics_process(delta: float) -> void:
 		controlled_movement(delta)
 	elif canMove:
 		normal_movement(delta)
-	
+
 func normal_movement(delta: float):
 		# Add the gravity.
 	if not is_on_floor():
