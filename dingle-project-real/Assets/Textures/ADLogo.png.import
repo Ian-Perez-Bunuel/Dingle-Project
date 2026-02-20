@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqtaq2msbcfym"
-path="res://.godot/imported/Festival.png-50bc1b1950833c29474279cd9c307dc4.ctex"
+uid="uid://dxffu2gl0dosq"
+path="res://.godot/imported/ADLogo.png-b4761d67727b5375dcc2c38659253c83.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/Festival.png"
-dest_files=["res://.godot/imported/Festival.png-50bc1b1950833c29474279cd9c307dc4.ctex"]
+source_file="res://Assets/Textures/ADLogo.png"
+dest_files=["res://.godot/imported/ADLogo.png-b4761d67727b5375dcc2c38659253c83.ctex"]
 
 [params]
 
