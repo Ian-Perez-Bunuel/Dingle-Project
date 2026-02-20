@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cc18vjnfvchia"]
+[gd_scene format=3 uid="uid://cc18vjnfvchia"]
 
 [ext_resource type="Script" uid="uid://d1wt4ma6055l8" path="res://addons/dialogue_manager/example_balloon/example_balloon.gd" id="1_tnhws"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_m1kxl"]
@@ -6,7 +6,7 @@
 [ext_resource type="FontFile" uid="uid://c7tim3pl1lfw5" path="res://Assets/Schoolbell-Regular.ttf" id="2_tfsfl"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_5lcpq"]
 [ext_resource type="Texture2D" uid="uid://bc8uwj8onigre" path="res://Assets/Textures/UI/ui_nameplate.png" id="6_qxthb"]
-[ext_resource type="Script" path="res://Dialogue/ui_audio.gd" id="7_qxthb"]
+[ext_resource type="Script" uid="uid://c4qph3mxgr2gx" path="res://Dialogue/ui_audio.gd" id="7_qxthb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hpnun"]
 bg_color = Color(0, 0, 0, 1)
@@ -116,11 +116,11 @@ _data = {
 &"progress": SubResource("Animation_qkmqt")
 }
 
-[node name="ExampleBalloon" type="CanvasLayer"]
+[node name="ExampleBalloon" type="CanvasLayer" unique_id=1333420289]
 layer = 100
 script = ExtResource("1_tnhws")
 
-[node name="Balloon" type="Control" parent="."]
+[node name="Balloon" type="Control" parent="." unique_id=1101536401]
 unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 15
@@ -130,7 +130,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_vini5")
 
-[node name="DialogueBoxContainer" type="MarginContainer" parent="Balloon"]
+[node name="DialogueBoxContainer" type="MarginContainer" parent="Balloon" unique_id=481502460]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -140,47 +140,45 @@ offset_top = -219.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="PanelContainer" type="PanelContainer" parent="Balloon/DialogueBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="Balloon/DialogueBoxContainer" unique_id=1707367440]
 clip_children = 2
 layout_mode = 2
 mouse_filter = 1
 
-[node name="TextureRect" type="TextureRect" parent="Balloon/DialogueBoxContainer/PanelContainer"]
+[node name="TextureRect" type="TextureRect" parent="Balloon/DialogueBoxContainer/PanelContainer" unique_id=559506780]
 layout_mode = 2
 texture = ExtResource("2_oyjxg")
 
-[node name="MarginContainer" type="MarginContainer" parent="Balloon/DialogueBoxContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Balloon/DialogueBoxContainer/PanelContainer" unique_id=630744826]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Balloon/DialogueBoxContainer/PanelContainer/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Balloon/DialogueBoxContainer/PanelContainer/MarginContainer" unique_id=1448130009]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Balloon/DialogueBoxContainer/PanelContainer/MarginContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Balloon/DialogueBoxContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=123155118]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="DialogueLabel" parent="Balloon/DialogueBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("2_m1kxl")]
+[node name="DialogueLabel" parent="Balloon/DialogueBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1910490427 instance=ExtResource("2_m1kxl")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 text = "Dialogue..."
 
-[node name="Control" type="Control" parent="Balloon/DialogueBoxContainer/PanelContainer/MarginContainer/HBoxContainer"]
+[node name="Control" type="Control" parent="Balloon/DialogueBoxContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=2059002090]
 custom_minimum_size = Vector2(20, 10)
 layout_mode = 2
 size_flags_vertical = 8
 
-[node name="Progress" type="Polygon2D" parent="Balloon/DialogueBoxContainer/PanelContainer/MarginContainer/HBoxContainer/Control"]
+[node name="Progress" type="Polygon2D" parent="Balloon/DialogueBoxContainer/PanelContainer/MarginContainer/HBoxContainer/Control" unique_id=1959024788]
 unique_name_in_owner = true
 polygon = PackedVector2Array(0, 0, 10, 10, 20, 0)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Balloon/DialogueBoxContainer/PanelContainer/MarginContainer/HBoxContainer/Control"]
-libraries = {
-&"": SubResource("AnimationLibrary_1337t")
-}
-autoplay = "progress"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Balloon/DialogueBoxContainer/PanelContainer/MarginContainer/HBoxContainer/Control" unique_id=1930467463]
+libraries/ = SubResource("AnimationLibrary_1337t")
+autoplay = &"progress"
 
-[node name="ResponsesMenu" type="VBoxContainer" parent="Balloon" node_paths=PackedStringArray("response_template")]
+[node name="ResponsesMenu" type="VBoxContainer" parent="Balloon" unique_id=329868910 node_paths=PackedStringArray("response_template")]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 5
@@ -198,12 +196,12 @@ alignment = 1
 script = ExtResource("3_5lcpq")
 response_template = NodePath("ResponseExample")
 
-[node name="ResponseExample" type="Button" parent="Balloon/ResponsesMenu"]
+[node name="ResponseExample" type="Button" parent="Balloon/ResponsesMenu" unique_id=1493732695]
 layout_mode = 2
 mouse_filter = 1
 text = "Response example"
 
-[node name="NameContainer" type="MarginContainer" parent="Balloon"]
+[node name="NameContainer" type="MarginContainer" parent="Balloon" unique_id=256819205]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -218,20 +216,20 @@ rotation = -0.05235988
 theme_override_constants/margin_left = -20
 theme_override_constants/margin_right = -20
 
-[node name="TextureRect" type="TextureRect" parent="Balloon/NameContainer"]
+[node name="TextureRect" type="TextureRect" parent="Balloon/NameContainer" unique_id=802070876]
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("6_qxthb")
 expand_mode = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="Balloon/NameContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Balloon/NameContainer" unique_id=1432606528]
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/NameContainer/MarginContainer"]
+[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/NameContainer/MarginContainer" unique_id=1899272784]
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 1
@@ -244,7 +242,7 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1396750131]
 unique_name_in_owner = true
 script = ExtResource("7_qxthb")
 
