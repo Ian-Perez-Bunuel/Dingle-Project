@@ -1,6 +1,8 @@
 ~ start
-if StoryFlags.talkedToEvilChippy:
+if StoryFlags.talkedToEvilChippy and not StoryFlags.completedGroceries
 	=> minigame
+elif StoryFlags.completedGroceries
+	=> done
 else
 	=> preEvilChippy
 
@@ -11,13 +13,23 @@ An Phiast: I don't think they're open yet...
 ~ minigame
 Welcome to LesserValue!
 - Let's grab those groceries!
-	do MinigameManager.activate("groceriesGame")
+	# do CutSceneManager.transition_stage_1()
+	# do wait(0.55)
+	do CutSceneManager.transition_stage_2()
+	# do MinigameManager.activate("groceriesGame")
+	=> moveAway
 - I'll come back later
 	=> moveAway
-	
+
+~ done
+An Phiast: I think I'm done here...
+=> moveAway
+
 ~ moveAway
 do CutSceneManager.move_to("Player", "OutsideLesserValue")
 do wait(0.5)
 do CutSceneManager.end()
+=> END
+
 	
 => END

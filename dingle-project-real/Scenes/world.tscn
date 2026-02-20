@@ -647,9 +647,10 @@ mesh = SubResource("BoxMesh_w5giw")
 stream = ExtResource("8_ochwf")
 
 [node name="TransitionShader" type="CanvasLayer" parent="."]
-layer = -3
+layer = -2
 
 [node name="ColorRect" type="ColorRect" parent="TransitionShader"]
+z_index = -2
 material = SubResource("ShaderMaterial_kn0ld")
 offset_right = 1152.0
 offset_bottom = 648.0
@@ -982,6 +983,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74.18497, 0.42839146, -5.992
 dialogue_resource = ExtResource("15_1cojt")
 
 [node name="ForcedInteraction" parent="Cutscene collisions/LesserValueMinigame/ObjectDialogue" instance=ExtResource("14_kn0ld")]
+oneUse = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cutscene collisions/LesserValueMinigame/ObjectDialogue/ForcedInteraction"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.959451, -0.31121635)
