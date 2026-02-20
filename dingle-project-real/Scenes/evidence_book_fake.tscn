@@ -37,7 +37,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_x0320")
 image1 = NodePath("Background/Evidence/Polaroid1/Image")
-image2 = NodePath("Background/Evidence/Polaroid2/Image")
+image2 = NodePath("")
 description = NodePath("Background/Evidence/Label")
 temp = ExtResource("2_4uanu")
 
@@ -87,10 +87,10 @@ anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 350.0
-offset_top = 128.0
-offset_right = 736.0
-offset_bottom = 111.0
+offset_left = 609.0
+offset_top = 151.0
+offset_right = 961.0
+offset_bottom = 190.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -100,32 +100,11 @@ text = "Test"
 layout_mode = 1
 offset_left = 129.0
 offset_top = 156.0
-offset_right = 307.74463
-offset_bottom = 372.0
+offset_right = 429.89655
+offset_bottom = 519.6118
 rotation = -0.1308997
 
 [node name="Image" type="TextureRect" parent="Background/Evidence/Polaroid1"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 27.0
-offset_top = 26.0
-offset_right = -27.0
-offset_bottom = -59.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_ux2fu")
-
-[node name="Polaroid2" type="ColorRect" parent="Background/Evidence"]
-layout_mode = 1
-offset_left = 847.0
-offset_top = 115.99999
-offset_right = 1026.947
-offset_bottom = 332.00006
-rotation = 0.20071286
-
-[node name="Image" type="TextureRect" parent="Background/Evidence/Polaroid2"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
