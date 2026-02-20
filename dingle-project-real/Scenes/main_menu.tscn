@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bjx4oo1w21je"]
+[gd_scene load_steps=14 format=3 uid="uid://bjx4oo1w21je"]
 
 [ext_resource type="Texture2D" uid="uid://qdrs7by7tkw7" path="res://Assets/Textures/Cover.png" id="1_28flt"]
 [ext_resource type="Script" uid="uid://bn8u6d4mkpu8v" path="res://Scripts/main_menu.gd" id="1_n45e2"]
@@ -12,8 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://c33nu20ot0f4m" path="res://Assets/Textures/JamLogo.png" id="10_t1dhk"]
 [ext_resource type="Texture2D" uid="uid://dxffu2gl0dosq" path="res://Assets/Textures/ADLogo.png" id="11_t1dhk"]
 [ext_resource type="Texture2D" uid="uid://dpno7u2d4gk05" path="res://Assets/Textures/setuLogo.png" id="12_vtepg"]
+[ext_resource type="PackedScene" uid="uid://c3h2vtcw4fs78" path="res://Scenes/credits.tscn" id="13_5egv6"]
 
-[node name="Control" type="Control" unique_id=2118845393]
+[node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,11 +23,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_n45e2")
 
-[node name="Cover" type="Sprite2D" parent="." unique_id=1535993249]
+[node name="Cover" type="Sprite2D" parent="."]
 position = Vector2(576, 324)
 texture = ExtResource("1_28flt")
 
-[node name="Play Button" type="TextureButton" parent="." unique_id=519826103]
+[node name="Play Button" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 38.0
 offset_top = 279.0
@@ -35,7 +36,7 @@ offset_bottom = 384.0
 texture_normal = ExtResource("3_trj04")
 texture_hover = ExtResource("4_16hvj")
 
-[node name="Credits Button" type="TextureButton" parent="." unique_id=624347694]
+[node name="Credits Button" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 37.0
 offset_top = 390.0
@@ -44,7 +45,7 @@ offset_bottom = 495.0
 texture_normal = ExtResource("5_vr1f0")
 texture_hover = ExtResource("6_t1dhk")
 
-[node name="Quit Button" type="TextureButton" parent="." unique_id=643739849]
+[node name="Quit Button" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 37.0
 offset_top = 507.0
@@ -53,25 +54,29 @@ offset_bottom = 612.0
 texture_normal = ExtResource("7_5egv6")
 texture_hover = ExtResource("8_vtepg")
 
-[node name="FishyBusinessLogo" type="Sprite2D" parent="." unique_id=1651372352]
+[node name="FishyBusinessLogo" type="Sprite2D" parent="."]
 position = Vector2(541, 128)
 scale = Vector2(0.18804348, 0.18804348)
 texture = ExtResource("9_8dnnj")
 
-[node name="JamLogo" type="Sprite2D" parent="." unique_id=1253378661]
+[node name="JamLogo" type="Sprite2D" parent="."]
 position = Vector2(1049.0916, 384.3008)
 scale = Vector2(0.057367004, 0.057367004)
 texture = ExtResource("10_t1dhk")
 
-[node name="Festival" type="Sprite2D" parent="." unique_id=1977494956]
+[node name="Festival" type="Sprite2D" parent="."]
 position = Vector2(1048, 484)
 scale = Vector2(0.14870554, 0.14870554)
 texture = ExtResource("11_t1dhk")
 
-[node name="SetuLogo" type="Sprite2D" parent="." unique_id=852862855]
+[node name="SetuLogo" type="Sprite2D" parent="."]
 position = Vector2(1050, 586.99994)
 scale = Vector2(0.55714273, 0.55714273)
 texture = ExtResource("12_vtepg")
+
+[node name="Credits" parent="." instance=ExtResource("13_5egv6")]
+visible = false
+layout_mode = 1
 
 [connection signal="pressed" from="Play Button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Credits Button" to="." method="_on_credits_button_pressed"]
