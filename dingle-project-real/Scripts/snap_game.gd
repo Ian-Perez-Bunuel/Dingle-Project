@@ -67,7 +67,8 @@ func end():
 	
 	Inventory.add_evidence(reward)
 	
-	
+	MinigameManager.endedGame()
+
 func startGameLoop() -> void:
 	while playing:
 		await get_tree().create_timer(timeBetweenCards).timeout

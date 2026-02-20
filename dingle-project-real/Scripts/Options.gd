@@ -1,6 +1,6 @@
 extends Node
 
-var musicVol: float = 1
+var musicVol: float = 0.5
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

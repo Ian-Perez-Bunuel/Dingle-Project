@@ -42,7 +42,7 @@ func start():
 	started = true
 
 func end():
-	await CutSceneManager.transition_stage_1()
+	# await CutSceneManager.transition_stage_1()
 	
 	Player.set_can_move(true)
 	Interactable.set_can_interact(true)
@@ -53,7 +53,8 @@ func end():
 	StoryFlags.completedGroceries = true
 	Inventory.add_evidence(reward)
 	
-	await CutSceneManager.transition_stage_2()
+	# await CutSceneManager.transition_stage_2()
+	MinigameManager.endedGame()
 
 func collect(grocery: Grocery):
 	print("Button: ", grocery.type)
