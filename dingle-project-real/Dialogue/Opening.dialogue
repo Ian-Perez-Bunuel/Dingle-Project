@@ -1,0 +1,10 @@
+~ start
+do FlashbackManager.waitFrame()
+do FlashbackManager.display(FlashbackManager.FlashBack.PreClothes, true, true)
+do FlashbackManager.display(FlashbackManager.FlashBack.ClothesFalling, true)
+do FlashbackManager.display(FlashbackManager.FlashBack.Sleeping)
+
+
+~ end
+do CutSceneManager.end()
+=> END

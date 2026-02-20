@@ -8,6 +8,7 @@ var fadeAnimation: AnimationPlayer
 
 enum FlashBack
 {
+	PreClothes,
 	ClothesFalling,
 	Sleeping,
 	Bar,
@@ -18,6 +19,7 @@ enum FlashBack
 var nameToFrames: Dictionary
 
 # Opening
+var preClothesFrames: Array[Texture2D] = []
 var clothesFallingFrames: Array[Texture2D] = []
 var sleepingFrames: Array[Texture2D] = []
 
@@ -39,8 +41,10 @@ func _ready() -> void:
 	fadeAnimation = world.get_node("FlashbackDisplay/FadeColor/AnimationPlayer") as AnimationPlayer
 	
 	# Opening
-	clothesFallingFrames.append(load("res://Assets/Textures/Flashbacks/intro_part1_0000.png"))
-	clothesFallingFrames.append(load("res://Assets/Textures/Flashbacks/intro_part1_0001.png"))
+	preClothesFrames.append(load("res://Assets/Textures/Flashbacks/intro_part1_0000.png"))
+	preClothesFrames.append(load("res://Assets/Textures/Flashbacks/intro_part1_0001.png"))
+	nameToFrames[FlashBack.PreClothes] = preClothesFrames
+	
 	clothesFallingFrames.append(load("res://Assets/Textures/Flashbacks/intro_part2_0000.png"))
 	clothesFallingFrames.append(load("res://Assets/Textures/Flashbacks/intro_part2_0001.png"))
 	nameToFrames[FlashBack.ClothesFalling] = clothesFallingFrames
@@ -67,11 +71,17 @@ func _ready() -> void:
 	eatingFlashbackFrames.append(load("res://Assets/Textures/Flashbacks/flashback_eating_0001.png"))
 	nameToFrames[FlashBack.Eating] = eatingFlashbackFrames
 
+func waitFrame():
+	await get_tree().process_frame
 
-func display(fb: FlashBack):
-	await fade_to_black()
+func display(fb: FlashBack, hasFollowing: bool = false, startBlack: bool = false):
+	if not startBlack:
+		await fade_to_black()
+		
 	displayScreen.visible = true
 	textureRect.texture = nameToFrames[fb][0]
+	textureRect.visible = true
+	
 	await fade_to_invis()
 	
 	var i: int = 0
@@ -87,7 +97,11 @@ func display(fb: FlashBack):
 			i = 0
 			l += 1
 	
-	displayScreen.visible = false
+	if not hasFollowing:
+		await fade_to_black()
+		textureRect.visible = false
+		await fade_to_invis()
+		displayScreen.visible = false
 
 func fade_to_black():
 	fadeAnimation.play("fade_to_black")

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2h0a3uqhy1xy"]
+
+[ext_resource type="PackedScene" uid="uid://b5d8jdatiiiwe" path="res://Scenes/Fungie.glb" id="1_id3qm"]
+
+[sub_resource type="GDScript" id="GDScript_id3qm"]
+script/source = "extends MeshInstance3D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	var mat := $\".\".get_active_material(0) as StandardMaterial3D
+	mat.cull_mode = BaseMaterial3D.CULL_DISABLED
+"
+
+[node name="Fungie" instance=ExtResource("1_id3qm")]
+
+[node name="Cube" parent="." index="0"]
+script = SubResource("GDScript_id3qm")
