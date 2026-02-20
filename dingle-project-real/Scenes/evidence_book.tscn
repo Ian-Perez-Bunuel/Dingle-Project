@@ -1,0 +1,189 @@
+[gd_scene load_steps=16 format=3 uid="uid://d0cgtux1bl7qd"]
+
+[ext_resource type="Script" uid="uid://pec5fvq7mcqp" path="res://Scripts/evidence_book.gd" id="1_x0320"]
+[ext_resource type="Resource" uid="uid://158iwhq64cex" path="res://Resources/TestEvidence.tres" id="2_4uanu"]
+[ext_resource type="Texture2D" uid="uid://770oby06nayx" path="res://Assets/Textures/UI/ui_bookmark_evidence1.png" id="3_1nkn7"]
+[ext_resource type="Texture2D" uid="uid://odmhqq7bph3k" path="res://Assets/Textures/UI/ui_evidencebook.png" id="3_4uanu"]
+[ext_resource type="Texture2D" uid="uid://cqrb0aqol3qk6" path="res://icon.svg" id="3_ux2fu"]
+[ext_resource type="Texture2D" uid="uid://ctdspuvkpjns7" path="res://Assets/Textures/UI/ui_bookmark_evidence2.png" id="4_1eja6"]
+[ext_resource type="Texture2D" uid="uid://qwlgkewg3a8u" path="res://Assets/Textures/UI/ui_arrow1.png" id="5_1orab"]
+[ext_resource type="Texture2D" uid="uid://3ovrxfyopu7d" path="res://Assets/Textures/UI/ui_bookmark_settings1.png" id="5_len6e"]
+[ext_resource type="Texture2D" uid="uid://dxlqdu0empurg" path="res://Assets/Textures/UI/ui_arrow2.png" id="6_3o2wa"]
+[ext_resource type="Texture2D" uid="uid://bc5634jb31sc" path="res://Assets/Textures/UI/ui_bookmark_settings2.png" id="6_j5cy3"]
+[ext_resource type="Texture2D" uid="uid://ci0ls7o82myax" path="res://Assets/Textures/UI/ui_grabber1.png" id="11_04geu"]
+[ext_resource type="Texture2D" uid="uid://42s1oqmdcbgb" path="res://Assets/Textures/UI/ui_grabber2.png" id="12_utv1j"]
+[ext_resource type="Texture2D" uid="uid://cfrh5qy7b1nhv" path="res://Assets/Textures/UI/ui_grabber3.png" id="13_n2alj"]
+[ext_resource type="Texture2D" uid="uid://fsqoextvtk7o" path="res://Assets/Textures/UI/ui_tick.png" id="14_yhywd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0kw46"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.85490197)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 2
+anti_aliasing = false
+
+[node name="EvidenceBook" type="Control" node_paths=PackedStringArray("image1", "image2", "description")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x0320")
+image1 = NodePath("Background/Evidence/Polaroid1/Image")
+image2 = NodePath("Background/Evidence/Polaroid2/Image")
+description = NodePath("Background/Evidence/Label")
+temp = ExtResource("2_4uanu")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.60784316)
+
+[node name="EvidenceButton" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 909.0
+offset_top = 5.0
+offset_right = 970.0
+offset_bottom = 112.0
+texture_normal = ExtResource("3_1nkn7")
+texture_hover = ExtResource("4_1eja6")
+
+[node name="SettingsButton" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 984.0
+offset_top = 5.0
+offset_right = 1045.0
+offset_bottom = 111.0
+texture_normal = ExtResource("5_len6e")
+texture_hover = ExtResource("6_j5cy3")
+
+[node name="Book" type="TextureRect" parent="Background"]
+layout_mode = 0
+offset_top = 43.0
+offset_right = 1152.0
+offset_bottom = 691.0
+mouse_filter = 2
+texture = ExtResource("3_4uanu")
+
+[node name="Evidence" type="Control" parent="Background"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Background/Evidence"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 350.0
+offset_top = 128.0
+offset_right = 736.0
+offset_bottom = 111.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Test"
+
+[node name="Polaroid1" type="ColorRect" parent="Background/Evidence"]
+layout_mode = 1
+offset_left = 129.0
+offset_top = 156.0
+offset_right = 307.74463
+offset_bottom = 372.0
+rotation = -0.1308997
+
+[node name="Image" type="TextureRect" parent="Background/Evidence/Polaroid1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 27.0
+offset_top = 26.0
+offset_right = -27.0
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_ux2fu")
+
+[node name="Polaroid2" type="ColorRect" parent="Background/Evidence"]
+layout_mode = 1
+offset_left = 847.0
+offset_top = 115.99999
+offset_right = 1026.947
+offset_bottom = 332.00006
+rotation = 0.20071286
+
+[node name="Image" type="TextureRect" parent="Background/Evidence/Polaroid2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 27.0
+offset_top = 26.0
+offset_right = -27.0
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_ux2fu")
+
+[node name="PreviousButton" type="TextureButton" parent="Background/Evidence"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 131.99994
+offset_top = 490.0
+offset_right = 238.99994
+offset_bottom = 543.0
+grow_vertical = 0
+texture_normal = ExtResource("5_1orab")
+texture_hover = ExtResource("6_3o2wa")
+flip_h = true
+
+[node name="NextButton" type="TextureButton" parent="Background/Evidence"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 871.9999
+offset_top = 490.0
+offset_right = 978.9999
+offset_bottom = 543.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("5_1orab")
+texture_hover = ExtResource("6_3o2wa")
+
+[node name="Settings" type="Control" parent="Background"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HSlider" type="HSlider" parent="Background/Settings"]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 422.0
+offset_right = 379.0
+offset_bottom = 515.0
+theme_override_icons/grabber = ExtResource("11_04geu")
+theme_override_icons/grabber_highlight = ExtResource("12_utv1j")
+theme_override_icons/grabber_disabled = ExtResource("13_n2alj")
+theme_override_icons/tick = ExtResource("14_yhywd")
+theme_override_styles/slider = SubResource("StyleBoxFlat_0kw46")
+
+[connection signal="pressed" from="Background/Evidence/PreviousButton" to="." method="prev"]
+[connection signal="pressed" from="Background/Evidence/NextButton" to="." method="next"]
