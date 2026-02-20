@@ -8,6 +8,7 @@ height = 2.5026855
 
 [node name="Lamp" type="Sprite3D"]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+shaded = true
 texture = ExtResource("1_3b5q5")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]

@@ -8,6 +8,7 @@ height = 3.6171875
 
 [node name="FireHydrant" type="Sprite3D"]
 transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, 0, 0)
+shaded = true
 texture = ExtResource("1_p2qvh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
