@@ -1,23 +1,39 @@
 ~ start
-Bartender: Heya sleuth, what can I get ya?
+Bartender: Heya Sleuth, what can I get ya?
+
+if StoryFlags.askedBoat
+	- Non-Alcoholic Beer
+		An Phiast: One non-alcoholic beer please!
+		do wait(0.5)
+		Bartender: Coming right up.
+		do StoryFlags.hasBeer = true
+		do Inventory.add_evidence(StoryFlags.beerEvidence)
 
 - Beer
 	An Phiast: One beer please!
-	Bartender: Coming right up.
-	do StoryFlags.hasBeer = true
-	do Inventory.add_evidence(StoryFlags.beerEvidence)
+	do wait(0.5)
+	Bartender: Hmmm... You have an ID?
+	do wait(0.5)
+	An Phiast: [speed=0.5]...
+	An Phiast: I have a badge?
+	do wait(0.5)
+	Bartender: Sorry, we don't accept those anymore
 
 - Martini
 	An Phiast: One martini please!
+	do wait(0.5)
 	Bartender: Sorry we're all out of olives, impossible to make without 'em.
 
 - Water
 	An Phiast: One glass of water please!
+	do wait(0.5)
 	Bartender: Coming right up.
 
 - Nothing
 	An Phiast: I need another minute to decide.
+	do wait(0.5)
 	Bartender: Take your time.
+
 => end
 
 ~ end

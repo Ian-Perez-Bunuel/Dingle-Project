@@ -1,7 +1,7 @@
 ~ start
-Captain: You ready to start?
+An Phiast: Let's do this!
 
-- Let's do this!
+- Yeah!
 	do MinigameManager.activate("SeagullGame")
 - Wait a second..
 => END

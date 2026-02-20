@@ -31,7 +31,7 @@ Leon: I wouldn't take any of that slop that Noel considers food even with his pe
 Leon: My fish and chips and far superior in every way, I have no need.
 do wait(0.5)
 Leon: But I know that the local seagulls love to steal everyone's chips, and I doubt they have as refinded of a palette as I do.
-Leon: I wouln't be surprised if they're your culprits!
+Leon: Might be hard to talk to interrogate them with how far they are from coast, but find a way and you just might find your culprits!
 Leon: Here, take this for your effort. => ending
 do Inventory.add_evidence(StoryFlags.evilChippyEvidence)
 
