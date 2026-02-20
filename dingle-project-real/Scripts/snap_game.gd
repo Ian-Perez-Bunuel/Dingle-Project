@@ -24,6 +24,11 @@ var called: bool = false
 @onready var playerLabel: Label = $PlayerScore
 @onready var captainLabel: Label = $CaptainScore
 
+@onready var capAnimator: AnimationPlayer = $CaptainHand/AnimationPlayer
+@onready var playerAnimator: AnimationPlayer = $PlayerHand/AnimationPlayer
+@onready var pileAnimator: AnimationPlayer = $PileAnimations
+@export var pilePos: Vector2
+
 @export var WIN_CON: int = 5
 var playerScore: int = 0
 var captainScore: int = 0
@@ -88,24 +93,39 @@ func addCard():
 	newCard.size = newCard.texture.get_size()
 	newCard.pivot_offset = Vector2(newCard.size.x / 2.0, newCard.size.y / 2.0)
 	newCard.rotation = randf_range(0.0, 180.0)
+	newCard.position.x += 1200
 	pile.add_child(newCard)
+	# tween onto the table
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	tween.tween_property(newCard, "position:x", 0.0, 0.25)
 
 	print(previousCard)
 	print(currentCard)
 	
 	if currentCard == previousCard:
+		playing = false
 		await get_tree().create_timer(captainReactionTime).timeout
 		if !called:
-			print("SNAP CAP")
+			capAnimator.play("snap")
+			await capAnimator.animation_finished
+			
 			captainScore += 1
 			captainLabel.text = "Captain's Score: " + str(captainScore)
 			reset_pile()
-			
 
 func reset_pile():
+	pileAnimator.play("reset")
+	await pileAnimator.animation_finished
+		
 	previousCard = Card.None
 	currentCard = Card.None
 	counter = 0
+	
+	playing = true
+	startGameLoop()
+	
+	pile.position = pilePos
 	
 	for child in pile.get_children():
 		child.queue_free()
@@ -122,8 +142,10 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("minigameAction"):
 		if currentCard == previousCard && previousCard != Card.None:
 			called = true
+			playerAnimator.play("snap")
+			await playerAnimator.animation_finished
+			
 			reset_pile()
 			playerScore += 1
 			playerLabel.text = "An Phiast's Score: " + str(playerScore)
-			print("SNAP ME!!!!")
 		

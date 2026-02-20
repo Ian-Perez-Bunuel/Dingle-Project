@@ -45,6 +45,35 @@ tracks/2/keys = {
 "values": [Vector3(1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_xxsvc"]
+resource_name = "idle"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(-2, 0.4, 1),
+"update": 0,
+"values": [Vector3(1.2, 1.2, 1.2), Vector3(1.25, 1.15, 1), Vector3(1.2, 1.2, 1.2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(-2, 0.4, 1),
+"update": 0,
+"values": [Vector3(-0.264, 1.5168823, 0), Vector3(-0.264, 1.4208316, 0), Vector3(-0.264, 1.5168823, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_cvnsp"]
 resource_name = "walk"
 tracks/0/type = "value"
@@ -72,35 +101,6 @@ tracks/1/keys = {
 "values": [Vector3(0, 1.2, 0), Vector3(-0.5, 1.2, 0), Vector3(0, 1.2, 0), Vector3(0.5, 1.2, 0), Vector3(0, 1.2, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_xxsvc"]
-resource_name = "idle"
-length = 4.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite3D:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 4),
-"transitions": PackedFloat32Array(-2, 0.4, 1),
-"update": 0,
-"values": [Vector3(1, 1, 1), Vector3(1.05, 0.95, 1), Vector3(1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite3D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2, 4),
-"transitions": PackedFloat32Array(-2, 0.2, 1),
-"update": 0,
-"values": [Vector3(-0.264, 1.15, 0), Vector3(-0.264, 1.09, 0), Vector3(-0.264, 1.15, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vgqql"]
 _data = {
 &"RESET": SubResource("Animation_6t5aa"),
@@ -125,3 +125,4 @@ shape = SubResource("CapsuleShape3D_xxsvc")
 libraries = {
 &"": SubResource("AnimationLibrary_vgqql")
 }
+autoplay = "idle"
