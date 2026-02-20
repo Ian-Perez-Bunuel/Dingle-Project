@@ -1,4 +1,4 @@
-[gd_scene load_steps=135 format=3 uid="uid://iysllbq6upr7"]
+[gd_scene load_steps=136 format=3 uid="uid://iysllbq6upr7"]
 
 [ext_resource type="PackedScene" uid="uid://bpgfead5netw3" path="res://Scenes/player.tscn" id="1_7yui6"]
 [ext_resource type="PackedScene" uid="uid://8t4uq2rp4c1o" path="res://Scenes/snap_game.tscn" id="1_c5t2i"]
@@ -51,6 +51,7 @@
 [ext_resource type="Resource" uid="uid://b5bfaq8g08amx" path="res://Dialogue/Singer.dialogue" id="39_lkcvt"]
 [ext_resource type="PackedScene" uid="uid://b5d8jdatiiiwe" path="res://Scenes/Fungie.glb" id="41_w5giw"]
 [ext_resource type="Resource" uid="uid://be85cg1x1mlg" path="res://Dialogue/Fungie.dialogue" id="42_jwdyn"]
+[ext_resource type="Texture2D" uid="uid://txjxxd6mty8p" path="res://Assets/Textures/Characters/Band_Saxophonist.png" id="52_13n8b"]
 
 [sub_resource type="Animation" id="Animation_coyub"]
 length = 0.001
@@ -1157,6 +1158,11 @@ debug_color = Color(0.99607843, 0, 0, 1)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Random_NPCs/Fungie/StaticBody3D"]
 transform = Transform3D(0.99999976, 0, -9.272583e-13, 0, 0.99999976, 0, 9.272583e-13, 0, 0.99999976, 0, 1.7767322, 0.17471313)
 shape = SubResource("BoxShape3D_uq5fj")
+
+[node name="Sax Guy" type="Sprite3D" parent="Random_NPCs"]
+transform = Transform3D(0.09, 0, 0, 0, 0.09, 0, 0, 0, 0.09, -252.51245, 2.536653, -6.5626774)
+billboard = 1
+texture = ExtResource("52_13n8b")
 
 [node name="VoidBlockers" type="Node" parent="."]
 
