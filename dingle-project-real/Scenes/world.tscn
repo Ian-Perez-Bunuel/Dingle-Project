@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=3 uid="uid://iysllbq6upr7"]
+[gd_scene load_steps=107 format=3 uid="uid://iysllbq6upr7"]
 
 [ext_resource type="PackedScene" uid="uid://bpgfead5netw3" path="res://Scenes/player.tscn" id="1_7yui6"]
 [ext_resource type="PackedScene" uid="uid://8t4uq2rp4c1o" path="res://Scenes/snap_game.tscn" id="1_c5t2i"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://captr67lb13cl" path="res://Scenes/npc.tscn" id="4_8j60k"]
 [ext_resource type="PackedScene" uid="uid://bb61pavwemraa" path="res://Scenes/evidence_book.tscn" id="6_ikia7"]
 [ext_resource type="Script" uid="uid://45pssicrscyg" path="res://Scripts/UIManager.gd" id="8_ikia7"]
+[ext_resource type="AudioStream" uid="uid://bpp5d07ib52js" path="res://Assets/Audio/shutters.mp3" id="8_ochwf"]
 [ext_resource type="PackedScene" uid="uid://cjj5ra8ixu5l0" path="res://Scenes/backstreet_1.tscn" id="9_opbav"]
 [ext_resource type="PackedScene" path="res://Scenes/docks_1.tscn" id="10_opbav"]
 [ext_resource type="PackedScene" uid="uid://d00d32xh76ix" path="res://Assets/Models/Boat.glb" id="12_1vso6"]
@@ -470,6 +471,9 @@ teleport = "dock_to_street"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6418686, 0, 0)
 shape = SubResource("BoxShape3D_e0ngr")
 debug_color = Color(0.9764706, 0, 0.41960785, 0.9843137)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Transitions"]
+stream = ExtResource("8_ochwf")
 
 [node name="TransitionShader" type="CanvasLayer" parent="."]
 layer = -3

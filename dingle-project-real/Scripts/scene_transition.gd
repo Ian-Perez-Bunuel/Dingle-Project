@@ -3,6 +3,8 @@ extends Area3D
 @export var teleport : String
 @onready var screen_effect = $"../../TransitionShader/ColorRect"
 @onready var player = $"../../Player"
+@onready var audio_player = get_parent().get_node("AudioStreamPlayer")
+
 
 func _on_body_shape_entered(body_rid: RID, body: Node3D, body_shape_index: int, local_shape_index: int) -> void:
 	print("teleporting an phiast...")
@@ -29,6 +31,7 @@ func _on_body_shape_entered(body_rid: RID, body: Node3D, body_shape_index: int, 
 			transition_stage_2()
 
 func transition_stage_1():
+	audio_player.play()
 	screen_effect.material.set_shader_parameter("invert", true)
 	screen_effect.material.set_shader_parameter("progress", 0.0)
 	var tween = create_tween()
@@ -36,6 +39,7 @@ func transition_stage_1():
 	await tween.finished
 
 func transition_stage_2():
+	audio_player.play()
 	screen_effect.material.set_shader_parameter("invert", false)
 	screen_effect.material.set_shader_parameter("progress", 0.0)
 	var tween = create_tween()
