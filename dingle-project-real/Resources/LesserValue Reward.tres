@@ -1,11 +1,10 @@
 [gd_resource type="Resource" script_class="Evidence" load_steps=3 format=3 uid="uid://bp17rgifua47x"]
 
 [ext_resource type="Script" uid="uid://i65gfwen11r0" path="res://Resources/EvidenceResource.gd" id="1_d7v16"]
-[ext_resource type="Texture2D" uid="uid://cqrb0aqol3qk6" path="res://icon.svg" id="1_n2icb"]
+[ext_resource type="Texture2D" uid="uid://cyo7q10v324fp" path="res://Assets/Textures/Evidence/evidence_groceries.jpg" id="1_n2icb"]
 
 [resource]
 script = ExtResource("1_d7v16")
-description = "Lesser value win"
+description = "Groceries. But why would a fish and chips shop be asking random detectives for favours.? Unless they were facing some sort of economic downturn!?"
 image1 = ExtResource("1_n2icb")
-image2 = ExtResource("1_n2icb")
 metadata/_custom_type_script = "uid://i65gfwen11r0"

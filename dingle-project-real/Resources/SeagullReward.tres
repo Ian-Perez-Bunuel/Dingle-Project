@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="Evidence" load_steps=2 format=3 uid="uid://bn3cp1bn3tvi7"]
+[gd_resource type="Resource" script_class="Evidence" load_steps=3 format=3 uid="uid://bn3cp1bn3tvi7"]
 
+[ext_resource type="Texture2D" uid="uid://g2v673wyhc0a" path="res://Assets/Textures/Evidence/evidence_seagull.jpg" id="1_5qyci"]
 [ext_resource type="Script" uid="uid://i65gfwen11r0" path="res://Resources/EvidenceResource.gd" id="1_76i2s"]
 
 [resource]
 script = ExtResource("1_76i2s")
-description = "WOW U DID IT!"
+description = "The seagull themselves. Seemingly the perfect candidate to steal the fish and chips. Maybe too perfect?"
+image1 = ExtResource("1_5qyci")
 metadata/_custom_type_script = "uid://i65gfwen11r0"
