@@ -103,7 +103,7 @@ func addCard():
 	var tween = create_tween()
 	tween.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	tween.tween_property(newCard, "position:x", 0.0, 0.25)
-
+	$AudioStreamPlayerCard.play()
 	print(previousCard)
 	print(currentCard)
 	
@@ -112,6 +112,7 @@ func addCard():
 		await get_tree().create_timer(captainReactionTime).timeout
 		if !called:
 			capAnimator.play("snap")
+			$AudioStreamPlayerSnap.play()
 			await capAnimator.animation_finished
 			
 			captainScore += 1
@@ -147,6 +148,7 @@ func _process(delta: float) -> void:
 		if currentCard == previousCard && previousCard != Card.None:
 			called = true
 			playerAnimator.play("snap")
+			$AudioStreamPlayerSnap.play()
 			await playerAnimator.animation_finished
 			
 			reset_pile()

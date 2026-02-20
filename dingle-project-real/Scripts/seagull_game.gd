@@ -70,6 +70,7 @@ func hand_upward_start():
 	
 	await t.finished
 	hand_downward_start()
+	$AudioStreamPlayer.play()
 
 func hand_downward_start():
 	var t = create_tween()

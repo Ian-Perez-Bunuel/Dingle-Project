@@ -657,7 +657,7 @@ shadow_normal_bias = 3.0
 environment = SubResource("Environment_8j60k")
 
 [node name="Player" parent="." instance=ExtResource("1_7yui6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.438522, 0.5666692, 4.9385166)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 452.06906, 0.5666692, 3.1094227)
 
 [node name="Transitions" type="Node" parent="."]
 
