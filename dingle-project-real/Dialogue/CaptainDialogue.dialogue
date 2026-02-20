@@ -80,7 +80,7 @@ do CutSceneManager.teleport_to("Captain", "Dock")
 ~ atDock
 Captain: Are you ready to go get those seagulls?
 - Yes, lets go!
-	Captain: Alright lets go get those bastards!
+	Captain: Alright lets go get them!
 	do CutSceneManager.transition_stage_1()
 	do wait(0.55)
 	do CutSceneManager.teleport_to("Player", "Sea1")

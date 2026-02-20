@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://b5bfaq8g08amx"
+path="res://.godot/imported/Singer.dialogue-6c2c1c874359ffe7d914e7bcd6d1583e.tres"
+
+[deps]
+
+source_file="res://Dialogue/Singer.dialogue"
+dest_files=["res://.godot/imported/Singer.dialogue-6c2c1c874359ffe7d914e7bcd6d1583e.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,14 @@
+~ start
+if StoryFlags.sawBarFlashback
+	Singer: La la LAAAA (IDK)
+else
+	Singer: Oh, welcome back!
+	An Phiast: Huh?
+	Singer: You drank a good bit I'm not suprised you don't remember.
+	do FlashbackManager.display(FlashbackManager.FlashBack.Bar)
+	do StoryFlags.sawBarFlashback = true
+	An Phiast: Oh yeah I was here last night...
+
+~ end
+do CutSceneManager.end()
+=> END

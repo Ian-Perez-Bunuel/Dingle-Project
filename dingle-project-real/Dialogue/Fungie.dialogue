@@ -1,0 +1,11 @@
+~ start
+if StoryFlags.sawRunningFlashBack
+	An Phiast: This is a cool statue (?)
+else
+	do FlashbackManager.display(FlashbackManager.FlashBack.Smelling)
+	do StoryFlags.sawSmellingFlashBack = true
+	An Phiast: Huh memory????? (man idk too tired for dialogue)
+
+~ end
+do CutSceneManager.end()
+=> END

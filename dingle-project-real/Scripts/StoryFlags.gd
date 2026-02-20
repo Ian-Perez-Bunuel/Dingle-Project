@@ -1,10 +1,37 @@
 extends Node
 #Just holds bools for stuff completed / done by the player
 
-# USED FOR TESTING ONLY
-#func _process(delta: float) -> void:
-#	if talkedToEvilChippy:
-#		print("TRUE")
+# Captain flags
+var beerEvidence: Evidence = load("res://Resources/beer.tres")
+var hasBeer: bool = false
+var capTalkNoBeer: bool = false
+var playedSnap: bool = false
+var wonSnap: bool = false
+var lostSnap: bool = false
+var capAtBoat: bool = false
+var capAtSea: bool = false
+
+# Chippy flags
+var completedIntro: bool = false
+var alertGiven: bool = false
+
+# Evil Chippy flags
+var evilChippyEvidence: Evidence = load("res://Resources/evilChippyEvidence.tres")
+var talkedToEvilChippy: bool = false
+var completedGroceries: bool = false
+
+# Seagull flags
+var seagullEvidence: Evidence = load("res://Resources/seagullEvidence.tres")
+var caughtGulls: bool = false
+var talkedToGull: bool = false
+
+# Random flags
+var badgeEvidence: Evidence = load("res://Resources/badgeEvidence.tres")
+var hasBadge: bool = false
+var sawBarFlashback: bool = false
+var sawRunningFlashBack: bool = false
+var sawSmellingFlashBack: bool = false
+
 
 func resetFlags():
 	# Captain flags
@@ -18,6 +45,7 @@ func resetFlags():
 	
 	# Chippy flags
 	completedIntro = false
+	alertGiven = false
 	
 	# Evil Chippy flags
 	talkedToEvilChippy = false
@@ -38,35 +66,6 @@ func resetFlags():
 
 ################### End of Reset Function ###################
 
-# Captain flags
-var beerEvidence: Evidence = load("res://Resources/beer.tres")
-var hasBeer: bool = false
-var capTalkNoBeer: bool = false
-var playedSnap: bool = false
-var wonSnap: bool = false
-var lostSnap: bool = false
-var capAtBoat: bool = false
-var capAtSea: bool = false
-
-# Chippy flags
-var completedIntro: bool = false
-
-# Evil Chippy flags
-var evilChippyEvidence: Evidence = load("res://Resources/evilChippyEvidence.tres")
-var talkedToEvilChippy: bool = false
-var completedGroceries: bool = false
-
-# Seagull flags
-var seagullEvidence: Evidence = load("res://Resources/seagullEvidence.tres")
-var caughtGulls: bool = false
-var talkedToGull: bool = false
-
-# Random flags
-var badgeEvidence: Evidence = load("res://Resources/badgeEvidence.tres")
-var hasBadge: bool = false
-var sawBarFlashback: bool = false
-var sawRunningFlashBack: bool = false
-var sawSmellingFlashBack: bool = false
 func seenFlashBacksAmount():
 	var amount: int = 0
 	if sawBarFlashback:

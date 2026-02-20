@@ -1,9 +1,12 @@
 ~ start
 if not StoryFlags.completedIntro
 	=> intro
-elif StoryFlags.completedIntro
+elif StoryFlags.completedIntro and not StoryFlags.caughtGulls
 	=> postIntro
-
+elif StoryFlags.caughtGulls
+	=> allDoneAlert
+elif StoryFlags.alertGiven
+	=> postAlert
 
 ~ intro
 ???: OH GOD NOT AGAIN! 
@@ -24,6 +27,37 @@ do StoryFlags.completedIntro = true
 
 ~ postIntro
 Chippy: Have you found the culprit yet???
+=> end
+
+~ allDoneAlert
+do StoryFlags.alertGiven = true
+do CutSceneManager.teleport_to("Chippy", "ChippyDocksStart")
+do CutSceneManager.move_to("Chippy", "ChippyDocksEnd")
+Chippy: HEY!!!
+do wait(3.5)
+
+Chippy: Do you know the culprit yet?
+- Yes
+	Chippy: Alright lets go resolve this!
+- No
+	Chippy: Alright...
+	Chippy: When you think you know or run out of things to do come to my shop.
+	do CutSceneManager.move_to("Chippy", "ChippyDocksStart")
+	do wait(5.0)
+	=> specielEnd
+=> end
+
+~ postAlert
+Chippy: So you think you know the culprit???
+- Yes
+	Chippy: Alright lets go resolve this!
+- No
+	Chippy: Alright then. 
+	Chippy: Just tell me when you have ok?
+=> end
+
+~ specielEnd
+do CutSceneManager.teleport_to("Chippy", "ChipperEnterance")
 
 ~ end
 do CutSceneManager.end()

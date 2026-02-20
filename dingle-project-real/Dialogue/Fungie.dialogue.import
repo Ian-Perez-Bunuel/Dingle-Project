@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://be85cg1x1mlg"
+path="res://.godot/imported/Fungie.dialogue-679fca56e10f87c59966d8b0f5eb09cf.tres"
+
+[deps]
+
+source_file="res://Dialogue/Fungie.dialogue"
+dest_files=["res://.godot/imported/Fungie.dialogue-679fca56e10f87c59966d8b0f5eb09cf.tres"]
+
+[params]
+
+defaults=true
