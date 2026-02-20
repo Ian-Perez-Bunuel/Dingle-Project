@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="Evidence" load_steps=2 format=3 uid="uid://wtatq7frsh28"]
+[gd_resource type="Resource" script_class="Evidence" load_steps=3 format=3 uid="uid://c3uimrrxlnvxp"]
 
 [ext_resource type="Script" uid="uid://i65gfwen11r0" path="res://Resources/EvidenceResource.gd" id="1_5k3n6"]
+[ext_resource type="Texture2D" uid="uid://cx7s4gty14qfl" path="res://Assets/Textures/Evidence/evidence_beer.jpg" id="1_6evyw"]
 
 [resource]
 script = ExtResource("1_5k3n6")
-description = "Beer"
+description = "A nice cold beer. Good to wash down a fish and chips with? Suspicous."
+image1 = ExtResource("1_6evyw")
 metadata/_custom_type_script = "uid://i65gfwen11r0"

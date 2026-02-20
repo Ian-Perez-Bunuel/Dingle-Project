@@ -13,7 +13,6 @@ var currentPage: int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	image1.texture = temp.image1
-	image2.texture = temp.image2
 	description.text = temp.description
 
 func toggle():
@@ -38,12 +37,10 @@ func open():
 		var firstEvidence = Inventory.ownedEvidence[0]
 		
 		image1.texture = firstEvidence.image1
-		image2.texture = firstEvidence.image2
 		description.text = firstEvidence.description
 		
 	else:
 		image1.texture = temp.image1
-		image2.texture = temp.image2
 		description.text = temp.description
 		
 func close():
@@ -59,7 +56,6 @@ func next():
 	var e = Inventory.ownedEvidence[currentPage]
 		
 	image1.texture = e.image1
-	image2.texture = e.image2
 	description.text = e.description
 
 func prev():
@@ -72,5 +68,4 @@ func prev():
 	var e = Inventory.ownedEvidence[currentPage]
 		
 	image1.texture = e.image1
-	image2.texture = e.image2
 	description.text = e.description

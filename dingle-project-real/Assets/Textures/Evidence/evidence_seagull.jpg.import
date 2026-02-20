@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c33nu20ot0f4m"
-path="res://.godot/imported/JamLogo.png-6a3802714bae3fe55bbe38e77324051b.ctex"
+uid="uid://g2v673wyhc0a"
+path="res://.godot/imported/evidence_seagull.jpg-06bc34117c1fc4f11fd441676ff1b644.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/JamLogo.png"
-dest_files=["res://.godot/imported/JamLogo.png-6a3802714bae3fe55bbe38e77324051b.ctex"]
+source_file="res://Assets/Textures/Evidence/evidence_seagull.jpg"
+dest_files=["res://.godot/imported/evidence_seagull.jpg-06bc34117c1fc4f11fd441676ff1b644.ctex"]
 
 [params]
 

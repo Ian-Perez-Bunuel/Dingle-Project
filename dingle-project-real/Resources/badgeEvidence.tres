@@ -1,7 +1,10 @@
-[gd_resource type="Resource" script_class="Evidence" load_steps=2 format=3 uid="uid://cpawjffpii4x1"]
+[gd_resource type="Resource" script_class="Evidence" load_steps=3 format=3 uid="uid://ptxcmng082j5"]
 
+[ext_resource type="Texture2D" uid="uid://ektewnkdeiie" path="res://Assets/Textures/Evidence/evidence_badge.jpg" id="1_5ke5x"]
 [ext_resource type="Script" uid="uid://i65gfwen11r0" path="res://Resources/EvidenceResource.gd" id="1_whuwk"]
 
 [resource]
 script = ExtResource("1_whuwk")
+description = "My very own Detective Badge! It has to be mine since I woke up next to it!"
+image1 = ExtResource("1_5ke5x")
 metadata/_custom_type_script = "uid://i65gfwen11r0"

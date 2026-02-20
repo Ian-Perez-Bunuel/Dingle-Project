@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c33nu20ot0f4m"
-path="res://.godot/imported/JamLogo.png-6a3802714bae3fe55bbe38e77324051b.ctex"
+uid="uid://ektewnkdeiie"
+path="res://.godot/imported/evidence_badge.jpg-d1d199d1f612d9ea48a90374544cd65c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/JamLogo.png"
-dest_files=["res://.godot/imported/JamLogo.png-6a3802714bae3fe55bbe38e77324051b.ctex"]
+source_file="res://Assets/Textures/Evidence/evidence_badge.jpg"
+dest_files=["res://.godot/imported/evidence_badge.jpg-d1d199d1f612d9ea48a90374544cd65c.ctex"]
 
 [params]
 
