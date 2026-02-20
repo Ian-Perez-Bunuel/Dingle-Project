@@ -242,6 +242,8 @@ libraries = {
 
 [node name="AudioStreamPlayerSnap" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_dhuei")
+bus = &"SFX"
 
 [node name="AudioStreamPlayerCard" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_13atm")
+bus = &"SFX"

@@ -564,6 +564,7 @@ size = Vector3(37.62207, 3.8886719, 35.711914)
 [node name="World" type="Node3D"]
 
 [node name="Music" parent="." instance=ExtResource("1_kwnki")]
+bus = &"Music"
 
 [node name="TransitionShader" type="CanvasLayer" parent="."]
 layer = -2
@@ -779,6 +780,7 @@ mesh = SubResource("BoxMesh_w5giw")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Transitions"]
 stream = ExtResource("8_ochwf")
+bus = &"SFX"
 
 [node name="GlobalNikNaks" type="Node" parent="."]
 
