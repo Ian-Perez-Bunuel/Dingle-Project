@@ -8,7 +8,7 @@ Bartender: Heya sleuth, what can I get ya?
 	do Inventory.add_evidence(StoryFlags.beerEvidence)
 
 - Martini
-	An Phiast: One glass martini please!
+	An Phiast: One martini please!
 	Bartender: Sorry we're all out of olives, impossible to make without 'em.
 
 - Water

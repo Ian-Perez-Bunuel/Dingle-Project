@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cjx3ouadj6dq8"
+path="res://.godot/imported/Children.dialogue-52f0d99515fa3474b46548e7666cbd90.tres"
+
+[deps]
+
+source_file="res://Dialogue/Children.dialogue"
+dest_files=["res://.godot/imported/Children.dialogue-52f0d99515fa3474b46548e7666cbd90.tres"]
+
+[params]
+
+defaults=true

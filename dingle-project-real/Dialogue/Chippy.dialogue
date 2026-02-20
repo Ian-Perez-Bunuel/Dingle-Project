@@ -15,21 +15,30 @@ do wait(1.0)
 Noel: YOU! DID YOU STEAL MY FISH AND CHIPS?!
 An Phiast: Me? No! I'm just a humble detective
 Noel: A detective you say? Well you've gotta help me!
-do wait(0.5)
 Noel: I've been working hard to make the Perfect Fish and Chips, and I finally did it!
 do wait(0.5)
-Noel: I've been working hard to make the Perfect Fish and Chips, and I finally did it!
-	
-- Nah, I'm good!
-	Chippy: Well... [speed=0.2] This is due tommorow sooooo...
-	do wait(0.5)
-	Chippy: You gotta do it anyway :D
+Noel: [wave]BUT THEY'RE GONE!!![/wave]
+do wait(0.5)
+Noel: Someone must have stolen them last night while I was letting them cool, they need to be cooked at an incredibly high temperature for perfection.
+Noel: I need someone to solve this mystery!
+do wait(0.5)
+An Phiast: Don't worry sir, I'm on the case!
+do wait(0.5)
+Noel: Thank you Detective!!
 
 do StoryFlags.completedIntro = true
 => end
 
 ~ postIntro
 Chippy: Have you found the culprit yet?
+
+- Not yet
+	An Phiast: The investigation is going well but I'll need some more time.
+	
+- Almost
+	An Phiast: We're almost there! I can feel it!!
+	
+Noel: Good luck Detective
 => end
 
 ~ allDoneAlert
@@ -39,12 +48,14 @@ do CutSceneManager.move_to("Chippy", "ChippyDocksEnd")
 Chippy: HEY!!!
 do wait(3.5)
 
-Chippy: Do you know the culprit yet?
+Chippy: Have you found the culprit yet
 - Yes
-	Chippy: Alright lets go resolve this!
-- No
+	An Phiast: I've cracked the case!
+	Chippy: Alright lets go finish this!
+- Almost
+	An Phiast: I need a little more time to gather evidence.
 	Chippy: Alright...
-	Chippy: When you think you know or run out of things to do come to my shop.
+	Chippy: When you think you've figured it out come by shop.
 	do CutSceneManager.move_to("Chippy", "ChippyDocksStart")
 	do wait(5.0)
 	=> specielEnd
