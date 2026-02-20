@@ -11,6 +11,7 @@ const BASE_SCALE = 0.5
 
 const SPEED = 5.0
 
+@onready var sprite: Sprite3D = $Sprite3D
 @onready var animationPlayer: AnimationPlayer = $AnimationPlayer
 @onready var stepNoise: AudioStreamPlayer3D = $PlayerSteps
 
@@ -67,7 +68,7 @@ func flip_sprite(flipped: bool):
 		target_x = BASE_SCALE 
 	
 	var tween = create_tween()
-	tween.tween_property($Sprite3D, "scale:x", target_x, FLIP_SPEED)\
+	tween.tween_property(sprite, "scale:x", target_x, FLIP_SPEED)\
 		.set_trans(Tween.TRANS_SINE)\
 		.set_ease(Tween.EASE_OUT)
 	facing_left = flipped
