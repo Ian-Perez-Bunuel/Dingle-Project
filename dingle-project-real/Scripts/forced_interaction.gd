@@ -3,14 +3,17 @@ extends Area3D
 signal interacted
 
 @export var oneUse: bool = false
+var used = false
 
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 
 func _on_body_entered(body: Node) -> void:
+	if used and oneUse:
+		return
+	
+	used = true
 	interact()
-	if oneUse:
-		queue_free()
 	
 	
 func interact():

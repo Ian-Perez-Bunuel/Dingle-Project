@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://bm4hj1y0q254c" path="res://Assets/Models/World/Backstreet1.glb" id="11_c5t2i"]
 [ext_resource type="PackedScene" uid="uid://d00d32xh76ix" path="res://Assets/Models/Boat.glb" id="12_1vso6"]
 [ext_resource type="Script" uid="uid://bwifi60ec7u1t" path="res://Scripts/scene_transition.gd" id="12_c5t2i"]
-[ext_resource type="Shader" uid="uid://d3lkdk8f7w4nc" path="res://Shaders/Water.gdshader" id="12_e0ngr"]
-[ext_resource type="PackedScene" path="res://Scenes/seagull_game.tscn" id="13_c5t2i"]
+[ext_resource type="Shader" path="res://Shaders/Water.gdshader" id="12_e0ngr"]
+[ext_resource type="PackedScene" uid="uid://ct3ngq0m2f83c" path="res://Scenes/seagull_game.tscn" id="13_c5t2i"]
 [ext_resource type="Shader" uid="uid://bscb7e5fasq7w" path="res://Shaders/screen_transition.gdshader" id="13_e0ngr"]
 [ext_resource type="PackedScene" uid="uid://cgyu3kxkm4rs8" path="res://Assets/Models/World/Docks1.glb" id="13_kn0ld"]
 [ext_resource type="PackedScene" uid="uid://crte5pffhmvf5" path="res://Scenes/ObjectDialogue.tscn" id="14_axeuq"]
@@ -31,7 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://cfoen85bbr3qb" path="res://Assets/Textures/Characters/Fisherman.png" id="26_pt3ps"]
 [ext_resource type="Texture2D" uid="uid://cvop7bm300lvl" path="res://Assets/Textures/Characters/GullOther.png" id="26_qebug"]
 [ext_resource type="Resource" uid="uid://cxggt6lkmgt0m" path="res://Dialogue/Seagull.dialogue" id="27_1vso6"]
-[ext_resource type="Script" path="res://Scripts/GullManager.gd" id="27_3ua1v"]
+[ext_resource type="Script" uid="uid://b1r2lual8ouy7" path="res://Scripts/GullManager.gd" id="27_3ua1v"]
 [ext_resource type="Texture2D" uid="uid://b4lgcev48b5q3" path="res://Assets/Textures/Characters/Band_Singer.png" id="27_hmc15"]
 [ext_resource type="Texture2D" uid="uid://da6eu338gu4ok" path="res://Assets/Textures/Characters/GullMain.png" id="27_o2rbt"]
 
@@ -685,7 +685,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 452.49777, 2.3339992, 0)
 [node name="Main_NPCs" type="Node" parent="."]
 
 [node name="Captain" parent="Main_NPCs" groups=["object"] instance=ExtResource("4_8j60k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -252.78705, 0.9149504, 1.1107302)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -252.78705, 0.35367632, 1.1107302)
 dialogue_resource = ExtResource("15_hgpy0")
 texture = ExtResource("18_xbk3s")
 
@@ -698,7 +698,7 @@ shape = SubResource("BoxShape3D_13n8b")
 debug_color = Color(0.99467343, 0, 0.22570384, 0.41960785)
 
 [node name="Chippy" parent="Main_NPCs" groups=["object"] instance=ExtResource("4_8j60k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84.21416, 0.9223451, -2.5742688)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84.21416, 0.7136151, -2.5742688)
 dialogue_resource = ExtResource("23_opbav")
 texture = ExtResource("21_i4fjy")
 
@@ -776,7 +776,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 117.82684, 0.9565549, 14.6202
 texture = ExtResource("26_pt3ps")
 
 [node name="Singer" parent="Random_NPCs" instance=ExtResource("4_8j60k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -253.9847, 1.831208, -5.3057685)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -253.9847, 1.4300854, -5.3057685)
 texture = ExtResource("27_hmc15")
 
 [node name="VoidBlockers" type="Node" parent="."]

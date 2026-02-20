@@ -76,6 +76,7 @@ texture = ExtResource("2_xxsvc")
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7527554, 0)
 shape = SubResource("CapsuleShape3D_xxsvc")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

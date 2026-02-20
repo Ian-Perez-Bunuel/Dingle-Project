@@ -1,8 +1,15 @@
 ~ start
+if not StoryFlags.completedIntro
+	=> intro
+elif StoryFlags.completedIntro
+	=> postIntro
+
+
+~ intro
 ???: OH GOD NOT AGAIN! 
 do CutSceneManager.move_to("Chippy", "RightOfAlley")
 do wait(1.0)
-Chippy: [wave]YOU GOTTA HELP ME GET ALL THE DIALOGUE CORRECT PLEASE![/wave]
+???: [wave]YOU GOTTA HELP ME GET ALL THE DIALOGUE CORRECT PLEASE![/wave]
 
 - Oh boy can't wait!
 	Chippy: YIPEEEE!!!
@@ -12,5 +19,13 @@ Chippy: [wave]YOU GOTTA HELP ME GET ALL THE DIALOGUE CORRECT PLEASE![/wave]
 	do wait(0.5)
 	Chippy: You gotta do it anyway :D
 
+do StoryFlags.completedIntro = true
+=> end
+
+~ postIntro
+Chippy: Have you found the culprit yet???
+
+~ end
 do CutSceneManager.end()
+
 => END
