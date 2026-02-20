@@ -1,5 +1,5 @@
 ~ start
-if StoryFlags.sawRunningFlashBack
+if StoryFlags.sawSmellingFlashBack
 	An Phiast: I should check back in on him soon, I wonder what he's been up to.
 else
 	do FlashbackManager.display(FlashbackManager.FlashBack.Smelling)

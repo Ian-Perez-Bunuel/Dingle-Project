@@ -1,22 +1,23 @@
 ~ start
-Seagull: This is post minigame where you catch 5 of them including this scarred one
-Seagull: Arrrrggg (RIONA PLEASE IMPROVE THIS - Seagulls = pirate speach?)
-Seagull: WHAT WAS THAT FOR!
-
-- Did you steal the fish and chips from Noel?
-	Seagull: No? We only eat Leon's fish and chips
-- For fun :D
-	Seagull: Are you serios?!
-	An Phiast: Nope
-	An Phiast: Did you steal the fish and chips from Noel?
-	Seagull: No? We only eat Leon's fish and chips
+Seagull: SQUAAAWKK!? (AVAST YE!! WHAT WAS THAT FOR!?)
+do wait(0.5)
+An Phiast: I've heard you like stealing chips... Where were you last night?
+do wait(0.5)
+Seagull: Squaa Squaawk! (We were by Leon's like usual! There's always scraps left outside by the landlubbers.)
+do wait(0.5)
+An Phiast: Hmmm, you never made your way to Noel's Chips?
+do wait(0.5)
+Seagull: Skryy Squaaawwk! (Aye! Too far from the coast for our liking matey, ask anyone! The locals never take kindly too us there anyway.)
+do wait(0.5)
+An Phiast: I see.. Thank you for the help, I think I know everything I need to.
 	
-An Phiast: Come back to land for further questioning...
+An Phiast: Come back to land for further questioning in a bit...
+do wait(0.5)
+Seagull: Squaaa. (Aye aye Detective.)
 
-Seagull: Alright alright
-
-An Phiast: Ok Captain you can bring us back now!
-Captain: Sounds good lets go back!
+do wait(1)
+An Phiast: Ok Captain, you can bring us back now!
+Captain: Sounds like the investigation went well, I'll start up the engine.
 => end
 
 ~ end

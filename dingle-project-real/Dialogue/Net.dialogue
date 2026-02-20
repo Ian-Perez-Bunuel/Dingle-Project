@@ -1,7 +1,7 @@
 ~ start
-Let's catch some seagulls!
+Captain: You ready to start?
 
-- Yay!
+- Let's do this!
 	do MinigameManager.activate("SeagullGame")
 - Wait a second..
 => END

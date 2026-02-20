@@ -1,0 +1,11 @@
+~ start
+if StoryFlags.sawRunningFlashBack
+	An Phiast: I won't get them wrapped up in all this...
+else
+	do FlashbackManager.display(FlashbackManager.FlashBack.Running)
+	do StoryFlags.sawRunningFlashBack = true
+	An Phiast: I remember running somewhere like that last night! I wonder if I was chasing the thief...
+
+~ end
+do CutSceneManager.end()
+=> END
