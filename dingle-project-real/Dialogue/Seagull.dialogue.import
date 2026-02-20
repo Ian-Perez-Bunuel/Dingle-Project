@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cxggt6lkmgt0m"
+path="res://.godot/imported/Seagull.dialogue-3369b17df506da3df2e323f8a2438175.tres"
+
+[deps]
+
+source_file="res://Dialogue/Seagull.dialogue"
+dest_files=["res://.godot/imported/Seagull.dialogue-3369b17df506da3df2e323f8a2438175.tres"]
+
+[params]
+
+defaults=true
