@@ -3,6 +3,11 @@ class_name Player
 
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 var hasTarget = false
+var moving = false
+
+var facing_left = false
+const FLIP_SPEED = 0.15
+const BASE_SCALE = 0.5
 
 const SPEED = 5.0
 
@@ -29,11 +34,38 @@ func normal_movement(delta: float):
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
+		$AnimationPlayer.play("walk")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
+		$AnimationPlayer.stop()
 
+	if direction.x < 0.0 and not facing_left:
+		flip_sprite(true)
+	elif direction.x > 0.0 and facing_left:
+		flip_sprite(false)
+		
+	
+	#if direction: #MAY USE THIS VERSION LATER, maybe combine with the stuff above it
+		#moving = true
+		#if not $AnimationPlayer.is_playing():
+			#$AnimationPlayer.play("walk")
+	#else:
+		#moving = false
 	move_and_slide()
+
+func flip_sprite(flipped: bool):
+	var target_x 
+	if flipped == true:
+		target_x = -BASE_SCALE 
+	else:
+		target_x = BASE_SCALE 
+	
+	var tween = create_tween()
+	tween.tween_property($Sprite3D, "scale:x", target_x, FLIP_SPEED)\
+		.set_trans(Tween.TRANS_SINE)\
+		.set_ease(Tween.EASE_OUT)
+	facing_left = flipped
 
 func set_target_pos(t_targetPos: Vector3):
 	hasTarget = true
