@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://8t4uq2rp4c1o"]
+[gd_scene load_steps=24 format=3 uid="uid://8t4uq2rp4c1o"]
 
 [ext_resource type="Script" uid="uid://c20i7ib43fxb8" path="res://Scripts/snap_game.gd" id="1_h2w27"]
 [ext_resource type="Resource" uid="uid://c552a8h85i2vn" path="res://Resources/snapReward.tres" id="2_cjdk3"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://2ttd2l8va8n7" path="res://Assets/Textures/minigames/PhiastHand.png" id="8_0dkby"]
 [ext_resource type="FontFile" uid="uid://c7tim3pl1lfw5" path="res://Assets/Schoolbell-Regular.ttf" id="8_4r5s0"]
 [ext_resource type="Texture2D" uid="uid://blc8b0g6wtpyy" path="res://Assets/Textures/minigames/CaptainHand.png" id="9_4r5s0"]
+[ext_resource type="AudioStream" uid="uid://cav21biarjj5v" path="res://Assets/Audio/snap.mp3" id="11_dhuei"]
+[ext_resource type="AudioStream" uid="uid://dqs7ptux3ltgq" path="res://Assets/Audio/card.mp3" id="12_13atm"]
 
 [sub_resource type="Animation" id="Animation_lacck"]
 length = 0.001
@@ -237,3 +239,9 @@ texture = ExtResource("8_0dkby")
 libraries = {
 &"": SubResource("AnimationLibrary_dhuei")
 }
+
+[node name="AudioStreamPlayerSnap" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_dhuei")
+
+[node name="AudioStreamPlayerCard" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_13atm")

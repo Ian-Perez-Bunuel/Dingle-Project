@@ -1,0 +1,15 @@
+SOUNDS
+ui_hover and ui_select - https://pixabay.com/sound-effects/film-special-effects-typewriter-button-slide-1a-47722/
+shutters - https://pixabay.com/sound-effects/film-special-effects-camera-shutter-346101/
+pageflip - https://pixabay.com/sound-effects/film-special-effects-book-foley-turn-pages-2-189809/
+footsteps - https://pixabay.com/sound-effects/film-special-effects-st3-footstep-sfx-323056/
+seagull minigame - https://www.zapsplat.com/music/medium-long-and-thin-twig-whoosh-swoosh-in-air-slower-and-weaker/
+snap minigame - https://www.zapsplat.com/music/hollow-wood-impact-thump-5/
+snap minigame 2 - https://pixabay.com/sound-effects/film-special-effects-cardsound32562-37691/
+
+SHADERS
+universal transition - https://godotshaders.com/shader/universal-transition-shader/
+water - https://godotshaders.com/shader/wind-waker-water-no-textures-needed/
+
+FONTS
+schoolbell font - https://fonts.google.com/specimen/Schoolbell

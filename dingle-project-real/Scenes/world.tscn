@@ -1,4 +1,4 @@
-[gd_scene load_steps=156 format=3 uid="uid://iysllbq6upr7"]
+[gd_scene load_steps=157 format=3 uid="uid://iysllbq6upr7"]
 
 [ext_resource type="PackedScene" uid="uid://bpgfead5netw3" path="res://Scenes/player.tscn" id="1_7yui6"]
 [ext_resource type="PackedScene" uid="uid://8t4uq2rp4c1o" path="res://Scenes/snap_game.tscn" id="1_c5t2i"]
@@ -59,7 +59,8 @@
 [ext_resource type="Texture2D" uid="uid://txjxxd6mty8p" path="res://Assets/Textures/Characters/Band_Saxophonist.png" id="52_13n8b"]
 [ext_resource type="Resource" uid="uid://cjx3ouadj6dq8" path="res://Dialogue/Children.dialogue" id="53_gwaj6"]
 [ext_resource type="Texture2D" uid="uid://b1bmr5sh54wnv" path="res://Assets/Textures/Characters/Kids.png" id="53_uqdn7"]
-[ext_resource type="Texture2D" uid="uid://b3ci8dd6vk83y" path="res://Assets/Textures/Characters/Anne.png" id="59_cvubk"]
+[ext_resource type="PackedScene" uid="uid://bjx4oo1w21je" path="res://Scenes/main_menu.tscn" id="59_cvubk"]
+[ext_resource type="Texture2D" uid="uid://b3ci8dd6vk83y" path="res://Assets/Textures/Characters/Anne.png" id="60_5kw24"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kn0ld"]
 shader = ExtResource("13_e0ngr")
@@ -554,10 +555,10 @@ polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 4), PackedInt32Arr
 cell_height = 0.01
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s73dv"]
-size = Vector3(19.055664, 1, 18.50879)
+size = Vector3(6.901367, 1, 5.366699)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lxtj3"]
-size = Vector3(22.498047, 1.4355469, 19.134766)
+size = Vector3(37.62207, 3.8886719, 35.711914)
 
 [node name="World" type="Node3D"]
 
@@ -715,7 +716,7 @@ shadow_normal_bias = 3.0
 environment = SubResource("Environment_8j60k")
 
 [node name="Player" parent="." instance=ExtResource("1_7yui6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -250.84515, -24.102251, 3.325657)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -250.42998, -24.197405, 3.1094227)
 
 [node name="Transitions" type="Node" parent="."]
 
@@ -1446,6 +1447,7 @@ texture = ExtResource("52_13n8b")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FinalEncounterNavMesh/FinalenCounter/Floor2"]
 shape = SubResource("BoxShape3D_s73dv")
+debug_color = Color(0.102432765, 0.17149277, 0, 1)
 
 [node name="Chippy" type="Sprite3D" parent="FinalEncounterNavMesh/FinalenCounter"]
 transform = Transform3D(0.14813735, 0, -0.98896676, 0, 1, 0, 0.98896676, 0, 0.14813735, -3.0905073, 1.732048, 3.3478546)
@@ -1483,14 +1485,15 @@ texture = ExtResource("18_xbk3s")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.315277, 0.7048626, 0.7939148)
 
 [node name="AnnePos" type="Node3D" parent="FinalEncounterNavMesh/FinalenCounter" groups=["place"]]
-transform = Transform3D(0.9999998, 0, 3.5527137e-15, 0, 1, 0, -3.5527137e-15, 0, 0.9999998, -1.4364529, 0.7048626, 1.8914185)
+transform = Transform3D(0.9999997, 0, 3.5527137e-15, 0, 1, 0, -3.5527137e-15, 0, 0.9999997, -1.4364529, 1.3397884, 1.8914185)
 
 [node name="Detective" parent="FinalEncounterNavMesh/FinalenCounter" groups=["object"] instance=ExtResource("4_8j60k")]
-transform = Transform3D(0.37347358, 0, 0.9276407, 0, 1, 0, -0.9276407, 0, 0.37347358, 4.2993016, 0.24899292, -3.8368835)
+transform = Transform3D(-0.18439725, 0, 0.9828513, 0, 1, 0, -0.9828513, 0, -0.18439725, -2.8212688, 0.24899292, 1.5849915)
+visible = false
 
 [node name="Sprite3D2" type="Sprite3D" parent="FinalEncounterNavMesh/FinalenCounter/Detective"]
 transform = Transform3D(0.08000001, 0, 1.8626451e-09, 0, 0.08, 0, -1.8626451e-09, 0, 0.08000001, 0, 1.0404968, 0)
-texture = ExtResource("59_cvubk")
+texture = ExtResource("60_5kw24")
 
 [node name="ObjectDialogue" parent="." instance=ExtResource("14_axeuq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -252.06915, -23.930807, 6.1879253)
@@ -1500,9 +1503,38 @@ dialogue_resource = ExtResource("30_w5giw")
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.6378937, 0.9017925, 0.3044157)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ObjectDialogue/ForcedInteraction"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6624756, -3.5251389, -12.756836)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2698975, -3.2402878, -13.146721)
 shape = SubResource("BoxShape3D_lxtj3")
-debug_color = Color(13.502251, 0, 0.7927084, 0.41960785)
+debug_color = Color(1, 0, 0.14999962, 1)
+
+[node name="Control" parent="." instance=ExtResource("59_cvubk")]
+
+[node name="PhiastJail" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PhiastJail"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.096309, 0, 2.1833496)
+shape = SubResource("BoxShape3D_s73dv")
+debug_color = Color(0.102432765, 0.17149277, 0, 1)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="PhiastJail"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.171397, 3.192871, 2.1833496)
+shape = SubResource("BoxShape3D_lxtj3")
+debug_color = Color(1, 0, 0.14999962, 1)
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="PhiastJail"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.021763, 3.192871, 2.1833496)
+shape = SubResource("BoxShape3D_lxtj3")
+debug_color = Color(1, 0, 0.14999962, 1)
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="PhiastJail"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 14.153898, 3.192871, 5.0595503)
+shape = SubResource("BoxShape3D_lxtj3")
+debug_color = Color(1, 0, 0.14999962, 1)
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="PhiastJail"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 14.153898, 3.192871, -1.7626257)
+shape = SubResource("BoxShape3D_lxtj3")
+debug_color = Color(1, 0, 0.14999962, 1)
 
 [connection signal="pressed" from="UI/EvidenceButton" to="UI" method="show_evidence"]
 [connection signal="pressed" from="UI/SettingsButton" to="UI" method="show_settings"]
