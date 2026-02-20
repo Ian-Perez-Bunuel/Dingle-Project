@@ -18,5 +18,6 @@ func _on_body_entered(body: Node) -> void:
 	
 func interact():
 	Player.set_can_move(false)
+	UI.canOpen = false
 	interacted.emit()
 	print("Basic Forced Interact - Please link to a function")

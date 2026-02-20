@@ -52,6 +52,7 @@ func end():
 	StoryFlags.playedSnap = true
 	Player.set_can_move(true)
 	Interactable.set_can_interact(true)
+	UI.canOpen = true
 	process_mode = Node.PROCESS_MODE_DISABLED
 	visible = false
 	playing = false

@@ -1,8 +1,10 @@
 extends Control
+class_name UI
 
 @onready var evidenceBook := $EvidenceBook
 @onready var settings := $Settings
 
+static var canOpen: bool = true
 	
 func toggle_show():
 	show_evidence()
@@ -18,6 +20,9 @@ func show_settings():
 	settings.set_showing(true)
 	
 func _process(delta: float) -> void:
+	if not canOpen:
+		return
+	
 	if Input.is_action_just_pressed("ui_cancel"):
 		toggle_show()
 		visible = !visible

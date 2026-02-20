@@ -24,6 +24,7 @@ func _ready() -> void:
 func end():
 	Interactable.set_can_interact(true)
 	Player.set_can_move(true)
+	UI.canOpen = true
 
 func hide_object(t_objectName: String):
 	var object = null

@@ -47,6 +47,7 @@ func interact():
 		used = true
 	
 	Player.set_can_move(false)
+	UI.canOpen = false
 	canInteract = false
 	interacted.emit()
 	print("Basic Interact - Please link to a function")
