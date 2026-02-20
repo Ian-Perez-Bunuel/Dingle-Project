@@ -37,13 +37,15 @@ An Phiast: And all the evidence points to...
 
 
 ~ Seagull
-An Phiast: Well I think the answer is obvious, these seagulls already have a history of stealing fish and chips. Sometimes, the correct answer is the most obvious one.
+An Phiast: Well I think the answer is obvious, these seagulls already have a history of stealing fish and chips. 
+An Phiast: Sometimes, the correct answer is the most obvious one.
 do wait(0.5)
 Seagull: Squaaa. (Sorry landlubber, wasn't us.)
 do wait(0.5)
 An Phiast: A likely story, but-
 do wait(0.5)
-Seagull: Squaaawk Squaa! (Look, we steal the red one's scraps all the time. But the blue one? Aye, he's too far. Ask anyone if they've seen us flying around by there.)
+Seagull: Squaaawk Squaa! (Look, we steal the red one's scraps all the time...) 
+Seagull: (But the blue one? Aye, he's too far. Ask anyone if they've seen us flying around by there.)
 do wait(0.5)
 An Phiast: Hmm...
 An Phiast: Well if it wasn't them then it must be...
@@ -51,7 +53,8 @@ An Phiast: Well if it wasn't them then it must be...
 
 ~ Captain
 An Phiast: It was the Captain! The man is a fiend for both fish and games of skill! 
-An Phiast: And what is the perfect marriage of those two if not stealing a meal and making a run for it! But oh, a nice fish and chips makes you quite parched! So you had to wash it off with a nice cool beer.
+An Phiast: And what is the perfect marriage of those two if not stealing a meal and making a run for it! 
+An Phiast: But oh, a nice fish and chips makes you quite parched! So you had to wash it off with a nice cool beer.
 do wait(0.5)
 Noel: Captain Daniels is a loyal customer and good friend, he'd never do such a thing!
 Captain: And I was out at sea until entering the bar this morning, the gull can attest. 
@@ -63,8 +66,8 @@ Phiast: Right. Um... Sorry Captain.
 => accuse
 
 ~ Chippy
-An Phiast: The Chipper himself! You were losing business to Leon! 
-An Phiast: Even the gulls wouldn't touch your scran! So you made up a phony tale about a 'Perfect Fish and Chips' to drum up attention! But you couldn't actually commit.
+An Phiast: The Chipper himself! You were losing business to Leon! Even the gulls wouldn't touch your scran! 
+An Phiast: So you made up a phony tale about a 'Perfect Fish and Chips' to drum up attention! But you couldn't actually commit.
 do wait(0.5)
 Captain: Umm. I've actually purchased his fish and chips before. They're really good.
 Seagull: I've snagged a couple loose crumbs here and there. They're really good indeed.
@@ -76,7 +79,8 @@ An Phiast: Right, sorry. I was actually gathering everyone's reaction... because
 => accuse
 
 ~ EvilChippy
-An Phiast: Well the answer is quite obvious. Brotherly rivalry. Leon here is the owner of a failing business. Losing stock to gulls and needing to buy his ingredients from Lesservalu to stay afloat. 
+An Phiast: Well the answer is quite obvious. Brotherly rivalry. Leon here is the owner of a failing business. 
+An Phiast: Losing stock to gulls and needing to buy his ingredients from Lesservalu to stay afloat. 
 An Phiast: But what if? He were to steal his brother's recipe and disguise it as his own cooking! How delightfully devilish!
 do wait(0.5)
 Chippy: Sorry Detective, but that's not possible.
@@ -104,7 +108,8 @@ Captain: Detective, but I thought you were a person of honour!
 Noel: I sent a fraud to get my groceries!?
 Seagull: Squaaaarr. (Aye, good to see ya finally own up.)
 do wait(0.5)
-An Phiast: I was after a long night of celebration, and I sensed a waft of something most delicious. Heading over and seeing a free meal, I grabbed it and quickly made a run for it. 
+An Phiast: I was after a long night of celebration, and I sensed a waft of something most delicious. 
+An Phiast: Heading over and seeing a free meal, I grabbed it and quickly made a run for it. 
 => endSequence
 
 ~ endSequence
@@ -126,12 +131,14 @@ do FlashbackManager.show_badge()
 
 An Phiast: How did I-?
 do wait(0.5)
-Anne Feast: I'll admit, the mistake is mine. I was drying my clothes on a line and they must've slipped off. Coincidentally falling [wave]right[/wave] on top of you.
+Anne Feast: I'll admit, the mistake is mine. I was drying my clothes on a line and they must've slipped off. 
+Anne Feast: Coincidentally falling [wave]right[/wave] on top of you.
 do wait(0.5)
 An Phiast: So I- I'm not a detective?
 do wait(0.5)
 Anne Feast: Legally? Not in the slightest. But... 
-Anne Feast: I've been tracking you since you left that alleyway, and I must say... Your methods are unorthodox but your spirit is undeniable. I see potential in you.
+Anne Feast: I've been tracking you since you left that alleyway, and I must say... 
+Anne Feast: Your methods are unorthodox but your spirit is undeniable. I see potential in you.
 do wait(0.5)
 An Phiast: Woah, thanks Detective!
 do wait(0.5)
