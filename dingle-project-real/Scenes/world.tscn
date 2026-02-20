@@ -1,4 +1,4 @@
-[gd_scene load_steps=157 format=3 uid="uid://iysllbq6upr7"]
+[gd_scene load_steps=158 format=3 uid="uid://iysllbq6upr7"]
 
 [ext_resource type="PackedScene" uid="uid://bpgfead5netw3" path="res://Scenes/player.tscn" id="1_7yui6"]
 [ext_resource type="PackedScene" uid="uid://8t4uq2rp4c1o" path="res://Scenes/snap_game.tscn" id="1_c5t2i"]
@@ -56,6 +56,7 @@
 [ext_resource type="Resource" uid="uid://b5bfaq8g08amx" path="res://Dialogue/Singer.dialogue" id="39_lkcvt"]
 [ext_resource type="PackedScene" uid="uid://b5d8jdatiiiwe" path="res://Scenes/Fungie.glb" id="41_w5giw"]
 [ext_resource type="Resource" uid="uid://be85cg1x1mlg" path="res://Dialogue/Fungie.dialogue" id="42_jwdyn"]
+[ext_resource type="Resource" uid="uid://ioa4olik8tbw" path="res://Dialogue/EvilChippy.dialogue" id="44_dsm2w"]
 [ext_resource type="Texture2D" uid="uid://txjxxd6mty8p" path="res://Assets/Textures/Characters/Band_Saxophonist.png" id="52_13n8b"]
 [ext_resource type="Resource" uid="uid://cjx3ouadj6dq8" path="res://Dialogue/Children.dialogue" id="53_gwaj6"]
 [ext_resource type="Texture2D" uid="uid://b1bmr5sh54wnv" path="res://Assets/Textures/Characters/Kids.png" id="53_uqdn7"]
@@ -1178,7 +1179,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74, 0, -1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 101.64329, 0, -11.199166)
 
 [node name="ChippyDocksEnd" type="Node3D" parent="Cutscene collisions/PostGullsChippy" groups=["place"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 113.09558, 9.536743e-07, 8.375561)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.92383, 9.536743e-07, 8.007994)
 
 [node name="AlertCutscene" type="Node" parent="Cutscene collisions"]
 
@@ -1200,7 +1201,7 @@ debug_color = Color(0.9882353, 0, 0, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -245.23166, 0, 6.6966457)
 
 [node name="Dock" type="Node3D" parent="Cutscene collisions" groups=["place"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112.81296, 1.338644, 14.523953)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112.81296, 0.4790511, 14.282567)
 
 [node name="DockP" type="Node3D" parent="Cutscene collisions" groups=["place"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 113.46832, 0.9454727, 19.9888)
@@ -1240,11 +1241,11 @@ shape = SubResource("BoxShape3D_5kw24")
 
 [node name="EvilChippy" parent="Main_NPCs" groups=["object"] instance=ExtResource("4_8j60k")]
 transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 92.83574, 0.39809084, 0.33597946)
-dialogue_resource = ExtResource("30_w5giw")
+dialogue_resource = ExtResource("44_dsm2w")
 texture = ExtResource("22_i4fjy")
 
 [node name="InteractionBox" parent="Main_NPCs/EvilChippy" instance=ExtResource("2_go701")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18647003, 0.7134936, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0487442, 1.1979833, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Main_NPCs/EvilChippy/InteractionBox"]
 shape = SubResource("BoxShape3D_uqdn7")
@@ -1255,7 +1256,7 @@ dialogue_resource = ExtResource("21_yq1aw")
 texture = ExtResource("24_pt3ps")
 
 [node name="InteractionBox" parent="Main_NPCs/Bartender" instance=ExtResource("2_go701")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85894465, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4300239, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Main_NPCs/Bartender/InteractionBox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7394409, 0, -0.1131258)
@@ -1312,7 +1313,7 @@ dialogue_resource = ExtResource("39_lkcvt")
 texture = ExtResource("27_hmc15")
 
 [node name="InteractionBox" parent="Random_NPCs/Singer" instance=ExtResource("2_go701")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7296972, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.327148, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Random_NPCs/Singer/InteractionBox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0068359375, -1.1891346, 1.0080566)

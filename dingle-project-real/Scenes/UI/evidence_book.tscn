@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://qwlgkewg3a8u" path="res://Assets/Textures/UI/ui_arrow1.png" id="5_1orab"]
 [ext_resource type="Texture2D" uid="uid://dxlqdu0empurg" path="res://Assets/Textures/UI/ui_arrow2.png" id="6_3o2wa"]
 
-[node name="EvidenceBook" type="Control" node_paths=PackedStringArray("image1", "image2", "description")]
+[node name="EvidenceBook" type="Control" node_paths=PackedStringArray("image1", "description")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,7 +17,6 @@ grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_x0320")
 image1 = NodePath("Evidence/Polaroid1/Image")
-image2 = NodePath("")
 description = NodePath("Evidence/Label")
 temp = ExtResource("2_4uanu")
 

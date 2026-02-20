@@ -2,7 +2,6 @@ extends Control
 
 # places to put the info
 @export var image1 : TextureRect
-@export var image2 : TextureRect
 @export var description : Label
 
 # Info on each page
@@ -35,6 +34,7 @@ func open():
 	print("Open")
 	if !Inventory.ownedEvidence.is_empty():
 		var firstEvidence = Inventory.ownedEvidence[0]
+		currentPage = 0
 		
 		image1.texture = firstEvidence.image1
 		description.text = firstEvidence.description
@@ -43,6 +43,7 @@ func open():
 		image1.texture = temp.image1
 		description.text = temp.description
 		
+
 func close():
 	print("Close")
 	
