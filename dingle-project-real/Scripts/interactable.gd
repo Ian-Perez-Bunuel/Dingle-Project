@@ -3,6 +3,8 @@ class_name Interactable
 
 @export var promptMessage := "Interact"
 @export var interactionUI: Sprite3D
+@export var singleUse: bool = false
+var used: bool = false
 
 var player_inside := false
 static var canInteract: bool = true
@@ -22,6 +24,9 @@ func _ready() -> void:
 	body_exited.connect(_on_body_exited)
 	
 func _process(delta: float) -> void:
+	if used:
+		return
+	
 	if canInteract:
 		if player_inside && Input.is_action_just_pressed("ui_accept"):
 			interact()
@@ -38,6 +43,9 @@ func _on_body_exited(body: Node) -> void:
 	
 	
 func interact():
+	if singleUse:
+		used = true
+	
 	Player.set_can_move(false)
 	canInteract = false
 	interacted.emit()

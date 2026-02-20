@@ -766,7 +766,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2312012, 3.454834, -4.7727
 shape = SubResource("BoxShape3D_dsm2w")
 debug_color = Color(0.9882353, 0, 0, 1)
 
-[node name="Badge" parent="Cutscene collisions/Opening" instance=ExtResource("14_axeuq")]
+[node name="Badge" parent="Cutscene collisions/Opening" groups=["object"] instance=ExtResource("14_axeuq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -107.74765, 0, -9.943859)
 dialogue_resource = ExtResource("21_r74th")
 
@@ -776,6 +776,7 @@ texture = ExtResource("21_p5wkl")
 
 [node name="InteractionBox" parent="Cutscene collisions/Opening/Badge" instance=ExtResource("2_go701")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3060608, -0.6416645, -0.19249439)
+singleUse = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cutscene collisions/Opening/Badge/InteractionBox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6346588, 1.2102766, 0.27670288)
@@ -959,6 +960,7 @@ skeleton = NodePath("../..")
 [connection signal="body_shape_entered" from="Transitions/Dock_To_Street" to="Transitions/Dock_To_Street" method="_on_body_shape_entered"]
 [connection signal="interacted" from="Sea/Boat/Net/InteractionBox" to="Sea/Boat/Net" method="speak"]
 [connection signal="interacted" from="Cutscene collisions/Opening/Opening flashbacks/ForcedInteraction" to="Cutscene collisions/Opening/Opening flashbacks" method="speak"]
+[connection signal="interacted" from="Cutscene collisions/Opening/Badge/InteractionBox" to="Cutscene collisions/Opening/Badge" method="speak"]
 [connection signal="interacted" from="Cutscene collisions/StartingCutscene/StartingBox" to="Main_NPCs/Chippy" method="speak"]
 [connection signal="interacted" from="Cutscene collisions/LesserValueMinigame/ObjectDialogue/ForcedInteraction" to="Cutscene collisions/LesserValueMinigame/ObjectDialogue" method="speak"]
 [connection signal="interacted" from="Main_NPCs/Captain/InteractionBox" to="Main_NPCs/Captain" method="speak"]

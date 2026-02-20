@@ -25,6 +25,18 @@ func end():
 	Interactable.set_can_interact(true)
 	Player.set_can_move(true)
 
+func hide_object(t_objectName: String):
+	var object = null
+	for o in allObjects:
+		if o.name == t_objectName:
+			object = o
+	
+	if (object == null):
+		print("Object was not found")
+		return
+	
+	object.visible = false
+
 func move_to(t_objectName: String, t_placeName: String):
 	var place = null
 	var object = null

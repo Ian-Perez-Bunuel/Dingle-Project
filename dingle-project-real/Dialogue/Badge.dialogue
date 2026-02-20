@@ -3,6 +3,7 @@ An Phiast: Huh, my badge!
 
 do Inventory.add_evidence(StoryFlags.badgeEvidence)
 do StoryFlags.hasBadge = true
+do CutSceneManager.hide_object("Badge")
 
 ~ end
 do CutSceneManager.end()
