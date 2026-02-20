@@ -4,10 +4,9 @@ extends Node
 # Captain flags
 var beerEvidence: Evidence = load("res://Resources/beer.tres")
 var hasBeer: bool = false
-var capTalkNoBeer: bool = false
-var playedSnap: bool = false
+var playedSnap: bool = true
 var wonSnap: bool = false
-var lostSnap: bool = false
+var askedBoat: bool = false
 var capAtBoat: bool = false
 var capAtSea: bool = false
 
@@ -36,10 +35,8 @@ var sawSmellingFlashBack: bool = false
 func resetFlags():
 	# Captain flags
 	hasBeer = false
-	playedSnap = false
+	playedSnap = true
 	wonSnap = false
-	lostSnap = false
-	capTalkNoBeer = false
 	capAtBoat = false
 	capAtSea = false
 	

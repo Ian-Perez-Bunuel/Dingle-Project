@@ -3,8 +3,10 @@ if StoryFlags.sawBarFlashback
 	An Phiast: I better not disturb her any more.
 else
 	Singer: Oh, welcome back!
+	do wait(0.5)
 	An Phiast: Huh?
-	Singer: Your head ok? I know you had a few last night, I'm not suprised it's a little foggy...
+	do wait(0.5)
+	Singer: Your head ok? I'm not suprised it's a little foggy after last night...
 	do FlashbackManager.display(FlashbackManager.FlashBack.Bar)
 	do StoryFlags.sawBarFlashback = true
 	An Phiast: Oh yeah, I was here last night...

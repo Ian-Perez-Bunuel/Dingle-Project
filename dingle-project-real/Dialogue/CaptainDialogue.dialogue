@@ -1,6 +1,10 @@
 ~ start
-if StoryFlags.capAtBoat
+if StoryFlags.caughtGulls
+	=> caughtGulls
+elif StoryFlags.capAtBoat
 	=> atDock
+elif StoryFlags.askedBoat
+	=> checkBeer
 elif StoryFlags.completedGroceries and StoryFlags.playedSnap
 	=> boatTalk
 elif StoryFlags.playedSnap
@@ -8,66 +12,100 @@ elif StoryFlags.playedSnap
 else
 	=> firstMeeting
 	
-~ postGame
-Captain: Ahhh, good game!
-Captain: By the way you can call me "Captain".
-Captain: Looking forward to talking with you again!
 
 ~ firstMeeting
 ???: Hey Buddy! 
 ???: Wanna play a game?
 
-- YESSS!!!
+- Sure!
+	An Phiast: I'd love to!
+	do wait(0.5)
 	???: That's the spirit! Lets play some snap!
 	
-- Nah, I'm good!
-	???: Oh... Okay...
+- Not right now
+	An Phiast: Sorry I'm a bit busy right now.
+	do wait(0.5)
+	???: Well let me know if you change your mind!
+	=> end
 
 ???: Have you played snap before?
 - Yes
+	An Phiast: I love Snap!
 	=> minigame
 - No
+	???: No worries Buddy, let me explain...
 	=> explainSnap
 
 ~ minigame
-???: Perfect lets start!
+do wait(0.5)
+???: Perfect! 
+???: Ready? Let's start.
 do MinigameManager.activate("snapGame") 
 => END
 
 ~ explainSnap
+do wait(0.5)
 ???: It's simple!
-???: Just say when there have been 2 of the same card in a row
-???: If you get it first you get 1 point.
+???: When you see two matching cards on top of eachother, yell "SNAP!" (click).
+???: If you call it first, you a point.
 ???: First to 5 wins!
 	
 ???: Does that make sense?
 	
 - Yes
+	An Phiast: Perfect sense!
 	=> minigame
 - No
-	Captain: Ok, I'll explain again cause you're clearly dense. 
+	An Phiast: Sorry I still don't get it.
+	do wait(0.5)
+	???: Don't worry, let's try this again.
 	=> explainSnap
 
+~ postGame
+???: Good game! Always nice to have some company.
+Captain: By the way, you can call me 'Captain'.
+Captain: Let me know if you ever need anything, Buddy.
+Captain: Be seeing you!
+=> end
 
 ~ boatTalk
-Captain: So you need my boat?
+Captain: Hey Buddy, nice to see you again!
+do wait(0.5)
+An Phiast: Hey Captain! I need a hand reaching the seagulls offshore. Any chance you could lend a hand?
+do wait(0.5)
+Captain: So you need my boat? Hmm...
+Captain: I could help you out, under one condition...
+do wait(0.5)
+An Phiast: And what's that?
+do wait(0.5)
+Captain: Grab me a drink before we head, 0.0 Since I'll be driving!
+do wait(0.5)
+An Phiast: Will do Captain!
 
+do StoryFlags.askedBoat = true
+=> end
+
+~ checkBeer
 elif StoryFlags.hasBeer
-	Captain: I see you got a beer...
-	Captain: Give me that beer and I'll give you a ride on my boat.
-	- Here you go!
+	Captain: I see you've got something for me!
+	Captain: Give it here!
+	- Ok!
+		An Phiast: Here you go!
 		=> giveBeer
-	- Nah
-		Captain: Let me know if you change your mind!
+	- No
+		An Phiast: No, sorry.
+		Captain: Hmmm, well let me know what you grab one for me okay!
 		=> end
 else
-	Captain: Get me a beer and I'll give you a ride on my boat.
-	do StoryFlags.capTalkNoBeer = true
+	Captain: You got that drink yet? 
 	=> end
 
 ~ giveBeer
+do wait(0.5)
+Captain: [wave]Ahhhhhh...[/wave]
+do wait(1)
 Captain: That hit the spot!
-Captain: Meet me at the dock, I'll take you to those damn seagulls
+Captain: Meet me at the dock, I'll take you to your suspects.
 do StoryFlags.capAtBoat = true
 => goToBoat
 
@@ -78,9 +116,10 @@ do CutSceneManager.teleport_to("Captain", "Dock")
 => end
 
 ~ atDock
-Captain: Are you ready to go get those seagulls?
-- Yes, lets go!
-	Captain: Alright lets go get them!
+Captain: Are you ready to go interrogate those gulls?
+- Lets go!
+	An Phiast: Yes, lets go!
+	Captain: Alright, I'll start the engine.
 	do CutSceneManager.transition_stage_1()
 	do wait(0.55)
 	do CutSceneManager.teleport_to("Player", "Sea")
@@ -93,8 +132,12 @@ Captain: Are you ready to go get those seagulls?
 	=> end
 	
 - Wait a second
-	Captain: Okay I'll just wait here for you!
+	Captain: Okay but don't be too long now.
 	=> end
+
+~ caughtGulls
+Captain: Hope you got everything you need Buddy.
+Captain: Good luck with the investigation.
 
 ~ end
 do CutSceneManager.end()

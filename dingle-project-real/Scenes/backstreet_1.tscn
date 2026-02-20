@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=4 uid="uid://cjj5ra8ixu5l0"]
+[gd_scene load_steps=8 format=4 uid="uid://cjj5ra8ixu5l0"]
 
 [ext_resource type="PackedScene" uid="uid://bm4hj1y0q254c" path="res://Assets/Models/World/Backstreet1.glb" id="1_eygvo"]
 
@@ -71,7 +71,26 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_lp0sl")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eygvo"]
+albedo_color = Color(0.49301243, 0.69498426, 0.4353556, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ya1qe"]
+material = SubResource("StandardMaterial3D_eygvo")
+size = Vector3(10, 20, 10)
+
 [node name="Backstreet1" instance=ExtResource("1_eygvo")]
 
 [node name="Plane" parent="." index="0"]
 mesh = SubResource("ArrayMesh_bwr6o")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="2"]
+transform = Transform3D(0.5891399, 0, 0.808031, 0, 1, 0, -0.808031, 0, 0.5891399, 84.04877, 6.8156447, -6.7317276)
+mesh = SubResource("BoxMesh_ya1qe")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="3"]
+transform = Transform3D(-0.021308959, 0, 0.9997729, 0, 1, 0, -0.9997729, 0, -0.021308959, 78.82602, 6.8156447, -19.83356)
+mesh = SubResource("BoxMesh_ya1qe")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." index="4"]
+transform = Transform3D(-0.021308959, 0, 0.9997729, 0, 1, 0, -0.9997729, 0, -0.021308959, 97.4745, 6.8156447, 9.23461)
+mesh = SubResource("BoxMesh_ya1qe")

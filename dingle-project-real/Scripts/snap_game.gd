@@ -139,7 +139,7 @@ func _process(delta: float) -> void:
 		end()
 	
 	if captainScore >= WIN_CON:
-		StoryFlags.lostSnap = true
+		StoryFlags.wonSnap = false
 		end()
 	
 	if Input.is_action_just_pressed("minigameAction"):
