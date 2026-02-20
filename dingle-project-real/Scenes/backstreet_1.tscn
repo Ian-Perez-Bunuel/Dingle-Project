@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=4 uid="uid://cjj5ra8ixu5l0"]
+
+[ext_resource type="PackedScene" uid="uid://bm4hj1y0q254c" path="res://Assets/Models/World/Backstreet1.glb" id="1_eygvo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ya1qe"]
+resource_name = "White"
+cull_mode = 2
+albedo_color = Color(0.45064825, 0.4506483, 0.45064813, 1)
+metallic_specular = 0.49
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5m1wf"]
+resource_name = "Grey1"
+cull_mode = 2
+albedo_color = Color(0.099985994, 0.099985994, 0.099985994, 1)
+metallic_specular = 0.2
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_lp0sl"]
+_surfaces = [{
+"aabb": AABB(-2.4008079, -0.027805725, -1, 7.0932994, 0.027805725, 2.6708612),
+"format": 34896613377,
+"index_count": 78,
+"index_data": PackedByteArray("AAACABYAAAABAAIAFgAJAAAAFgAIAAkAAgAXABYAFwAIABYAAgADABcAFwAGAAgAAwAEABcABAAGABcAAwAFAAQABAAHAAYACgAMABgACgALAAwAGAARAAoAGAAMAA0AGAAQABEAGAANABkAGQAQABgAGQANAA8AGQAPAA4AGQASABAADgASABkADgATABIAEgAUABAAEgAVABQA"),
+"lods": [0.0004729836, PackedByteArray("AAABAAIAAgADAAAAAwAEAAAAAwAFAAQABAAGAAAABAAHAAYAAAAGAAgAAAAIAAkACgALAAwACgAMAA0ACgANAA4ADgANAA8ADgAQAAoACgAQABEADgASABAADgATABIAEgAUABAAEgAVABQA")],
+"name": "White",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 26,
+"vertex_data": PackedByteArray("AAD//y+GAAAAAP//AAAAALx6//8AAAAAAIn//wAAAAD/////L4YAAP////8AAAAAAIkAAC+GAAD//wAAL4YAALx6AAAvhgAAAAAAAC+GAAAAAP//cKwAAAAAAABwrAAAvHoAAHCsAAAAiQAAcKwAAP////9wrAAA//8AAHCsAAC8ev//gsQAAAAA//+CxAAAAIn//4LEAAD/////gsQAALx6/////wAAAIn/////AAC8ev//L4YAAACJ//8vhgAAvHr//3CsAAAAif//cKwAAA==")
+}, {
+"aabb": AABB(-2.4008079, -0.027805725, 0.4, 7.0932994, 1e-05, 0.39908674),
+"format": 34896613377,
+"index_count": 18,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAAAAIABAACAAUABgAEAAUABgAHAAQA"),
+"name": "Grey1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AIkAAAAAAAD//wAA//8AAACJAAD//wAA//8AAAAAAAC8egAAAAAAALx6AAD//wAAAAAAAP//AAAAAAAAAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_bwr6o"]
+resource_name = "Backstreet1_Plane_002"
+_surfaces = [{
+"aabb": AABB(-2.4008079, -0.027805725, -1, 7.0932994, 0.027805725, 2.6708612),
+"attribute_data": PackedByteArray("AAAyswAAAAD//wAA//8AAP//MrP//wAAAAAys///MrP//zKzAAAys///MrP//zKzAAD//wAA//////////////////////////////////8AAP//AAD//////////////////////////zKz//8ys///MrP//zKz/////////////////////w=="),
+"format": 34896613399,
+"index_count": 78,
+"index_data": PackedByteArray("AAACABoAAAABAAIAAgAbABoAAgADABsAAwAEABsAAwAFAAQAHAAIAB0AHQAIAAkAHQAJAAYAHAAHAAgACgAHABwACgALAAcADAAOAB4ADAANAA4AHgAOAA8AHgAPAB8AHwAPABEAHwARABAAIAATACEAIQATABUAIQAVABQAIAAWABMAFgAYABMAFgAZABgAEgAWACAAEgAXABYA"),
+"lods": [0.0004729836, PackedByteArray("AAABAAIAAgADAAAAAwAEAAAAAwAFAAQABgAHAAgABgAIAAkACgAHAAYACgALAAcADAANAA4ADAAOAA8ADAAPABAAEAAPABEAEgATABQAFAATABUAEgAWABMAEgAXABYAFgAYABMAFgAZABgA")],
+"material": SubResource("StandardMaterial3D_ya1qe"),
+"name": "White",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 34,
+"vertex_data": PackedByteArray("AAD//y+G/78AAP//AAD/v7x6//8AAP+/AIn//wAA/7//////L4b/v/////8AAP+/AAD//y+G/n8AiQAAL4b+f7x6AAAvhv5/AAAAAC+G/n//////L4b+f///AAAvhv5/AAD//3Cs//8AAAAAcKz//7x6AABwrP//AIkAAHCs////////cKz/////AABwrP///////3Cs/7+8ev//gsT/vwAA//9wrP+/AAD//4LE/78Aif//gsT/v/////+CxP+/vHr//////78Aif//////v7x6//8vhv+/AIn//y+G/78Aif//L4b+f7x6//8vhv5/vHr//3Cs//8Aif//cKz//wCJ//9wrP+/vHr//3Cs/7////9/////f////3////9/////f////3//f////3////9/////f////3////9///////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9//3////9///////9/////f////3////9/")
+}, {
+"aabb": AABB(-2.4008079, -0.027805725, 0.4, 7.0932994, 1e-05, 0.39908674),
+"attribute_data": PackedByteArray("//8ys/////////////8ys///MrP/////AAD//wAAMrM="),
+"format": 34896613399,
+"index_count": 18,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAAAAIABAACAAUABgAEAAUABgAHAAQA"),
+"material": SubResource("StandardMaterial3D_5m1wf"),
+"name": "Grey1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AIkAAAAA/7///wAA////vwCJAAD///+///8AAAAA/7+8egAAAAD/v7x6AAD///+/AAAAAP///78AAAAAAAD/v////3////9/////f////3////9/////f////3////9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_lp0sl")
+
+[node name="Backstreet1" instance=ExtResource("1_eygvo")]
+
+[node name="Plane" parent="." index="0"]
+mesh = SubResource("ArrayMesh_bwr6o")
