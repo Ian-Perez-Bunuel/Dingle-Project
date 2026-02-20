@@ -6,6 +6,7 @@ elif StoryFlags.completedIntro
 
 
 ~ intro
+do FlashbackManager.display(FlashbackManager.FlashBack.Eating)
 ???: OH GOD NOT AGAIN! 
 do CutSceneManager.move_to("Chippy", "RightOfAlley")
 do wait(1.0)

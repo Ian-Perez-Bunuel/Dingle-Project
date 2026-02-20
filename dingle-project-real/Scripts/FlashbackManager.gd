@@ -1,6 +1,7 @@
 extends Node
 
-var timePerFrame: float = 1.5
+var timePerFrame: float = 0.5
+var loops: float = 3
 var displayScreen: Control
 var textureRect: TextureRect
 
@@ -31,8 +32,9 @@ var eatingFlashbackFrames: Array[Texture2D] = []
 # Loading flashbacks
 func _ready() -> void:
 	await get_tree().process_frame
-	displayScreen = $FlashbackDisplay
-	textureRect = $FlashbackDisplay/frameTexture
+	var world := get_tree().current_scene
+	displayScreen = world.get_node("FlashbackDisplay") as Control
+	textureRect = world.get_node("FlashbackDisplay/frameTexture") as TextureRect
 	
 	# Opening
 	clothesFallingFrames.append(load("res://Assets/Textures/Flashbacks/intro_part1_0000.png"))
@@ -65,11 +67,19 @@ func _ready() -> void:
 
 
 func display(fb: FlashBack):
-	print(fb)
 	var i: int = 0
-	while i < nameToFrames[fb].size():
+	var l: int = 0
+	
+	displayScreen.visible = true
+	
+	while l <= loops:
 		textureRect.texture = nameToFrames[fb][i]
 		
 		await get_tree().create_timer(timePerFrame).timeout
 		i += 1
+		if i >= nameToFrames[fb].size():
+			i = 0
+			l += 1
+	
+	displayScreen.visible = false
 	
