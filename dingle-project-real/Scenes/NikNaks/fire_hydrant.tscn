@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://qanw6pu7uldv"]
+
+[ext_resource type="Texture2D" uid="uid://bdmxsv6nm2qjj" path="res://Assets/Textures/FireHydrant.png" id="1_p2qvh"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g44x5"]
+radius = 0.89990234
+height = 3.6171875
+
+[node name="FireHydrant" type="Sprite3D"]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, 0, 0)
+texture = ExtResource("1_p2qvh")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15722656, 0)
+shape = SubResource("CapsuleShape3D_g44x5")
