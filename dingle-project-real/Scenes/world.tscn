@@ -1,4 +1,4 @@
-[gd_scene load_steps=111 format=3 uid="uid://iysllbq6upr7"]
+[gd_scene load_steps=113 format=3 uid="uid://iysllbq6upr7"]
 
 [ext_resource type="PackedScene" uid="uid://bpgfead5netw3" path="res://Scenes/player.tscn" id="1_7yui6"]
 [ext_resource type="PackedScene" uid="uid://8t4uq2rp4c1o" path="res://Scenes/snap_game.tscn" id="1_c5t2i"]
@@ -8,12 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://bb61pavwemraa" path="res://Scenes/evidence_book.tscn" id="6_ikia7"]
 [ext_resource type="Script" uid="uid://45pssicrscyg" path="res://Scripts/UIManager.gd" id="8_ikia7"]
 [ext_resource type="AudioStream" uid="uid://bpp5d07ib52js" path="res://Assets/Audio/shutters.mp3" id="8_ochwf"]
-[ext_resource type="PackedScene" path="res://Scenes/backstreet_1.tscn" id="9_opbav"]
+[ext_resource type="PackedScene" uid="uid://cjj5ra8ixu5l0" path="res://Scenes/backstreet_1.tscn" id="9_opbav"]
 [ext_resource type="PackedScene" path="res://Scenes/docks_1.tscn" id="10_opbav"]
 [ext_resource type="PackedScene" uid="uid://d00d32xh76ix" path="res://Assets/Models/Boat.glb" id="12_1vso6"]
 [ext_resource type="Script" uid="uid://bwifi60ec7u1t" path="res://Scripts/scene_transition.gd" id="12_c5t2i"]
-[ext_resource type="Shader" path="res://Shaders/Water.gdshader" id="12_e0ngr"]
-[ext_resource type="PackedScene" uid="uid://ct3ngq0m2f83c" path="res://Scenes/seagull_game.tscn" id="13_c5t2i"]
+[ext_resource type="Shader" uid="uid://d3lkdk8f7w4nc" path="res://Shaders/Water.gdshader" id="12_e0ngr"]
+[ext_resource type="PackedScene" path="res://Scenes/seagull_game.tscn" id="13_c5t2i"]
 [ext_resource type="Shader" uid="uid://bscb7e5fasq7w" path="res://Shaders/screen_transition.gdshader" id="13_e0ngr"]
 [ext_resource type="PackedScene" uid="uid://crte5pffhmvf5" path="res://Scenes/ObjectDialogue.tscn" id="14_axeuq"]
 [ext_resource type="PackedScene" uid="uid://cg1gikex5xxfq" path="res://Assets/Models/World/Bar.glb" id="14_e0ngr"]
@@ -35,7 +35,7 @@
 [ext_resource type="Texture2D" uid="uid://cfoen85bbr3qb" path="res://Assets/Textures/Characters/Fisherman.png" id="26_pt3ps"]
 [ext_resource type="Texture2D" uid="uid://cvop7bm300lvl" path="res://Assets/Textures/Characters/GullOther.png" id="26_qebug"]
 [ext_resource type="Resource" uid="uid://cxggt6lkmgt0m" path="res://Dialogue/Seagull.dialogue" id="27_1vso6"]
-[ext_resource type="Script" uid="uid://b1r2lual8ouy7" path="res://Scripts/GullManager.gd" id="27_3ua1v"]
+[ext_resource type="Script" path="res://Scripts/GullManager.gd" id="27_3ua1v"]
 [ext_resource type="Texture2D" uid="uid://b4lgcev48b5q3" path="res://Assets/Textures/Characters/Band_Singer.png" id="27_hmc15"]
 [ext_resource type="Texture2D" uid="uid://da6eu338gu4ok" path="res://Assets/Textures/Characters/GullMain.png" id="27_o2rbt"]
 
@@ -109,9 +109,20 @@ _data = {
 &"fade_to_invis": SubResource("Animation_p5wkl")
 }
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ochwf"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_p5wkl"]
+noise = SubResource("FastNoiseLite_ochwf")
+seamless = true
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_go701"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+sky_top_color = Color(0.31764707, 0.74509805, 0.8117647, 1)
+sky_horizon_color = Color(0.67058825, 0.85490197, 0.80784315, 1)
+sky_energy_multiplier = 0.9
+sky_cover = SubResource("NoiseTexture2D_p5wkl")
+sky_cover_modulate = Color(1, 1, 1, 0.3254902)
+ground_bottom_color = Color(0.37254903, 0.62352943, 0.8156863, 1)
+ground_horizon_color = Color(0.67058825, 0.85490197, 0.80784315, 1)
 
 [sub_resource type="Sky" id="Sky_5a7ea"]
 sky_material = SubResource("ProceduralSkyMaterial_go701")
@@ -423,6 +434,7 @@ mouse_filter = 1
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
+shadow_normal_bias = 3.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_8j60k")
@@ -953,6 +965,9 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74.607864, -0.19225025, 27.924187)
 mesh = SubResource("BoxMesh_dt0r1")
 skeleton = NodePath("../..")
+
+[node name="Boat" parent="." instance=ExtResource("12_1vso6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 107.19921, -3.1257467, 28.76767)
 
 [connection signal="body_shape_entered" from="Transitions/Street_To_Dock" to="Transitions/Street_To_Dock" method="_on_body_shape_entered"]
 [connection signal="body_shape_entered" from="Transitions/Street_To_Bar" to="Transitions/Street_To_Bar" method="_on_body_shape_entered"]
