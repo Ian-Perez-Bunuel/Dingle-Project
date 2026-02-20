@@ -15,6 +15,8 @@ var speed: int = 500
 
 @onready var seagull = $Seagull
 @onready var seagullSprite = $Seagull/Sprite2D
+@export var seagullTexture: Texture2D
+@export var alphaSeagullTexture: Texture2D
 @export var seagullStartHeight: float
 
 @onready var scoreLabel = $Score
@@ -108,6 +110,9 @@ func score_point() -> void:
 	score += 1
 	scoreLabel.text = "Score: " + str(score)
 	
+	if score == WIN_CON-1:
+		seagullSprite.texture = alphaSeagullTexture
+	
 	if score >= WIN_CON:
 		end()
 		
@@ -117,6 +122,7 @@ func set_caught(area: Area2D):
 func end():
 	print("ENDED")
 	visible = false
+	seagullSprite.texture = seagullTexture # Reset
 	Inventory.add_evidence(reward)
 	StoryFlags.caughtGulls = true
 	

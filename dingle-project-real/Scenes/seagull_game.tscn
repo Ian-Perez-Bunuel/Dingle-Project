@@ -1,11 +1,51 @@
-[gd_scene load_steps=9 format=3 uid="uid://ct3ngq0m2f83c"]
+[gd_scene load_steps=14 format=3 uid="uid://ct3ngq0m2f83c"]
 
 [ext_resource type="Script" uid="uid://njn2syb7k1ap" path="res://Scripts/seagull_game.gd" id="1_wfp23"]
 [ext_resource type="Resource" uid="uid://bn3cp1bn3tvi7" path="res://Resources/SeagullReward.tres" id="2_p5bjh"]
 [ext_resource type="Texture2D" uid="uid://b5qhdh5ostk2y" path="res://Assets/Textures/minigames/minigame_seagull_background.png" id="3_o8df2"]
 [ext_resource type="Texture2D" uid="uid://bxakt7ipqq2mi" path="res://Assets/Textures/minigames/minigame_seagull_net.png" id="3_wvsv6"]
+[ext_resource type="Texture2D" uid="uid://dlopfhe0u44pw" path="res://Assets/Textures/minigames/minigame_seagull_gull2.png" id="4_87gjl"]
 [ext_resource type="Texture2D" uid="uid://hx4hqyeg1jdj" path="res://Assets/Textures/minigames/minigame_seagull_gull1.png" id="4_o8df2"]
 [ext_resource type="FontFile" uid="uid://c7tim3pl1lfw5" path="res://Assets/Schoolbell-Regular.ttf" id="6_sdik1"]
+[ext_resource type="Texture2D" uid="uid://dhvu7gaa0pvb0" path="res://Assets/Textures/minigames/minigame_seagull_water.png" id="6_tvm5x"]
+
+[sub_resource type="Animation" id="Animation_tvm5x"]
+resource_name = "sway"
+length = 6.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 6),
+"transitions": PackedFloat32Array(0.4, 1.5, 0.4),
+"update": 0,
+"values": [Vector2(-366, 553), Vector2(-5, 553), Vector2(-366, 553)]
+}
+
+[sub_resource type="Animation" id="Animation_0gj42"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-366, 553)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0gj42"]
+_data = {
+&"RESET": SubResource("Animation_0gj42"),
+&"sway": SubResource("Animation_tvm5x")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0183m"]
 size = Vector2(98, 98)
@@ -25,6 +65,8 @@ grow_vertical = 2
 script = ExtResource("1_wfp23")
 reward = ExtResource("2_p5bjh")
 startHeight = 500.0
+seagullTexture = ExtResource("4_o8df2")
+alphaSeagullTexture = ExtResource("4_87gjl")
 seagullStartHeight = 130.0
 
 [node name="Background" type="TextureRect" parent="."]
@@ -35,6 +77,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_o8df2")
+
+[node name="Waves" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -942.0
+offset_top = -95.0
+offset_right = 578.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("6_tvm5x")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Waves"]
+libraries = {
+&"": SubResource("AnimationLibrary_0gj42")
+}
 
 [node name="Net" type="Area2D" parent="."]
 position = Vector2(593, 500)
