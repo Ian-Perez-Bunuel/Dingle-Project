@@ -133,7 +133,7 @@ do wait(0.5)
 ???: Finally you figured it out!
 
 # detective walks up
-do CutSceneManager.move_to("Detective", "AnnePos")
+do CutSceneManager.show_object("Detective")
 do wait(1.0)
 
 ???: Because it isn't your name, An Phiast. Read it again.

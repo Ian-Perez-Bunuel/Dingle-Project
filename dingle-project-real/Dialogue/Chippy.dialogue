@@ -52,6 +52,7 @@ Chippy: Have you found the culprit yet
 - Yes
 	An Phiast: I've cracked the case!
 	Chippy: Alright lets go finish this!
+	do CutSceneManager.move_to("Player", "FinalPlace")
 - Almost
 	An Phiast: I need a little more time to gather evidence.
 	Chippy: Alright...

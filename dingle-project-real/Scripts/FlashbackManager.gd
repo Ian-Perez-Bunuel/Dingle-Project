@@ -100,10 +100,10 @@ func show_end_card():
 	endCardFadeAnimation.play("ShowEndCard")
 	await endCardFadeAnimation.animation_finished
 	
-	await get_tree().create_timer(4.0).timeout
+	await get_tree().create_timer(5.0).timeout
 	
-	# BACK TO MENU
-	# RESET
+	CutSceneManager.show_main_menu()
+	StoryFlags.resetFlags()
 	
 	endCard.visible = false
 

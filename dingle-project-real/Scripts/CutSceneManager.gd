@@ -6,12 +6,14 @@ var allPlaces : Array[Node3D]
 var screen_effect
 var transition_sound
 
+var mainMenu: Control
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	await get_tree().process_frame
 	var world := get_tree().current_scene
 	transition_sound = world.get_node("Transitions/AudioStreamPlayer") as AudioStreamPlayer
-	
+	mainMenu = world.get_node("Control") as Control
 	screen_effect = get_tree().current_scene.get_node("TransitionShader/ColorRect")
 
 	allObjects.clear()
@@ -29,6 +31,9 @@ func end():
 	Player.set_can_move(true)
 	UI.canOpen = true
 
+func show_main_menu():
+	mainMenu.show()
+
 func hide_object(t_objectName: String):
 	var object = null
 	for o in allObjects:
@@ -40,6 +45,18 @@ func hide_object(t_objectName: String):
 		return
 	
 	object.visible = false
+	
+func show_object(t_objectName: String):
+	var object = null
+	for o in allObjects:
+		if o.name == t_objectName:
+			object = o
+	
+	if (object == null):
+		print("Object was not found")
+		return
+	
+	object.visible = true
 
 func move_to(t_objectName: String, t_placeName: String):
 	var place = null
