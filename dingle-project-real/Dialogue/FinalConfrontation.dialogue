@@ -1,5 +1,20 @@
 ~ start
-An Phiast: Okay so who could it be?
+An Phiast: [speed=0.5]So...
+An Phiast: You're probably wondering why I've gathered you all here.
+do wait(0.5)
+Noel: I'm not, you told me you had the culprit!
+do wait(0.5)
+Leon: The culprit!? Oh Noel, is this you blaming me for another one of your knuckleheaded errors?
+do wait(0.5)
+Captain: I'm a culprit? What the heck, Detective! I thought we were friends!
+do wait(0.5)
+Seagull: Squaaawkk! (Well it wasn't me! I gave my alibi!)
+do wait(0.5)
+An Phiast: Settle down everyone, I've investigated thoroughly and looked carefully at the clues.
+An Phiast: And all the evidence points to...
+=> accuse
+
+~ accuse
 - The Seagulls
 	do StoryFlags.addName("Seagulls")
 	=> Seagull
@@ -17,44 +32,131 @@ An Phiast: Okay so who could it be?
 	=> EvilChippy
 
 
-- ME?! [if StoryFlags.canSeeSelf()]
+- Someone Else... [if StoryFlags.canSeeSelf()]
 	=> Me
 
 
 ~ Seagull
-Nah wasn't me
-=> start
+An Phiast: Well I think the answer is obvious, these seagulls already have a history of stealing fish and chips. Sometimes, the correct answer is the most obvious one.
+do wait(0.5)
+Seagull: Squaaa. (Sorry landlubber, wasn't us.)
+do wait(0.5)
+An Phiast: A likely story, but-
+do wait(0.5)
+Seagull: Squaaawk Squaa! (Look, we steal the red one's scraps all the time. But the blue one? Aye, he's too far. Ask anyone if they've seen us flying around by there.)
+do wait(0.5)
+An Phiast: Hmm...
+An Phiast: Well if it wasn't them then it must be...
+=> accuse
 
 ~ Captain
-Nah wasn't me
-=> start
+An Phiast: It was the Captain! The man is a fiend for both fish and games of skill! 
+An Phiast: And what is the perfect marriage of those two if not stealing a meal and making a run for it! But oh, a nice fish and chips makes you quite parched! So you had to wash it off with a nice cool beer.
+do wait(0.5)
+Noel: Captain Daniels is a loyal customer and good friend, he'd never do such a thing!
+Captain: And I was out at sea until entering the bar this morning, the gull can attest. 
+Seagull: Aye, out looking for our dear Fungie you were.
+do wait(0.5)
+Noel: So detective, any other leads?
+do wait(0.5)
+Phiast: Right. Um... Sorry Captain.
+=> accuse
 
 ~ Chippy
-Nah wasn't me
-=> start
+An Phiast: The Chipper himself! You were losing business to Leon! 
+An Phiast: Even the gulls wouldn't touch your scran! So you made up a phony tale about a 'Perfect Fish and Chips' to drum up attention! But you couldn't actually commit.
+do wait(0.5)
+Captain: Umm. I've actually purchased his fish and chips before. They're really good.
+Seagull: I've snagged a couple loose crumbs here and there. They're really good indeed.
+Leon: Hmph.
+do wait(0.5)
+Noel: What the heck, detective! If I knew you were just gonna accuse me, I'd never have hired you!
+do wait(0.5)
+An Phiast: Right, sorry. I was actually gathering everyone's reaction... because the real culprit is...
+=> accuse
 
 ~ EvilChippy
-Nah wasn't me
-=> start
-
-~ Detective
-Nah wasn't me
-=> start
+An Phiast: Well the answer is quite obvious. Brotherly rivalry. Leon here is the owner of a failing business. Losing stock to gulls and needing to buy his ingredients from Lesservalu to stay afloat. 
+An Phiast: But what if? He were to steal his brother's recipe and disguise it as his own cooking! How delightfully devilish!
+do wait(0.5)
+Chippy: Sorry Detective, but that's not possible.
+do wait(0.5)
+An Phiast: What? But he's your evil twin brother! Right??
+do wait(0.5)
+Chippy: Right, but... if he were to steal my fish and chips, that'd be admitting that my fish and chips are better than his.
+E. Chippy: Because they are. 
+An Chippy: See? He can't be the culprit, I'm sorry, Detective. Any other leads?
+do wait(0.5)
+An Phiast: Oh, well, okay, give me a second...
+=> accuse
 
 ~ Me
-It was me... wasn;t it...
+An Phiast: I believe I have the culprit. But it is an answer I myself don't want to hear.
+do wait(0.5)
+Noel: Well Detective, spit it out!
+do wait(0.5)
+An Phiast: The culprit is....
+# play all flashbacks here in order
+An Phiast: Me.
+do wait(0.5)
+Leon: What!!!???
+Captain: Detective, but I thought you were a person of honour!
+Noel: I sent a fraud to get my groceries!?
+Seagull: Squaaaarr. (Aye, good to see ya finally own up.)
+do wait(0.5)
+An Phiast: I was after a long night of celebration, and I sensed a waft of something most delicious. Heading over and seeing a free meal, I grabbed it and quickly made a run for it. 
 => endSequence
 
 ~ endSequence
 do FlashbackManager.display(FlashbackManager.FlashBack.Eating)
+
+An Phiast: I must've fallen asleep soon after eating it all. I'm sorry.
+do wait(0.5)
+Noel: But then... why the detective outfit?
+do wait(0.5)
+An Phiast: I don't know. I woke up in these clothes and the badge- it had my name on it.
+do wait(0.5)
 ???: Finally you figured it out!
 # detective walks up
-An Phiast: Who are you???
-Detective: I'm the detective who's badge you stole!
-An Phiast: No this is mine?
+???: Because it isn't your name, An Phiast. Read it again.
+do wait(0.5)
+An Phiast: Huh?
+
 do FlashbackManager.show_badge()
-# some more dialogue
-# end screen / credits
+
+An Phiast: How did I-?
+do wait(0.5)
+Anne Feast: I'll admit, the mistake is mine. I was drying my clothes on a line and they must've slipped off. Coincidentally falling [wave]right[/wave] on top of you.
+do wait(0.5)
+An Phiast: So I- I'm not a detective?
+do wait(0.5)
+Anne Feast: Legally? Not in the slightest. But... 
+Anne Feast: I've been tracking you since you left that alleyway, and I must say... Your methods are unorthodox but your spirit is undeniable. I see potential in you.
+do wait(0.5)
+An Phiast: Woah, thanks Detective!
+do wait(0.5)
+Anne Feast: But I'm gonna need the outfit back.
+do wait(0.5)
+An Phiast: Awww... even the hat?
+do wait(0.5)
+Anne Feast: Hmmm... Fine.
+Anne Feast: Keep the hat, trainee.
+do wait(0.5)
+An Phiast: Hooray!!
+do wait(0.5)
+Noel: Well An Phiast, I suppose at the end of the day... you did solve the case.
+do wait(0.5)
+An Phiast: I guess so!
+do wait(0.5)
+Noel: I suppose, you do deserve a reward for your efforts... Do you remember the taste of my perfect fish and chips?
+do wait(0.5)
+An Phiast: Not by much... Only that it was absolutely scrumptious!
+do wait(0.5)
+Noel: How about taste testing my second batch 
+do wait(0.5)
+An Phiast: Sounds perfect!
+
+# fade to end screen / credits
 # return to main menu
 
 do CutSceneManager.end()
