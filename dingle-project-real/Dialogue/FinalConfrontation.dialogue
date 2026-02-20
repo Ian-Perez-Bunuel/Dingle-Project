@@ -83,13 +83,13 @@ An Phiast: Well the answer is quite obvious. Brotherly rivalry. Leon here is the
 An Phiast: Losing stock to gulls and needing to buy his ingredients from Lesservalu to stay afloat. 
 An Phiast: But what if? He were to steal his brother's recipe and disguise it as his own cooking! How delightfully devilish!
 do wait(0.5)
-Chippy: Sorry Detective, but that's not possible.
+Noel: Sorry Detective, but that's not possible.
 do wait(0.5)
 An Phiast: What? But he's your evil twin brother! Right??
 do wait(0.5)
-Chippy: Right, but... if he were to steal my fish and chips, that'd be admitting that my fish and chips are better than his.
-E. Chippy: Because they are. 
-An Chippy: See? He can't be the culprit, I'm sorry, Detective. Any other leads?
+Noel: Right, but... if he were to steal my fish and chips, that'd be admitting that my fish and chips are better than his.
+Leon: Because they are. 
+Noel: See? He can't be the culprit, I'm sorry, Detective. Any other leads?
 do wait(0.5)
 An Phiast: Oh, well, okay, give me a second...
 => accuse
