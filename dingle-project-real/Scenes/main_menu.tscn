@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://g2cbyvjmybsl"]
+
+[ext_resource type="Texture2D" uid="uid://qdrs7by7tkw7" path="res://Assets/Textures/Cover.png" id="1_28flt"]
+[ext_resource type="Script" uid="uid://bn8u6d4mkpu8v" path="res://Scripts/main_menu.gd" id="1_n45e2"]
+[ext_resource type="Texture2D" uid="uid://d4dmkn4gqr77s" path="res://Assets/Textures/UI/Credits.png" id="2_ce3w2"]
+[ext_resource type="Texture2D" uid="uid://degil683eft8t" path="res://Assets/Textures/UI/Play.png" id="3_n45e2"]
+[ext_resource type="Texture2D" uid="uid://dhgtq0iahbon2" path="res://Assets/Textures/UI/Quit.png" id="4_opfnp"]
+
+[node name="Control" type="Control" unique_id=1387908326]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n45e2")
+
+[node name="Play Button" type="Button" parent="." unique_id=1366948296]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 308.0
+offset_right = 266.0
+offset_bottom = 412.0
+
+[node name="Credits Button" type="Button" parent="." unique_id=596895075]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 419.0
+offset_right = 264.0
+offset_bottom = 522.0
+
+[node name="Quit Button" type="Button" parent="." unique_id=1331614814]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 536.0
+offset_right = 264.0
+offset_bottom = 639.0
+
+[node name="Cover" type="Sprite2D" parent="." unique_id=2003797950]
+position = Vector2(576, 324)
+texture = ExtResource("1_28flt")
+
+[node name="Credits" type="Sprite2D" parent="." unique_id=952184903]
+position = Vector2(577, 325)
+texture = ExtResource("2_ce3w2")
+
+[node name="Play" type="Sprite2D" parent="." unique_id=1558316630]
+position = Vector2(577, 325)
+texture = ExtResource("3_n45e2")
+
+[node name="Quit" type="Sprite2D" parent="." unique_id=1299015638]
+position = Vector2(577, 325)
+texture = ExtResource("4_opfnp")
+
+[connection signal="pressed" from="Play Button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Credits Button" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="Quit Button" to="." method="_on_quit_button_pressed"]

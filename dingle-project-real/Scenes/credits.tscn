@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b604f1dldk712"]
+
+[ext_resource type="Texture2D" uid="uid://qdrs7by7tkw7" path="res://Assets/Textures/Cover.png" id="1_r18jl"]
+
+[node name="Control" type="Control" unique_id=1926807351]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Cover" type="Sprite2D" parent="." unique_id=1680342300]
+position = Vector2(999.4114, 599.5001)
+scale = Vector2(2.9399505, 3.3842595)
+texture = ExtResource("1_r18jl")
