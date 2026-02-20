@@ -43,7 +43,7 @@ Noel: Good luck Detective
 
 ~ allDoneAlert
 do StoryFlags.alertGiven = true
-do CutSceneManager.teleport_to("Chippy", "ChippyDocksEnd")
+do CutSceneManager.teleport_to("Chippy", "ChippyDocksStart")
 do CutSceneManager.move_to("Chippy", "ChippyDocksEnd")
 Noel: HEY!!!
 do wait(3.5)

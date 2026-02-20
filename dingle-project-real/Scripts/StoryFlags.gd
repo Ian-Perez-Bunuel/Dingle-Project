@@ -3,10 +3,10 @@ extends Node
 
 # Captain flags
 var beerEvidence: Evidence = load("res://Resources/beer.tres")
-var hasBeer: bool = true
-var playedSnap: bool = true
-var wonSnap: bool = true
-var askedBoat: bool = true
+var hasBeer: bool = false
+var playedSnap: bool = false
+var wonSnap: bool = false
+var askedBoat: bool = false
 var capAtBoat: bool = false
 var capAtSea: bool = false
 
@@ -16,8 +16,8 @@ var alertGiven: bool = false
 
 # Evil Chippy flags
 var evilChippyEvidence: Evidence = load("res://Resources/evilChippyEvidence.tres")
-var talkedToEvilChippy: bool = true
-var completedGroceries: bool = true
+var talkedToEvilChippy: bool = false
+var completedGroceries: bool = false
 
 # Seagull flags
 var seagullEvidence: Evidence = load("res://Resources/seagullEvidence.tres")
