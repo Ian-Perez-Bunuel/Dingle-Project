@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bjx4oo1w21je"]
+[gd_scene load_steps=13 format=3 uid="uid://bjx4oo1w21je"]
 
 [ext_resource type="Texture2D" uid="uid://qdrs7by7tkw7" path="res://Assets/Textures/Cover.png" id="1_28flt"]
 [ext_resource type="Script" uid="uid://bn8u6d4mkpu8v" path="res://Scripts/main_menu.gd" id="1_n45e2"]
@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://b601u3600w5gi" path="res://Assets/Textures/UI/button_quit1.png" id="7_5egv6"]
 [ext_resource type="Texture2D" uid="uid://baj3ori5wlj73" path="res://Assets/Textures/UI/button_quit2.png" id="8_vtepg"]
 [ext_resource type="Texture2D" uid="uid://cky5dtoy5uwg1" path="res://Assets/Textures/UI/FishyBusinessLogo.png" id="9_8dnnj"]
+[ext_resource type="Texture2D" uid="uid://c1uk8jkeyy2cn" path="res://Assets/Textures/JamLogo.png" id="10_t1dhk"]
+[ext_resource type="Texture2D" uid="uid://bqtaq2msbcfym" path="res://Assets/Textures/Festival.png" id="11_5egv6"]
+[ext_resource type="Texture2D" uid="uid://dpno7u2d4gk05" path="res://Assets/Textures/setuLogo.png" id="12_vtepg"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -54,6 +57,21 @@ texture_hover = ExtResource("8_vtepg")
 position = Vector2(975, 94)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("9_8dnnj")
+
+[node name="JamLogo" type="Sprite2D" parent="."]
+position = Vector2(519, 571)
+scale = Vector2(0.39156622, 0.3915662)
+texture = ExtResource("10_t1dhk")
+
+[node name="Festival" type="Sprite2D" parent="."]
+position = Vector2(1003, 590)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("11_5egv6")
+
+[node name="SetuLogo" type="Sprite2D" parent="."]
+position = Vector2(751, 586)
+scale = Vector2(0.55714273, 0.55714273)
+texture = ExtResource("12_vtepg")
 
 [connection signal="pressed" from="Play Button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Credits Button" to="." method="_on_credits_button_pressed"]
