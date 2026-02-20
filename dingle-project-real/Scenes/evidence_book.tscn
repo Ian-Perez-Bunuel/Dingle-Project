@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://bb61pavwemraa"]
+[gd_scene load_steps=11 format=3 uid="uid://bb61pavwemraa"]
 
 [ext_resource type="Script" uid="uid://pec5fvq7mcqp" path="res://Scripts/evidence_book.gd" id="1_x0320"]
 [ext_resource type="Resource" uid="uid://158iwhq64cex" path="res://Resources/TestEvidence.tres" id="2_4uanu"]
+[ext_resource type="Texture2D" uid="uid://770oby06nayx" path="res://Assets/Textures/ui_bookmark_evidence1.png" id="3_1nkn7"]
+[ext_resource type="Texture2D" uid="uid://odmhqq7bph3k" path="res://Assets/Textures/ui_evidencebook.png" id="3_4uanu"]
 [ext_resource type="Texture2D" uid="uid://cqrb0aqol3qk6" path="res://icon.svg" id="3_ux2fu"]
+[ext_resource type="Texture2D" uid="uid://ctdspuvkpjns7" path="res://Assets/Textures/ui_bookmark_evidence2.png" id="4_1eja6"]
+[ext_resource type="Texture2D" uid="uid://qwlgkewg3a8u" path="res://Assets/Textures/ui_arrow1.png" id="5_1orab"]
+[ext_resource type="Texture2D" uid="uid://3ovrxfyopu7d" path="res://Assets/Textures/ui_bookmark_settings1.png" id="5_len6e"]
+[ext_resource type="Texture2D" uid="uid://dxlqdu0empurg" path="res://Assets/Textures/ui_arrow2.png" id="6_3o2wa"]
+[ext_resource type="Texture2D" uid="uid://bc5634jb31sc" path="res://Assets/Textures/ui_bookmark_settings2.png" id="6_j5cy3"]
 
 [node name="EvidenceBook" type="Control" node_paths=PackedStringArray("image1", "image2", "description")]
 layout_mode = 3
@@ -26,6 +33,32 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.60784316)
 
+[node name="EvidenceButton" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 909.0
+offset_top = 5.0
+offset_right = 970.0
+offset_bottom = 112.0
+texture_normal = ExtResource("3_1nkn7")
+texture_hover = ExtResource("4_1eja6")
+
+[node name="SettingsButton" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 984.0
+offset_top = 5.0
+offset_right = 1045.0
+offset_bottom = 111.0
+texture_normal = ExtResource("5_len6e")
+texture_hover = ExtResource("6_j5cy3")
+
+[node name="Book" type="TextureRect" parent="Background"]
+layout_mode = 0
+offset_top = 43.0
+offset_right = 1152.0
+offset_bottom = 691.0
+mouse_filter = 2
+texture = ExtResource("3_4uanu")
+
 [node name="Label" type="Label" parent="Background"]
 layout_mode = 1
 anchors_preset = 13
@@ -38,13 +71,15 @@ offset_right = 180.0
 offset_bottom = -128.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Test"
 
 [node name="Polaroid1" type="ColorRect" parent="Background"]
 layout_mode = 1
-offset_left = 51.000008
-offset_top = 72.0
-offset_right = 301.0
-offset_bottom = 347.0
+offset_left = 129.0
+offset_top = 156.0
+offset_right = 307.74463
+offset_bottom = 372.0
 rotation = -0.1308997
 
 [node name="Image" type="TextureRect" parent="Background/Polaroid1"]
@@ -62,10 +97,10 @@ texture = ExtResource("3_ux2fu")
 
 [node name="Polaroid2" type="ColorRect" parent="Background"]
 layout_mode = 1
-offset_left = 839.99994
-offset_top = 304.99997
-offset_right = 1090.0
-offset_bottom = 580.0
+offset_left = 847.0
+offset_top = 115.99999
+offset_right = 1026.947
+offset_bottom = 332.00006
 rotation = 0.20071286
 
 [node name="Image" type="TextureRect" parent="Background/Polaroid2"]
@@ -81,29 +116,35 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_ux2fu")
 
-[node name="PreviousButton" type="Button" parent="."]
+[node name="PreviousButton" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -50.0
-offset_right = 78.0
+offset_left = 132.0
+offset_top = -118.0
+offset_right = 239.0
+offset_bottom = -65.0
 grow_vertical = 0
-text = "PREV
-"
+texture_normal = ExtResource("5_1orab")
+texture_hover = ExtResource("6_3o2wa")
+flip_h = true
 
-[node name="NextButton" type="Button" parent="."]
+[node name="NextButton" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -78.0
-offset_top = -50.0
+offset_left = -240.0
+offset_top = -118.0
+offset_right = -133.0
+offset_bottom = -65.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "Next"
+texture_normal = ExtResource("5_1orab")
+texture_hover = ExtResource("6_3o2wa")
 
 [connection signal="pressed" from="PreviousButton" to="." method="prev"]
 [connection signal="pressed" from="NextButton" to="." method="next"]
