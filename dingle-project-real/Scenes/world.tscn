@@ -266,7 +266,7 @@ size = Vector3(21.584229, 27.021973, 11.46521)
 size = Vector3(2.1253395, 1, 2.0786285)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5kw24"]
-size = Vector3(3.9863281, 2.4882813, 4.078125)
+size = Vector3(3.9863281, 2.1508179, 4.078125)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uqdn7"]
 size = Vector3(3.8564453, 1, 4.185547)
@@ -284,6 +284,22 @@ size = Vector3(65, 20, 25)
 size = Vector3(8.155, 1, 7.945)
 
 [node name="World" type="Node3D"]
+
+[node name="FlashbackDisplay" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="frameTexture" type="TextureRect" parent="FlashbackDisplay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="snapGame" parent="." instance=ExtResource("1_c5t2i")]
 visible = false
@@ -703,9 +719,10 @@ dialogue_resource = ExtResource("23_opbav")
 texture = ExtResource("21_i4fjy")
 
 [node name="InteractionBox" parent="Main_NPCs/Chippy" instance=ExtResource("2_go701")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7162269, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Main_NPCs/Chippy/InteractionBox"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25878912, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.60926604, 0)
 shape = SubResource("BoxShape3D_5kw24")
 
 [node name="EvilChippy" parent="Main_NPCs" groups=["object"] instance=ExtResource("4_8j60k")]

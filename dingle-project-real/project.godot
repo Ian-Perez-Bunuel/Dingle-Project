@@ -22,6 +22,7 @@ CutSceneManager="*res://Scripts/CutSceneManager.gd"
 MinigameManager="*res://Scripts/MinigameManager.gd"
 Inventory="*res://Scripts/Inventory.gd"
 StoryFlags="*res://Scripts/StoryFlags.gd"
+FlashbackManager="*res://Scripts/FlashbackManager.gd"
 
 [dialogue_manager]
 
