@@ -15,12 +15,15 @@ func _ready() -> void:
 	sprite.texture = texture
 	if flippedTexture:
 		sprite.flip_h = true
+	
+	animationPlayer.play("idle")
 
 func speak():
 	DialogueManager.show_dialogue_balloon(dialogue_resource, "start");
 
 func set_target_pos(t_targetPos: Vector3):
 	hasTarget = true
+	animationPlayer.stop()
 	nav_agent.target_position =  t_targetPos
 
 func _physics_process(delta: float) -> void:
@@ -37,5 +40,7 @@ func movement():
 		hasTarget = false
 		animationPlayer.stop()
 		velocity = Vector3.ZERO
+		await get_tree().create_timer(2.0).timeout
+		animationPlayer.play("idle")
 		
 	move_and_slide()
