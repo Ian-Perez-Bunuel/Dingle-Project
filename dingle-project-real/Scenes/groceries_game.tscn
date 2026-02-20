@@ -35,7 +35,6 @@ winCons = Dictionary[int, int]({
 })
 
 [node name="Background1" type="TextureRect" parent="."]
-visible = false
 z_index = -5
 layout_mode = 0
 offset_right = 40.0
@@ -43,7 +42,6 @@ offset_bottom = 40.0
 texture = ExtResource("2_5braf")
 
 [node name="Background2" type="TextureRect" parent="."]
-visible = false
 z_index = -5
 layout_mode = 0
 offset_left = 1152.0
