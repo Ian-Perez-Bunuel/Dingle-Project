@@ -35,6 +35,8 @@ func normal_movement(delta: float):
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 		$AnimationPlayer.play("walk")
+		if !$PlayerNoises.playing: # player movement audio
+			$PlayerNoises.play()
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
@@ -44,8 +46,8 @@ func normal_movement(delta: float):
 		flip_sprite(true)
 	elif direction.x > 0.0 and facing_left:
 		flip_sprite(false)
-		
-	
+
+
 	#if direction: #MAY USE THIS VERSION LATER, maybe combine with the stuff above it
 		#moving = true
 		#if not $AnimationPlayer.is_playing():
