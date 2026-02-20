@@ -1,12 +1,16 @@
-[gd_scene format=3 uid="uid://g2cbyvjmybsl"]
+[gd_scene load_steps=10 format=3 uid="uid://bjx4oo1w21je"]
 
 [ext_resource type="Texture2D" uid="uid://qdrs7by7tkw7" path="res://Assets/Textures/Cover.png" id="1_28flt"]
 [ext_resource type="Script" uid="uid://bn8u6d4mkpu8v" path="res://Scripts/main_menu.gd" id="1_n45e2"]
-[ext_resource type="Texture2D" uid="uid://d4dmkn4gqr77s" path="res://Assets/Textures/UI/Credits.png" id="2_ce3w2"]
-[ext_resource type="Texture2D" uid="uid://degil683eft8t" path="res://Assets/Textures/UI/Play.png" id="3_n45e2"]
-[ext_resource type="Texture2D" uid="uid://dhgtq0iahbon2" path="res://Assets/Textures/UI/Quit.png" id="4_opfnp"]
+[ext_resource type="Texture2D" uid="uid://cbw3nialdxtbs" path="res://Assets/Textures/UI/button_play1.png" id="3_trj04"]
+[ext_resource type="Texture2D" uid="uid://bxsdmnw1oo7ie" path="res://Assets/Textures/UI/button_play2.png" id="4_16hvj"]
+[ext_resource type="Texture2D" uid="uid://cyj0vrx0wstsk" path="res://Assets/Textures/UI/button_credits1.png" id="5_vr1f0"]
+[ext_resource type="Texture2D" uid="uid://3ygbbf7acxg7" path="res://Assets/Textures/UI/button_credits2.png" id="6_t1dhk"]
+[ext_resource type="Texture2D" uid="uid://b601u3600w5gi" path="res://Assets/Textures/UI/button_quit1.png" id="7_5egv6"]
+[ext_resource type="Texture2D" uid="uid://baj3ori5wlj73" path="res://Assets/Textures/UI/button_quit2.png" id="8_vtepg"]
+[ext_resource type="Texture2D" uid="uid://cky5dtoy5uwg1" path="res://Assets/Textures/UI/FishyBusinessLogo.png" id="9_8dnnj"]
 
-[node name="Control" type="Control" unique_id=1387908326]
+[node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,42 +19,41 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_n45e2")
 
-[node name="Play Button" type="Button" parent="." unique_id=1366948296]
-layout_mode = 0
-offset_left = 47.0
-offset_top = 308.0
-offset_right = 266.0
-offset_bottom = 412.0
-
-[node name="Credits Button" type="Button" parent="." unique_id=596895075]
-layout_mode = 0
-offset_left = 46.0
-offset_top = 419.0
-offset_right = 264.0
-offset_bottom = 522.0
-
-[node name="Quit Button" type="Button" parent="." unique_id=1331614814]
-layout_mode = 0
-offset_left = 46.0
-offset_top = 536.0
-offset_right = 264.0
-offset_bottom = 639.0
-
-[node name="Cover" type="Sprite2D" parent="." unique_id=2003797950]
+[node name="Cover" type="Sprite2D" parent="."]
 position = Vector2(576, 324)
 texture = ExtResource("1_28flt")
 
-[node name="Credits" type="Sprite2D" parent="." unique_id=952184903]
-position = Vector2(577, 325)
-texture = ExtResource("2_ce3w2")
+[node name="Play Button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 279.0
+offset_right = 257.0
+offset_bottom = 384.0
+texture_normal = ExtResource("3_trj04")
+texture_hover = ExtResource("4_16hvj")
 
-[node name="Play" type="Sprite2D" parent="." unique_id=1558316630]
-position = Vector2(577, 325)
-texture = ExtResource("3_n45e2")
+[node name="Credits Button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 390.0
+offset_right = 255.0
+offset_bottom = 495.0
+texture_normal = ExtResource("5_vr1f0")
+texture_hover = ExtResource("6_t1dhk")
 
-[node name="Quit" type="Sprite2D" parent="." unique_id=1299015638]
-position = Vector2(577, 325)
-texture = ExtResource("4_opfnp")
+[node name="Quit Button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 507.0
+offset_right = 255.0
+offset_bottom = 612.0
+texture_normal = ExtResource("7_5egv6")
+texture_hover = ExtResource("8_vtepg")
+
+[node name="FishyBusinessLogo" type="Sprite2D" parent="."]
+position = Vector2(975, 94)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("9_8dnnj")
 
 [connection signal="pressed" from="Play Button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Credits Button" to="." method="_on_credits_button_pressed"]
