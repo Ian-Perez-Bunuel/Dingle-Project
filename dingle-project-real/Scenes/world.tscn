@@ -1,4 +1,4 @@
-[gd_scene load_steps=133 format=3 uid="uid://iysllbq6upr7"]
+[gd_scene load_steps=135 format=3 uid="uid://iysllbq6upr7"]
 
 [ext_resource type="PackedScene" uid="uid://bpgfead5netw3" path="res://Scenes/player.tscn" id="1_7yui6"]
 [ext_resource type="PackedScene" uid="uid://8t4uq2rp4c1o" path="res://Scenes/snap_game.tscn" id="1_c5t2i"]
@@ -29,7 +29,9 @@
 [ext_resource type="Texture2D" uid="uid://bxakt7ipqq2mi" path="res://Assets/Textures/minigames/minigame_seagull_net.png" id="14_r0ikl"]
 [ext_resource type="Resource" uid="uid://bqvugdxj615a3" path="res://Dialogue/GroceriesStart.dialogue" id="15_1cojt"]
 [ext_resource type="Resource" uid="uid://dv5auc1h6wjwd" path="res://Dialogue/CaptainDialogue.dialogue" id="15_hgpy0"]
+[ext_resource type="Texture2D" uid="uid://brag3tkd4x644" path="res://Assets/Textures/ForksLogo.png" id="18_l33cg"]
 [ext_resource type="Texture2D" uid="uid://dtniw6dlctr2" path="res://Assets/Textures/Characters/Sea Captain.png" id="18_xbk3s"]
+[ext_resource type="Texture2D" uid="uid://cdgtyunotpvqv" path="res://Assets/Textures/LesserValuLogo.png" id="19_13n8b"]
 [ext_resource type="Resource" uid="uid://c7hrscjbuw1jn" path="res://Dialogue/Opening.dialogue" id="19_ochwf"]
 [ext_resource type="Texture2D" uid="uid://bob0dxmd7w5m7" path="res://Assets/Textures/Characters/Chippy.png" id="21_i4fjy"]
 [ext_resource type="Texture2D" uid="uid://dl46p2wfa5fel" path="res://Assets/Textures/Badge.png" id="21_p5wkl"]
@@ -237,7 +239,7 @@ size = Vector3(65.762, 21.571716, 12.251465)
 size = Vector3(16.827644, 21.571716, 8.984802)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hmc15"]
-size = Vector3(14.735475, 21.571716, 24.919296)
+size = Vector3(14.735475, 21.571716, 26.5252)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dt0r1"]
 size = Vector3(7.0452576, 21.571716, 9.002869)
@@ -580,7 +582,7 @@ shadow_normal_bias = 3.0
 environment = SubResource("Environment_8j60k")
 
 [node name="Player" parent="." instance=ExtResource("1_7yui6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -106.00412, 0.5666692, -14.390852)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.438522, 0.5666692, 4.9385166)
 
 [node name="Transitions" type="Node" parent="."]
 
@@ -676,8 +678,9 @@ transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -63.768093, 1
 shape = SubResource("BoxShape3D_pt3ps")
 
 [node name="Wall4" type="CollisionShape3D" parent="Backstreet NavMesh/Backstreet1/BackstreetCollision"]
-transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -44.06186, 10.285858, -0.785964)
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -44.06186, 10.285858, 0.01698792)
 shape = SubResource("BoxShape3D_hmc15")
+debug_color = Color(0.87058824, 0, 1, 1)
 
 [node name="Wall5" type="CollisionShape3D" parent="Backstreet NavMesh/Backstreet1/BackstreetCollision"]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -79.75709, 10.285858, -8.744179)
@@ -690,6 +693,7 @@ shape = SubResource("BoxShape3D_qebug")
 [node name="Wall7" type="CollisionShape3D" parent="Backstreet NavMesh/Backstreet1/BackstreetCollision"]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -117.10303, 10.285858, -15.47178)
 shape = SubResource("BoxShape3D_o2rbt")
+debug_color = Color(0.9254902, 0, 1, 1)
 
 [node name="Wall8" type="CollisionShape3D" parent="Backstreet NavMesh/Backstreet1/BackstreetCollision"]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -106.45418, 10.285858, -26.083101)
@@ -698,6 +702,7 @@ shape = SubResource("BoxShape3D_1vso6")
 [node name="Wall9" type="CollisionShape3D" parent="Backstreet NavMesh/Backstreet1/BackstreetCollision"]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -117.35854, 10.285858, 3.9050913)
 shape = SubResource("BoxShape3D_o2rbt")
+debug_color = Color(0.9254902, 0, 1, 1)
 
 [node name="Ramp1" type="CollisionShape3D" parent="Backstreet NavMesh/Backstreet1/BackstreetCollision"]
 transform = Transform3D(1, 0, 0, 0, 0.628737, 0.77761805, 0, -0.77761805, 0.628737, -76.099785, -0.7016744, -0.2147887)
@@ -718,6 +723,16 @@ shape = SubResource("BoxShape3D_coyub")
 [node name="Ramp5" type="CollisionShape3D" parent="Backstreet NavMesh/Backstreet1/BackstreetCollision"]
 transform = Transform3D(1, 0, 0, 0, 0.9918211, -0.12763585, 0, 0.12763585, 0.9918211, -54.697113, 0.025932252, -5.923312)
 shape = SubResource("BoxShape3D_ochwf")
+
+[node name="Logos" type="Node" parent="Backstreet NavMesh/Backstreet1"]
+
+[node name="ForksLogo" type="Sprite3D" parent="Backstreet NavMesh/Backstreet1/Logos"]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -56.273533, 12.079821, -5.6287775)
+texture = ExtResource("18_l33cg")
+
+[node name="lesservaluLogo" type="Sprite3D" parent="Backstreet NavMesh/Backstreet1/Logos"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -74.54257, 9.704765, -2.9918032)
+texture = ExtResource("19_13n8b")
 
 [node name="Dock NavMesh" type="NavigationRegion3D" parent="."]
 transform = Transform3D(0.9999961, -0.00277507, 0, 0.00277507, 0.9999961, 0, 0, 0, 1, 100, 0, 9.106)
@@ -954,7 +969,7 @@ transform = Transform3D(0.040000003, 0, 0, 0, 0.040000003, 0, 0, 0, 0.040000003,
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cutscene collisions/StartingCutscene/StartingBox"]
 transform = Transform3D(0.99995035, 0, 0, 0, 0.99995035, 0, 0, 0, 0.99995035, 0, -8.018196, 131.12836)
 shape = SubResource("BoxShape3D_l33cg")
-debug_color = Color(1.973361e-06, 0.64187884, 0.32193586, 1)
+debug_color = Color(0.9882353, 0, 0, 1)
 
 [node name="RightOfAlley" type="Node3D" parent="Cutscene collisions/StartingCutscene" groups=["place"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.44476, 0.77810574, -2.8152254)
