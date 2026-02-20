@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://b5rwbrfgovl1t"]
 
-[ext_resource type="Script" uid="uid://cobfpwvjyuuru" path="res://Scenes/UI/settings.gd" id="1_741ux"]
+[ext_resource type="Script" uid="uid://cobfpwvjyuuru" path="res://Scripts/settings.gd" id="1_741ux"]
 [ext_resource type="Texture2D" uid="uid://odmhqq7bph3k" path="res://Assets/Textures/UI/ui_evidencebook.png" id="1_dkbde"]
 [ext_resource type="FontFile" uid="uid://c7tim3pl1lfw5" path="res://Assets/Schoolbell-Regular.ttf" id="1_n8st6"]
 [ext_resource type="Texture2D" uid="uid://ci0ls7o82myax" path="res://Assets/Textures/UI/ui_grabber1.png" id="1_ygnii"]
@@ -42,6 +42,7 @@ mouse_filter = 1
 script = ExtResource("1_741ux")
 
 [node name="BookTemp" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_top = 43.0
 offset_right = 1152.0

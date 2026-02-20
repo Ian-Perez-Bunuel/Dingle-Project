@@ -40,6 +40,7 @@ func movement():
 		hasTarget = false
 		animationPlayer.stop()
 		velocity = Vector3.ZERO
+		
 		await get_tree().create_timer(2.0).timeout
 		animationPlayer.play("idle")
 		
