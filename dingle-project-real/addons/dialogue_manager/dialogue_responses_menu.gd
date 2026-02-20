@@ -24,7 +24,7 @@ signal response_selected(response: Control)
 @export var auto_focus_first_item: bool = true
 
 ## Hide any responses where [code]is_allowed[/code] is false
-@export var hide_failed_responses: bool = false
+@export var hide_failed_responses: bool = true
 
 ## The list of dialogue responses.
 var responses: Array = []:

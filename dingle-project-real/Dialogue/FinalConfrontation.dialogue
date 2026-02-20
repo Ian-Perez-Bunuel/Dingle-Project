@@ -1,0 +1,50 @@
+~ start
+An Phiast: Okay so who could it be?
+- The Seagulls
+	do StoryFlags.addName("Seagulls")
+	=> Seagull
+
+- Captain
+	do StoryFlags.addName("Captain")
+	=> Captain
+
+- Noel
+	do StoryFlags.addName("Noel")
+	=> Chippy
+
+- Leon
+	do StoryFlags.addName("Leon")
+	=> EvilChippy
+
+
+- ME?! [if StoryFlags.canSeeSelf()]
+	=> Me
+
+
+~ Seagull
+Nah wasn't me
+=> start
+
+~ Captain
+Nah wasn't me
+=> start
+
+~ Chippy
+Nah wasn't me
+=> start
+
+~ EvilChippy
+Nah wasn't me
+=> start
+
+~ Detective
+Nah wasn't me
+=> start
+
+~ Me
+Fuck... It was me...
+=> endSequence
+
+~ endSequence
+
+=> END

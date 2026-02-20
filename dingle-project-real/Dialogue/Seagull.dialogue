@@ -1,0 +1,31 @@
+~ start
+Seagull: This is post minigame where you catch 5 of them including this scarred one
+Seagull: Arrrrggg (RIONA PLEASE IMPROVE THIS - Seagulls = pirate speach?)
+Seagull: WHAT WAS THAT FOR!
+
+- Did you steal the fish and chips from Noel?
+	Seagull: No? We only eat Leon's fish and chips
+- For fun :D
+	Seagull: Are you serios?!
+	An Phiast: Nope
+	An Phiast: Did you steal the fish and chips from Noel?
+	Seagull: No? We only eat Leon's fish and chips
+	
+An Phiast: Come back to land for further questioning...
+
+Seagull: Alright alright
+
+An Phiast: Ok Captain you can bring us back now!
+Captain: Sounds good lets go back!
+=> end
+
+~ end
+do CutSceneManager.transition_stage_1()
+do wait(0.55)
+do CutSceneManager.teleport_to("Player", "DockP")
+do CutSceneManager.transition_stage_2()
+
+do Inventory.add_evidence(StoryFlags.seagullEvidence)
+do CutSceneManager.end()
+
+=> END

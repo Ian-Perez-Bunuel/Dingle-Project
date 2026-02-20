@@ -6,7 +6,7 @@
 [ext_resource type="FontFile" uid="uid://c7tim3pl1lfw5" path="res://Assets/Schoolbell-Regular.ttf" id="2_tfsfl"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_5lcpq"]
 [ext_resource type="Texture2D" uid="uid://bc8uwj8onigre" path="res://Assets/Textures/ui_nameplate.png" id="6_qxthb"]
-[ext_resource type="Script" uid="uid://c4qph3mxgr2gx" path="res://Dialogue/ui_audio.gd" id="7_qxthb"]
+[ext_resource type="Script" path="res://Dialogue/ui_audio.gd" id="7_qxthb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hpnun"]
 bg_color = Color(0, 0, 0, 1)

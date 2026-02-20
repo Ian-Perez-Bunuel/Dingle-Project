@@ -1,7 +1,5 @@
 ~ start
-if StoryFlags.capAtSea
-	=> atSea
-elif StoryFlags.capAtBoat
+if StoryFlags.capAtBoat
 	=> atDock
 elif StoryFlags.completedGroceries and StoryFlags.playedSnap
 	=> boatTalk
@@ -89,19 +87,14 @@ Captain: Are you ready to go get those seagulls?
 	do CutSceneManager.teleport_to("Captain", "Sea2")
 	do StoryFlags.capAtSea = true
 	do CutSceneManager.transition_stage_2()
+	do wait(0.6)
+	
+	Captain: Okay here we are.
+	Captain: Try use my net to catch the seagulls!
 	=> end
 	
 - Wait a second
 	Captain: Okay I'll just wait here for you!
-	=> end
-
-~ atSea
-Captain: Would you like to try catch them?
-- Of course
-	Captain: Good luck!
-	do MinigameManager.activate("SeagullGame")
-- Nah
-	Captain: Oh ok...
 	=> end
 
 ~ end

@@ -118,6 +118,7 @@ func end():
 	print("ENDED")
 	visible = false
 	Inventory.add_evidence(reward)
+	StoryFlags.caughtGulls = true
 	
 	Player.set_can_move(true)
 	Interactable.set_can_interact(true)

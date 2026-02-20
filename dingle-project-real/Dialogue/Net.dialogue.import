@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://byvu3jxulcn4h"
+path="res://.godot/imported/Net.dialogue-941d11cccf61c1299fdc554d7813a524.tres"
+
+[deps]
+
+source_file="res://Dialogue/Net.dialogue"
+dest_files=["res://.godot/imported/Net.dialogue-941d11cccf61c1299fdc554d7813a524.tres"]
+
+[params]
+
+defaults=true
