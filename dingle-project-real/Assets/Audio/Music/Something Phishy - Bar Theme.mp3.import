@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://brvhroogufo7q"
+path="res://.godot/imported/Something Phishy - Bar Theme.mp3-634c04f77abab6d52cf9e1e6205d26ba.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/Something Phishy - Bar Theme.mp3"
+dest_files=["res://.godot/imported/Something Phishy - Bar Theme.mp3-634c04f77abab6d52cf9e1e6205d26ba.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
