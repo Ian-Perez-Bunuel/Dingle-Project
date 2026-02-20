@@ -4,7 +4,7 @@ extends Area3D
 @onready var screen_effect = $"../../TransitionShader/ColorRect"
 @onready var player = $"../../Player"
 @onready var audio_player = get_parent().get_node("AudioStreamPlayer")
-
+@onready var musicManager: MusicManager = $"../../Music"
 
 func _on_body_shape_entered(body_rid: RID, body: Node3D, body_shape_index: int, local_shape_index: int) -> void:
 	print("teleporting an phiast...")
@@ -16,10 +16,16 @@ func _on_body_shape_entered(body_rid: RID, body: Node3D, body_shape_index: int, 
 		"street_to_bar":
 			await transition_stage_1()
 			player.global_position = Vector3(-245.5,0.0,5.5)
+			
+			musicManager.set_music(MusicManager.Track.Bar)
+			
 			transition_stage_2()
 		"bar_to_street":
 			await transition_stage_1()
 			player.global_position = Vector3(-54,0.0,-3.0)
+			
+			musicManager.set_music(MusicManager.Track.Overworld)
+			
 			transition_stage_2()
 		"dock_to_street":
 			await transition_stage_1()

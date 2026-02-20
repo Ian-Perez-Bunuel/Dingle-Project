@@ -23,6 +23,7 @@ MinigameManager="*res://Scripts/MinigameManager.gd"
 Inventory="*res://Scripts/Inventory.gd"
 StoryFlags="*res://Scripts/StoryFlags.gd"
 FlashbackManager="*res://Scripts/FlashbackManager.gd"
+Options="*res://Scripts/Options.gd"
 
 [dialogue_manager]
 

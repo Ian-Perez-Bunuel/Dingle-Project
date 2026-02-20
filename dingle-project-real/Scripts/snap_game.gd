@@ -27,7 +27,7 @@ var called: bool = false
 @onready var capAnimator: AnimationPlayer = $CaptainHand/AnimationPlayer
 @onready var playerAnimator: AnimationPlayer = $PlayerHand/AnimationPlayer
 @onready var pileAnimator: AnimationPlayer = $PileAnimations
-@export var pilePos: Vector2
+var pilePos: Vector2
 
 @export var WIN_CON: int = 5
 var playerScore: int = 0
@@ -42,6 +42,9 @@ var playing: bool = false
 func _ready() -> void:
 	values = Card.values()
 	values.erase(Card.None)
+	pilePos = get_viewport().get_visible_rect().size / 2
+	pilePos.x -= pile.size.x / 2.0
+	pilePos.y -= pile.size.y / 2.0
 	
 	process_mode = Node.PROCESS_MODE_DISABLED
 
