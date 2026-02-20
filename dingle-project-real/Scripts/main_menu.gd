@@ -12,8 +12,8 @@ func _process(delta):
 
 func _on_play_button_pressed():
 	#teleport an phiast to alley
-	player.global_position = Vector3(-105.0, 0.5, -21.0)
-	await get_tree().create_timer(0.5).timeout
+	#player.global_position = Vector3(-105.0, 0.5, -21.0)
+	#await get_tree().create_timer(0.5).timeout
 	hide()
 
 

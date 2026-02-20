@@ -16,7 +16,7 @@ Welcome to LesserValue!
 	# do CutSceneManager.transition_stage_1()
 	# do wait(0.55)
 	do CutSceneManager.transition_stage_2()
-	# do MinigameManager.activate("groceriesGame")
+	do MinigameManager.activate("groceriesGame")
 	=> moveAway
 - I'll come back later
 	=> moveAway
