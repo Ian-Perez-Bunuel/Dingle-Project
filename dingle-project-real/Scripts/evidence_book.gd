@@ -23,7 +23,15 @@ func toggle():
 		open()
 	else:
 		close()
-		
+
+func set_showing(b: bool):
+	visible = b
+	
+	if visible:
+		open()
+	else:
+		close()
+
 func open():
 	print("Open")
 	if !Inventory.ownedEvidence.is_empty():

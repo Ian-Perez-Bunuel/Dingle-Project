@@ -1,0 +1,131 @@
+[gd_scene load_steps=11 format=3 uid="uid://b5rwbrfgovl1t"]
+
+[ext_resource type="Script" uid="uid://cobfpwvjyuuru" path="res://Scenes/UI/settings.gd" id="1_741ux"]
+[ext_resource type="Texture2D" uid="uid://odmhqq7bph3k" path="res://Assets/Textures/UI/ui_evidencebook.png" id="1_dkbde"]
+[ext_resource type="FontFile" uid="uid://c7tim3pl1lfw5" path="res://Assets/Schoolbell-Regular.ttf" id="1_n8st6"]
+[ext_resource type="Texture2D" uid="uid://ci0ls7o82myax" path="res://Assets/Textures/UI/ui_grabber1.png" id="1_ygnii"]
+[ext_resource type="Texture2D" uid="uid://42s1oqmdcbgb" path="res://Assets/Textures/UI/ui_grabber2.png" id="2_n8st6"]
+[ext_resource type="Texture2D" uid="uid://cfrh5qy7b1nhv" path="res://Assets/Textures/UI/ui_grabber3.png" id="3_dkbde"]
+[ext_resource type="Texture2D" uid="uid://fsqoextvtk7o" path="res://Assets/Textures/UI/ui_tick.png" id="4_741ux"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dkbde"]
+font = ExtResource("1_n8st6")
+font_size = 50
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_741ux"]
+font = ExtResource("1_n8st6")
+font_size = 35
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0kw46"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.85490197)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 2
+anti_aliasing = false
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_741ux")
+
+[node name="BookTemp" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = 43.0
+offset_right = 1152.0
+offset_bottom = 691.0
+mouse_filter = 2
+texture = ExtResource("1_dkbde")
+
+[node name="Sound Settings" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -376.0
+offset_top = 125.0
+offset_right = -85.999756
+offset_bottom = 194.0
+grow_horizontal = 2
+text = "Sound Settings"
+label_settings = SubResource("LabelSettings_dkbde")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.13100001
+anchor_top = 0.312
+anchor_right = 0.47000003
+anchor_bottom = 0.84400004
+offset_left = 0.08798218
+offset_top = -0.17601013
+offset_right = 0.5599365
+offset_bottom = 0.08795166
+
+[node name="MasterLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Master"
+label_settings = SubResource("LabelSettings_741ux")
+horizontal_alignment = 1
+
+[node name="MasterSlider" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("1_ygnii")
+theme_override_icons/grabber_highlight = ExtResource("2_n8st6")
+theme_override_icons/grabber_disabled = ExtResource("3_dkbde")
+theme_override_icons/tick = ExtResource("4_741ux")
+theme_override_styles/slider = SubResource("StyleBoxFlat_0kw46")
+
+[node name="MusicLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Music"
+label_settings = SubResource("LabelSettings_741ux")
+horizontal_alignment = 1
+
+[node name="MusicSlider" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("1_ygnii")
+theme_override_icons/grabber_highlight = ExtResource("2_n8st6")
+theme_override_icons/grabber_disabled = ExtResource("3_dkbde")
+theme_override_icons/tick = ExtResource("4_741ux")
+theme_override_styles/slider = SubResource("StyleBoxFlat_0kw46")
+
+[node name="AmbientLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Ambient"
+label_settings = SubResource("LabelSettings_741ux")
+horizontal_alignment = 1
+
+[node name="AmbientSlider" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("1_ygnii")
+theme_override_icons/grabber_highlight = ExtResource("2_n8st6")
+theme_override_icons/grabber_disabled = ExtResource("3_dkbde")
+theme_override_icons/tick = ExtResource("4_741ux")
+theme_override_styles/slider = SubResource("StyleBoxFlat_0kw46")
+
+[node name="SoundEffectsLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Sound Effects"
+label_settings = SubResource("LabelSettings_741ux")
+horizontal_alignment = 1
+
+[node name="SoundEffectsSlider" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("1_ygnii")
+theme_override_icons/grabber_highlight = ExtResource("2_n8st6")
+theme_override_icons/grabber_disabled = ExtResource("3_dkbde")
+theme_override_icons/tick = ExtResource("4_741ux")
+theme_override_styles/slider = SubResource("StyleBoxFlat_0kw46")

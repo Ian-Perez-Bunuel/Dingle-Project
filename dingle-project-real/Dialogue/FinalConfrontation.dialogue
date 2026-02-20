@@ -42,10 +42,20 @@ Nah wasn't me
 => start
 
 ~ Me
-Fuck... It was me...
+It was me... wasn;t it...
 => endSequence
 
 ~ endSequence
 do FlashbackManager.display(FlashbackManager.FlashBack.Eating)
+???: Finally you figured it out!
+# detective walks up
+An Phiast: Who are you???
+Detective: I'm the detective who's badge you stole!
+An Phiast: No this is mine?
+do FlashbackManager.show_badge()
+# some more dialogue
+# end screen / credits
+# return to main menu
 
+do CutSceneManager.end()
 => END

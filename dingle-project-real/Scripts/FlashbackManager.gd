@@ -5,6 +5,7 @@ var loops: float = 3
 var displayScreen: Control
 var textureRect: TextureRect
 var fadeAnimation: AnimationPlayer
+var openBadge: TextureRect
 
 enum FlashBack
 {
@@ -38,7 +39,8 @@ func _ready() -> void:
 	var world := get_tree().current_scene
 	displayScreen = world.get_node("FlashbackDisplay") as Control
 	textureRect = world.get_node("FlashbackDisplay/frameTexture") as TextureRect
-	fadeAnimation = world.get_node("FlashbackDisplay/FadeColor/AnimationPlayer") as AnimationPlayer
+	fadeAnimation = world.get_node("FlashbackDisplay/AnimationPlayer") as AnimationPlayer
+	openBadge = world.get_node("FlashbackDisplay/BadgeOpen") as TextureRect
 	
 	# Opening
 	preClothesFrames.append(load("res://Assets/Textures/Flashbacks/intro_part1_0000.png"))
@@ -74,11 +76,22 @@ func _ready() -> void:
 func waitFrame():
 	await get_tree().process_frame
 
+func show_badge():
+	openBadge.visible = true
+	
+	fadeAnimation.play("show_badge")
+	await fadeAnimation.animation_finished
+	
+	await get_tree().create_timer(4.0).timeout
+	fadeAnimation.play("remove_badge")
+	await fadeAnimation.animation_finished
+	
+	openBadge.visible = false
+
 func display(fb: FlashBack, hasFollowing: bool = false, startBlack: bool = false):
 	if not startBlack:
 		await fade_to_black()
 		
-	displayScreen.visible = true
 	textureRect.texture = nameToFrames[fb][0]
 	textureRect.visible = true
 	
@@ -101,7 +114,6 @@ func display(fb: FlashBack, hasFollowing: bool = false, startBlack: bool = false
 		await fade_to_black()
 		textureRect.visible = false
 		await fade_to_invis()
-		displayScreen.visible = false
 
 func fade_to_black():
 	fadeAnimation.play("fade_to_black")
