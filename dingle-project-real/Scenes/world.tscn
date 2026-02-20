@@ -1,10 +1,10 @@
-[gd_scene load_steps=148 format=3 uid="uid://iysllbq6upr7"]
+[gd_scene load_steps=151 format=3 uid="uid://iysllbq6upr7"]
 
 [ext_resource type="PackedScene" uid="uid://bpgfead5netw3" path="res://Scenes/player.tscn" id="1_7yui6"]
 [ext_resource type="PackedScene" uid="uid://8t4uq2rp4c1o" path="res://Scenes/snap_game.tscn" id="1_c5t2i"]
 [ext_resource type="PackedScene" uid="uid://ds1das1xkbdv4" path="res://Scenes/groceries_game.tscn" id="1_ikia7"]
 [ext_resource type="Texture2D" uid="uid://basnyfjxrjkh4" path="res://Assets/Textures/Badge_ID.png" id="1_jwdyn"]
-[ext_resource type="PackedScene" uid="uid://bljo4ns7o8y6e" path="res://Scenes/music.tscn" id="1_kwnki"]
+[ext_resource type="PackedScene" path="res://Scenes/music.tscn" id="1_kwnki"]
 [ext_resource type="PackedScene" uid="uid://bjooqpqmpiw7u" path="res://Scenes/interaction_box.tscn" id="2_go701"]
 [ext_resource type="PackedScene" uid="uid://captr67lb13cl" path="res://Scenes/npc.tscn" id="4_8j60k"]
 [ext_resource type="PackedScene" uid="uid://cvuenej67dy73" path="res://Scenes/UI/evidence_book.tscn" id="6_ikia7"]
@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://d00d32xh76ix" path="res://Assets/Models/Boat.glb" id="12_1vso6"]
 [ext_resource type="PackedScene" uid="uid://b5rwbrfgovl1t" path="res://Scenes/UI/settings.tscn" id="12_b4e6k"]
 [ext_resource type="Script" uid="uid://bwifi60ec7u1t" path="res://Scripts/scene_transition.gd" id="12_c5t2i"]
-[ext_resource type="Shader" path="res://Shaders/Water.gdshader" id="12_e0ngr"]
+[ext_resource type="Shader" uid="uid://d3lkdk8f7w4nc" path="res://Shaders/Water.gdshader" id="12_e0ngr"]
 [ext_resource type="PackedScene" uid="uid://ct3ngq0m2f83c" path="res://Scenes/seagull_game.tscn" id="13_c5t2i"]
 [ext_resource type="Shader" uid="uid://bscb7e5fasq7w" path="res://Shaders/screen_transition.gdshader" id="13_e0ngr"]
 [ext_resource type="PackedScene" uid="uid://crte5pffhmvf5" path="res://Scenes/ObjectDialogue.tscn" id="14_axeuq"]
@@ -43,12 +43,12 @@
 [ext_resource type="Resource" uid="uid://btma17emfv8o8" path="res://Dialogue/Bartender.dialogue" id="21_yq1aw"]
 [ext_resource type="Texture2D" uid="uid://y32mhwyuurat" path="res://Assets/Textures/Characters/EvilChippy.png" id="22_i4fjy"]
 [ext_resource type="Resource" uid="uid://ctaj2pv88ani6" path="res://Dialogue/Chippy.dialogue" id="23_opbav"]
-[ext_resource type="Script" uid="uid://ctt6lqahjhhiy" path="res://Scripts/DockAlert.gd" id="24_04jkj"]
+[ext_resource type="Script" path="res://Scripts/DockAlert.gd" id="24_04jkj"]
 [ext_resource type="Texture2D" uid="uid://jko5roo7lwat" path="res://Assets/Textures/Characters/Bartender.png" id="24_pt3ps"]
 [ext_resource type="Texture2D" uid="uid://cfoen85bbr3qb" path="res://Assets/Textures/Characters/Fisherman.png" id="26_pt3ps"]
 [ext_resource type="Texture2D" uid="uid://cvop7bm300lvl" path="res://Assets/Textures/Characters/GullOther.png" id="26_qebug"]
 [ext_resource type="Resource" uid="uid://cxggt6lkmgt0m" path="res://Dialogue/Seagull.dialogue" id="27_1vso6"]
-[ext_resource type="Script" uid="uid://b1r2lual8ouy7" path="res://Scripts/GullManager.gd" id="27_3ua1v"]
+[ext_resource type="Script" path="res://Scripts/GullManager.gd" id="27_3ua1v"]
 [ext_resource type="Texture2D" uid="uid://b4lgcev48b5q3" path="res://Assets/Textures/Characters/Band_Singer.png" id="27_hmc15"]
 [ext_resource type="Texture2D" uid="uid://da6eu338gu4ok" path="res://Assets/Textures/Characters/GullMain.png" id="27_o2rbt"]
 [ext_resource type="Resource" uid="uid://b14hgku50po38" path="res://Dialogue/FinalConfrontation.dialogue" id="30_w5giw"]
@@ -58,6 +58,7 @@
 [ext_resource type="Texture2D" uid="uid://txjxxd6mty8p" path="res://Assets/Textures/Characters/Band_Saxophonist.png" id="52_13n8b"]
 [ext_resource type="Resource" uid="uid://cjx3ouadj6dq8" path="res://Dialogue/Children.dialogue" id="53_gwaj6"]
 [ext_resource type="Texture2D" uid="uid://b1bmr5sh54wnv" path="res://Assets/Textures/Characters/Kids.png" id="53_uqdn7"]
+[ext_resource type="PackedScene" uid="uid://bjx4oo1w21je" path="res://Scenes/main_menu.tscn" id="59_cvubk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kn0ld"]
 shader = ExtResource("13_e0ngr")
@@ -510,6 +511,12 @@ size = Vector3(8.155, 1, 20)
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_w5giw"]
 points = PackedVector3Array(4.142222, 0.6002777, 3.9883327, -4.142222, -0.56472224, -4.037222, -4.142222, -0.56472224, 3.9883327, -4.142222, 0.6002777, -4.037222, 4.142222, -0.56472224, -4.037222, -4.142222, 0.6002777, 3.9883327, 4.142222, -0.56472224, 3.9883327, 4.142222, 0.6002777, -4.037222)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_s73dv"]
+size = Vector3(6.901367, 1, 5.366699)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lxtj3"]
+size = Vector3(0.9536133, 7.385742, 6.864624)
+
 [node name="World" type="Node3D"]
 
 [node name="Music" parent="." instance=ExtResource("1_kwnki")]
@@ -650,7 +657,7 @@ shadow_normal_bias = 3.0
 environment = SubResource("Environment_8j60k")
 
 [node name="Player" parent="." instance=ExtResource("1_7yui6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.438522, 0.5666692, 4.9385166)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.05246, 0.5666692, 1.4800406)
 
 [node name="Transitions" type="Node" parent="."]
 
@@ -1360,6 +1367,35 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 121.
 
 [node name="ManHole5" parent="." instance=ExtResource("17_g44x5")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 107.7913, 0.33469653, -28.044157)
+
+[node name="Control" parent="." instance=ExtResource("59_cvubk")]
+
+[node name="PhiastJail" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PhiastJail"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.096309, 0, 2.1833496)
+shape = SubResource("BoxShape3D_s73dv")
+debug_color = Color(0.102432765, 0.17149277, 0, 1)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="PhiastJail"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.171397, 3.192871, 2.1833496)
+shape = SubResource("BoxShape3D_lxtj3")
+debug_color = Color(0.102432765, 0.17149277, 0, 1)
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="PhiastJail"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.021763, 3.192871, 2.1833496)
+shape = SubResource("BoxShape3D_lxtj3")
+debug_color = Color(0.102432765, 0.17149277, 0, 1)
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="PhiastJail"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 14.153898, 3.192871, 5.0595503)
+shape = SubResource("BoxShape3D_lxtj3")
+debug_color = Color(0.102432765, 0.17149277, 0, 1)
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="PhiastJail"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 14.153898, 3.192871, -1.7626257)
+shape = SubResource("BoxShape3D_lxtj3")
+debug_color = Color(0.102432765, 0.17149277, 0, 1)
 
 [connection signal="pressed" from="UI/EvidenceButton" to="UI" method="show_evidence"]
 [connection signal="pressed" from="UI/SettingsButton" to="UI" method="show_settings"]
