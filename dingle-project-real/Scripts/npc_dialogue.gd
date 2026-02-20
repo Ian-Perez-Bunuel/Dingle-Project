@@ -4,6 +4,7 @@ extends CharacterBody3D
 @export var texture: Texture2D
 @export var flippedTexture: bool
 
+@onready var animationPlayer: AnimationPlayer = $AnimationPlayer
 @onready var sprite: Sprite3D = $Sprite3D
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 var hasTarget = false
@@ -30,9 +31,11 @@ func movement():
 	var next_path_pos := nav_agent.get_next_path_position()
 	var direction := global_position.direction_to(next_path_pos)
 	velocity = direction * SPEED
+	animationPlayer.play("walk")
 	
 	if nav_agent.is_navigation_finished():
 		hasTarget = false
+		animationPlayer.stop()
 		velocity = Vector3.ZERO
 		
 	move_and_slide()

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://ctaj2pv88ani6"
+path="res://.godot/imported/Chippy.dialogue-016b2da86ff86b45498cc3d56ed97843.tres"
+
+[deps]
+
+source_file="res://Dialogue/Chippy.dialogue"
+dest_files=["res://.godot/imported/Chippy.dialogue-016b2da86ff86b45498cc3d56ed97843.tres"]
+
+[params]
+
+defaults=true

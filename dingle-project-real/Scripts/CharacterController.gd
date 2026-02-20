@@ -11,6 +11,8 @@ const BASE_SCALE = 0.5
 
 const SPEED = 5.0
 
+@onready var animationPlayer: AnimationPlayer = $AnimationPlayer
+
 static var canMove = true
 
 static func set_can_move(b: bool):
@@ -34,11 +36,11 @@ func normal_movement(delta: float):
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
-		$AnimationPlayer.play("walk")
+		animationPlayer.play("walk")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-		$AnimationPlayer.stop()
+		animationPlayer.stop()
 
 	if direction.x < 0.0 and not facing_left:
 		flip_sprite(true)
@@ -75,9 +77,11 @@ func controlled_movement(delta: float):
 	var next_path_pos := nav_agent.get_next_path_position()
 	var direction := global_position.direction_to(next_path_pos)
 	velocity = direction * SPEED
+	animationPlayer.play("walk")
 	
 	if nav_agent.is_navigation_finished():
 		hasTarget = false
+		animationPlayer.stop()
 		velocity = Vector3.ZERO
 		
 	move_and_slide()

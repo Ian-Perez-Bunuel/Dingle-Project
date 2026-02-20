@@ -1,4 +1,4 @@
-[gd_scene load_steps=99 format=3 uid="uid://iysllbq6upr7"]
+[gd_scene load_steps=100 format=3 uid="uid://iysllbq6upr7"]
 
 [ext_resource type="PackedScene" uid="uid://bpgfead5netw3" path="res://Scenes/player.tscn" id="1_7yui6"]
 [ext_resource type="PackedScene" uid="uid://8t4uq2rp4c1o" path="res://Scenes/snap_game.tscn" id="1_c5t2i"]
@@ -26,7 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://bob0dxmd7w5m7" path="res://Assets/Textures/Characters/Chippy.png" id="21_i4fjy"]
 [ext_resource type="Resource" uid="uid://btma17emfv8o8" path="res://Dialogue/Bartender.dialogue" id="21_yq1aw"]
 [ext_resource type="Texture2D" uid="uid://y32mhwyuurat" path="res://Assets/Textures/Characters/EvilChippy.png" id="22_i4fjy"]
-[ext_resource type="Resource" uid="uid://b14hgku50po38" path="res://Dialogue/FinalConfrontation.dialogue" id="23_opbav"]
+[ext_resource type="Resource" uid="uid://ctaj2pv88ani6" path="res://Dialogue/Chippy.dialogue" id="23_opbav"]
 [ext_resource type="Texture2D" uid="uid://jko5roo7lwat" path="res://Assets/Textures/Characters/Bartender.png" id="24_pt3ps"]
 [ext_resource type="Texture2D" uid="uid://cfoen85bbr3qb" path="res://Assets/Textures/Characters/Fisherman.png" id="26_pt3ps"]
 [ext_resource type="Texture2D" uid="uid://cvop7bm300lvl" path="res://Assets/Textures/Characters/GullOther.png" id="26_qebug"]
@@ -265,8 +265,11 @@ size = Vector3(21.584229, 27.021973, 11.46521)
 [sub_resource type="BoxShape3D" id="BoxShape3D_13n8b"]
 size = Vector3(2.1253395, 1, 2.0786285)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_5kw24"]
+size = Vector3(3.9863281, 2.4882813, 4.078125)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_uqdn7"]
-size = Vector3(4.741211, 1, 5.776367)
+size = Vector3(3.8564453, 1, 4.185547)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_36g3o"]
 size = Vector3(4.9505615, 1, 7.5333786)
@@ -314,7 +317,7 @@ shadow_enabled = true
 environment = SubResource("Environment_8j60k")
 
 [node name="Player" parent="." instance=ExtResource("1_7yui6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -86.503525, -0.18678331, 2.4644308)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -105.316185, 0.44092083, -15.987401)
 
 [node name="Transitions" type="Node" parent="."]
 
@@ -695,12 +698,18 @@ shape = SubResource("BoxShape3D_13n8b")
 debug_color = Color(0.99467343, 0, 0.22570384, 0.41960785)
 
 [node name="Chippy" parent="Main_NPCs" groups=["object"] instance=ExtResource("4_8j60k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -87.457924, 0.9223451, -2.5742688)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84.21416, 0.9223451, -2.5742688)
 dialogue_resource = ExtResource("23_opbav")
 texture = ExtResource("21_i4fjy")
 
+[node name="InteractionBox" parent="Main_NPCs/Chippy" instance=ExtResource("2_go701")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Main_NPCs/Chippy/InteractionBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25878912, 0)
+shape = SubResource("BoxShape3D_5kw24")
+
 [node name="EvilChippy" parent="Main_NPCs" groups=["object"] instance=ExtResource("4_8j60k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.83574, 0.60645044, 0.33597946)
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 92.83574, 0.60645044, 0.33597946)
 dialogue_resource = ExtResource("18_0pcbe")
 texture = ExtResource("22_i4fjy")
 
@@ -805,6 +814,7 @@ skeleton = NodePath("../..")
 [connection signal="interacted" from="Cutscene collisions/StartingCutscene/StartingBox" to="Main_NPCs/Chippy" method="speak"]
 [connection signal="interacted" from="Cutscene collisions/LesserValueMinigame/ObjectDialogue/ForcedInteraction" to="Cutscene collisions/LesserValueMinigame/ObjectDialogue" method="speak"]
 [connection signal="interacted" from="Main_NPCs/Captain/InteractionBox" to="Main_NPCs/Captain" method="speak"]
+[connection signal="interacted" from="Main_NPCs/Chippy/InteractionBox" to="Main_NPCs/Chippy" method="speak"]
 [connection signal="interacted" from="Main_NPCs/EvilChippy/InteractionBox" to="Main_NPCs/EvilChippy" method="speak"]
 [connection signal="interacted" from="Main_NPCs/Bartender/InteractionBox" to="Main_NPCs/Bartender" method="speak"]
 [connection signal="interacted" from="Main_NPCs/Seagulls/MainSeagull/InteractionBox" to="Main_NPCs/Seagulls/MainSeagull" method="speak"]

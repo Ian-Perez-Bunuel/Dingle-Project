@@ -17,6 +17,7 @@ func resetFlags():
 	capAtSea = false
 	
 	# Chippy flags
+	completedIntro = true
 	
 	# Evil Chippy flags
 	talkedToEvilChippy = false
@@ -47,7 +48,7 @@ var capAtBoat: bool = false
 var capAtSea: bool = false
 
 # Chippy flags
-
+var completedIntro: bool = true
 
 # Evil Chippy flags
 var evilChippyEvidence: Evidence = load("res://Resources/evilChippyEvidence.tres")
