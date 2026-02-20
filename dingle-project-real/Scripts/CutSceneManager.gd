@@ -4,10 +4,13 @@ var allObjects : Array[Node3D]
 var allPlaces : Array[Node3D]
 
 var screen_effect
+var transition_sound
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	await get_tree().process_frame
+	var world := get_tree().current_scene
+	transition_sound = world.get_node("Transitions/AudioStreamPlayer") as AudioStreamPlayer
 	
 	screen_effect = get_tree().current_scene.get_node("TransitionShader/ColorRect")
 
@@ -78,6 +81,7 @@ func teleport_to(t_objectName: String, t_placeName: String):
 	object.position = place.position
 	
 func transition_stage_1():
+	transition_sound.play()
 	screen_effect.material.set_shader_parameter("invert", true)
 	screen_effect.material.set_shader_parameter("progress", 0.0)
 	var tween = create_tween()
@@ -85,6 +89,7 @@ func transition_stage_1():
 	await tween.finished
 
 func transition_stage_2():
+	transition_sound.play()
 	screen_effect.material.set_shader_parameter("invert", false)
 	screen_effect.material.set_shader_parameter("progress", 0.0)
 	var tween = create_tween()
