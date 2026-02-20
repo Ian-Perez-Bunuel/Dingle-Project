@@ -104,15 +104,28 @@ offset_right = 307.74463
 offset_bottom = 372.0
 rotation = -0.1308997
 
+[node name="Black" type="ColorRect" parent="Background/Evidence/Polaroid1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = 25.0
+offset_right = -23.744629
+offset_bottom = -61.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
 [node name="Image" type="TextureRect" parent="Background/Evidence/Polaroid1"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 27.0
-offset_top = 26.0
-offset_right = -27.0
-offset_bottom = -59.0
+offset_left = 25.0
+offset_top = 25.0
+offset_right = -23.744629
+offset_bottom = -61.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_ux2fu")
@@ -125,15 +138,28 @@ offset_right = 1026.947
 offset_bottom = 332.00006
 rotation = 0.20071286
 
+[node name="Black" type="ColorRect" parent="Background/Evidence/Polaroid2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.999939
+offset_top = 24.999992
+offset_right = -24.947083
+offset_bottom = -61.00006
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
 [node name="Image" type="TextureRect" parent="Background/Evidence/Polaroid2"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 27.0
-offset_top = 26.0
-offset_right = -27.0
-offset_bottom = -59.0
+offset_left = 25.0
+offset_top = 25.0
+offset_right = -24.947021
+offset_bottom = -61.00006
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_ux2fu")
