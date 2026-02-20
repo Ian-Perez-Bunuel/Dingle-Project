@@ -17,4 +17,8 @@ Bartender: Hey man, what would you like?
 
 - Nothing I'm good
 	Bartender: Why did you even talk to me then?
+=> end
+
+~ end
+do CutSceneManager.end()
 => END

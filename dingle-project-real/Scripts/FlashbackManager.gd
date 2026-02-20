@@ -4,6 +4,7 @@ var timePerFrame: float = 0.5
 var loops: float = 3
 var displayScreen: Control
 var textureRect: TextureRect
+var fadeAnimation: AnimationPlayer
 
 enum FlashBack
 {
@@ -35,6 +36,7 @@ func _ready() -> void:
 	var world := get_tree().current_scene
 	displayScreen = world.get_node("FlashbackDisplay") as Control
 	textureRect = world.get_node("FlashbackDisplay/frameTexture") as TextureRect
+	fadeAnimation = world.get_node("FlashbackDisplay/FadeColor/AnimationPlayer") as AnimationPlayer
 	
 	# Opening
 	clothesFallingFrames.append(load("res://Assets/Textures/Flashbacks/intro_part1_0000.png"))
@@ -67,10 +69,14 @@ func _ready() -> void:
 
 
 func display(fb: FlashBack):
+	await fade_to_black()
+	displayScreen.visible = true
+	textureRect.texture = nameToFrames[fb][0]
+	await fade_to_invis()
+	
 	var i: int = 0
 	var l: int = 0
 	
-	displayScreen.visible = true
 	
 	while l <= loops:
 		textureRect.texture = nameToFrames[fb][i]
@@ -82,4 +88,11 @@ func display(fb: FlashBack):
 			l += 1
 	
 	displayScreen.visible = false
+
+func fade_to_black():
+	fadeAnimation.play("fade_to_black")
+	await fadeAnimation.animation_finished
 	
+func fade_to_invis():
+	fadeAnimation.play("fade_to_invis")
+	await fadeAnimation.animation_finished

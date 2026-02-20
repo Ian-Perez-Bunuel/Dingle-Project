@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=3 uid="uid://iysllbq6upr7"]
+[gd_scene load_steps=105 format=3 uid="uid://iysllbq6upr7"]
 
 [ext_resource type="PackedScene" uid="uid://bpgfead5netw3" path="res://Scenes/player.tscn" id="1_7yui6"]
 [ext_resource type="PackedScene" uid="uid://8t4uq2rp4c1o" path="res://Scenes/snap_game.tscn" id="1_c5t2i"]
@@ -34,6 +34,76 @@
 [ext_resource type="Script" uid="uid://b1r2lual8ouy7" path="res://Scripts/GullManager.gd" id="27_3ua1v"]
 [ext_resource type="Texture2D" uid="uid://b4lgcev48b5q3" path="res://Assets/Textures/Characters/Band_Singer.png" id="27_hmc15"]
 [ext_resource type="Texture2D" uid="uid://da6eu338gu4ok" path="res://Assets/Textures/Characters/GullMain.png" id="27_o2rbt"]
+
+[sub_resource type="Animation" id="Animation_opbav"]
+resource_name = "fade_in_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(0.3, 1, 0.3),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_coyub"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ochwf"]
+resource_name = "fade_to_black"
+length = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_p5wkl"]
+resource_name = "fade_to_invis"
+length = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ochwf"]
+_data = {
+&"RESET": SubResource("Animation_coyub"),
+&"fade_in_out": SubResource("Animation_opbav"),
+&"fade_to_black": SubResource("Animation_ochwf"),
+&"fade_to_invis": SubResource("Animation_p5wkl")
+}
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_go701"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -286,7 +356,6 @@ size = Vector3(8.155, 1, 7.945)
 [node name="World" type="Node3D"]
 
 [node name="FlashbackDisplay" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -301,6 +370,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="FadeColor" type="ColorRect" parent="FlashbackDisplay"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FlashbackDisplay/FadeColor"]
+libraries = {
+&"": SubResource("AnimationLibrary_ochwf")
+}
 
 [node name="snapGame" parent="." instance=ExtResource("1_c5t2i")]
 visible = false
@@ -743,6 +827,7 @@ dialogue_resource = ExtResource("21_yq1aw")
 texture = ExtResource("24_pt3ps")
 
 [node name="InteractionBox" parent="Main_NPCs/Bartender" instance=ExtResource("2_go701")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85894465, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Main_NPCs/Bartender/InteractionBox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7394409, 0, -0.1131258)
