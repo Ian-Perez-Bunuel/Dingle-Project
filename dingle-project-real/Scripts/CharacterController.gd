@@ -12,6 +12,7 @@ const BASE_SCALE = 0.5
 const SPEED = 5.0
 
 @onready var animationPlayer: AnimationPlayer = $AnimationPlayer
+@onready var stepNoise: AudioStreamPlayer3D = $PlayerSteps
 
 static var canMove = true
 
@@ -36,9 +37,9 @@ func normal_movement(delta: float):
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
-		$AnimationPlayer.play("walk")
-		if !$PlayerNoises.playing: # player movement audio
-			$PlayerNoises.play()
+		animationPlayer.play("walk")
+		if !stepNoise.playing: # player movement audio
+			stepNoise.play()
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)

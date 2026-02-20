@@ -95,7 +95,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_vgqql")
 }
 
-[node name="PlayerNoises" type="AudioStreamPlayer3D" parent="."]
+[node name="PlayerSteps" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_6t5aa")
 volume_db = -15.0
 pitch_scale = 0.9
