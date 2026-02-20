@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fsqoextvtk7o"
-path="res://.godot/imported/ui_tick.png-2137fa94547df7dacae8acd48975953a.ctex"
+uid="uid://42s1oqmdcbgb"
+path="res://.godot/imported/ui_grabber2.png-b2a228cd10dd7cb02c37c5121a95fe73.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/ui_tick.png"
-dest_files=["res://.godot/imported/ui_tick.png-2137fa94547df7dacae8acd48975953a.ctex"]
+source_file="res://Assets/Textures/UI/ui_grabber2.png"
+dest_files=["res://.godot/imported/ui_grabber2.png-b2a228cd10dd7cb02c37c5121a95fe73.ctex"]
 
 [params]
 

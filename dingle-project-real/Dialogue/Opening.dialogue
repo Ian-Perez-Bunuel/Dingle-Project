@@ -4,6 +4,9 @@ do FlashbackManager.display(FlashbackManager.FlashBack.PreClothes, true, true)
 do FlashbackManager.display(FlashbackManager.FlashBack.ClothesFalling, true)
 do FlashbackManager.display(FlashbackManager.FlashBack.Sleeping)
 
+An Phiast: Huh...
+An Phiast: I dont remember anything.
+An Phiast: With this clothes I [wave]MUST[/wave] be a detective!
 
 ~ end
 do CutSceneManager.end()

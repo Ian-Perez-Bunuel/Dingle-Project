@@ -2,20 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfrh5qy7b1nhv"
-path="res://.godot/imported/ui_grabber3.png-098286f3f625ab552de10bc3fa491cd5.ctex"
+uid="uid://dl46p2wfa5fel"
+path.s3tc="res://.godot/imported/Badge.png-bb6e63e6b4ad4872bae6b1c5b07fbafd.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://Assets/Textures/ui_grabber3.png"
-dest_files=["res://.godot/imported/ui_grabber3.png-098286f3f625ab552de10bc3fa491cd5.ctex"]
+source_file="res://Assets/Textures/Badge.png"
+dest_files=["res://.godot/imported/Badge.png-bb6e63e6b4ad4872bae6b1c5b07fbafd.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -23,7 +24,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -37,4 +38,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

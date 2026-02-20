@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bjooqpqmpiw7u"]
 
 [ext_resource type="Script" uid="uid://cmc55tgevkblt" path="res://Scripts/interactable.gd" id="1_b6m3o"]
-[ext_resource type="Texture2D" uid="uid://cucog04env4xc" path="res://Assets/Textures/ui_key.png" id="2_tijgc"]
+[ext_resource type="Texture2D" uid="uid://cucog04env4xc" path="res://Assets/Textures/UI/ui_key.png" id="2_tijgc"]
 
 [node name="InteractionBox" type="Area3D" node_paths=PackedStringArray("interactionUI")]
 collision_mask = 128

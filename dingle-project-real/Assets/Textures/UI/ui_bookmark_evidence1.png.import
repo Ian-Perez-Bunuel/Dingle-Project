@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://odmhqq7bph3k"
-path="res://.godot/imported/ui_evidencebook.png-d63d48bce32d9520d8a922cf681ecec1.ctex"
+uid="uid://770oby06nayx"
+path="res://.godot/imported/ui_bookmark_evidence1.png-50317c45550611af6b3ffe8c47209478.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/ui_evidencebook.png"
-dest_files=["res://.godot/imported/ui_evidencebook.png-d63d48bce32d9520d8a922cf681ecec1.ctex"]
+source_file="res://Assets/Textures/UI/ui_bookmark_evidence1.png"
+dest_files=["res://.godot/imported/ui_bookmark_evidence1.png-50317c45550611af6b3ffe8c47209478.ctex"]
 
 [params]
 

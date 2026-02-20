@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://d1wt4ma6055l8" path="res://addons/dialogue_manager/example_balloon/example_balloon.gd" id="1_tnhws"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_m1kxl"]
-[ext_resource type="Texture2D" uid="uid://67gcyo2auqbr" path="res://Assets/Textures/ui_textbox.png" id="2_oyjxg"]
+[ext_resource type="Texture2D" uid="uid://67gcyo2auqbr" path="res://Assets/Textures/UI/ui_textbox.png" id="2_oyjxg"]
 [ext_resource type="FontFile" uid="uid://c7tim3pl1lfw5" path="res://Assets/Schoolbell-Regular.ttf" id="2_tfsfl"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_5lcpq"]
-[ext_resource type="Texture2D" uid="uid://bc8uwj8onigre" path="res://Assets/Textures/ui_nameplate.png" id="6_qxthb"]
+[ext_resource type="Texture2D" uid="uid://bc8uwj8onigre" path="res://Assets/Textures/UI/ui_nameplate.png" id="6_qxthb"]
 [ext_resource type="Script" path="res://Dialogue/ui_audio.gd" id="7_qxthb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hpnun"]

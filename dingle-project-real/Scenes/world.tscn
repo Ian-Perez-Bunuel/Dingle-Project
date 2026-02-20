@@ -1,4 +1,4 @@
-[gd_scene load_steps=108 format=3 uid="uid://iysllbq6upr7"]
+[gd_scene load_steps=111 format=3 uid="uid://iysllbq6upr7"]
 
 [ext_resource type="PackedScene" uid="uid://bpgfead5netw3" path="res://Scenes/player.tscn" id="1_7yui6"]
 [ext_resource type="PackedScene" uid="uid://8t4uq2rp4c1o" path="res://Scenes/snap_game.tscn" id="1_c5t2i"]
@@ -26,6 +26,8 @@
 [ext_resource type="Texture2D" uid="uid://dtniw6dlctr2" path="res://Assets/Textures/Characters/Sea Captain.png" id="18_xbk3s"]
 [ext_resource type="Resource" uid="uid://c7hrscjbuw1jn" path="res://Dialogue/Opening.dialogue" id="19_ochwf"]
 [ext_resource type="Texture2D" uid="uid://bob0dxmd7w5m7" path="res://Assets/Textures/Characters/Chippy.png" id="21_i4fjy"]
+[ext_resource type="Texture2D" uid="uid://dl46p2wfa5fel" path="res://Assets/Textures/Badge.png" id="21_p5wkl"]
+[ext_resource type="Resource" uid="uid://bhyoa8rnfpo2g" path="res://Dialogue/Badge.dialogue" id="21_r74th"]
 [ext_resource type="Resource" uid="uid://btma17emfv8o8" path="res://Dialogue/Bartender.dialogue" id="21_yq1aw"]
 [ext_resource type="Texture2D" uid="uid://y32mhwyuurat" path="res://Assets/Textures/Characters/EvilChippy.png" id="22_i4fjy"]
 [ext_resource type="Resource" uid="uid://ctaj2pv88ani6" path="res://Dialogue/Chippy.dialogue" id="23_opbav"]
@@ -330,6 +332,9 @@ height = 100.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dsm2w"]
 size = Vector3(33.595367, 7.909668, 61.23047)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_82dmg"]
+size = Vector3(6.405121, 1, 3.4370728)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l33cg"]
 size = Vector3(12.854492, 115.685486, 460.08862)
@@ -749,17 +754,33 @@ mesh = SubResource("SphereMesh_0pcbe")
 
 [node name="Opening" type="Node" parent="Cutscene collisions"]
 
-[node name="ObjectDialogue" parent="Cutscene collisions/Opening" instance=ExtResource("14_axeuq")]
+[node name="Opening flashbacks" parent="Cutscene collisions/Opening" instance=ExtResource("14_axeuq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -105.71201, 0, -17.174908)
 dialogue_resource = ExtResource("19_ochwf")
 
-[node name="ForcedInteraction" parent="Cutscene collisions/Opening/ObjectDialogue" instance=ExtResource("14_kn0ld")]
+[node name="ForcedInteraction" parent="Cutscene collisions/Opening/Opening flashbacks" instance=ExtResource("14_kn0ld")]
 oneUse = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cutscene collisions/Opening/ObjectDialogue/ForcedInteraction"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cutscene collisions/Opening/Opening flashbacks/ForcedInteraction"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2312012, 3.454834, -4.7727203)
 shape = SubResource("BoxShape3D_dsm2w")
 debug_color = Color(0.9882353, 0, 0, 1)
+
+[node name="Badge" parent="Cutscene collisions/Opening" instance=ExtResource("14_axeuq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -107.74765, 0, -9.943859)
+dialogue_resource = ExtResource("21_r74th")
+
+[node name="Sprite3D" type="Sprite3D" parent="Cutscene collisions/Opening/Badge"]
+transform = Transform3D(0.29402924, -0.4006784, 0.054805264, 0.08128734, 0.124932215, 0.4772675, -0.39615542, -0.27175125, 0.1386076, 0.3089981, 0.5209148, 0)
+texture = ExtResource("21_p5wkl")
+
+[node name="InteractionBox" parent="Cutscene collisions/Opening/Badge" instance=ExtResource("2_go701")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3060608, -0.6416645, -0.19249439)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cutscene collisions/Opening/Badge/InteractionBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6346588, 1.2102766, 0.27670288)
+shape = SubResource("BoxShape3D_82dmg")
+debug_color = Color(1, 0.45882353, 0, 1)
 
 [node name="StartingCutscene" type="Node" parent="Cutscene collisions"]
 
@@ -937,7 +958,7 @@ skeleton = NodePath("../..")
 [connection signal="body_shape_entered" from="Transitions/Bar_To_Street" to="Transitions/Bar_To_Street" method="_on_body_shape_entered"]
 [connection signal="body_shape_entered" from="Transitions/Dock_To_Street" to="Transitions/Dock_To_Street" method="_on_body_shape_entered"]
 [connection signal="interacted" from="Sea/Boat/Net/InteractionBox" to="Sea/Boat/Net" method="speak"]
-[connection signal="interacted" from="Cutscene collisions/Opening/ObjectDialogue/ForcedInteraction" to="Cutscene collisions/Opening/ObjectDialogue" method="speak"]
+[connection signal="interacted" from="Cutscene collisions/Opening/Opening flashbacks/ForcedInteraction" to="Cutscene collisions/Opening/Opening flashbacks" method="speak"]
 [connection signal="interacted" from="Cutscene collisions/StartingCutscene/StartingBox" to="Main_NPCs/Chippy" method="speak"]
 [connection signal="interacted" from="Cutscene collisions/LesserValueMinigame/ObjectDialogue/ForcedInteraction" to="Cutscene collisions/LesserValueMinigame/ObjectDialogue" method="speak"]
 [connection signal="interacted" from="Main_NPCs/Captain/InteractionBox" to="Main_NPCs/Captain" method="speak"]

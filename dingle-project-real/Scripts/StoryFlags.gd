@@ -28,6 +28,7 @@ func resetFlags():
 	talkedToGull = false
 	
 	# Random flags
+	hasBadge = false
 	sawBarFlashback = false
 	sawRunningFlashBack = false
 	sawSmellingFlashBack = false
@@ -61,6 +62,8 @@ var caughtGulls: bool = false
 var talkedToGull: bool = false
 
 # Random flags
+var badgeEvidence: Evidence = load("res://Resources/badgeEvidence.tres")
+var hasBadge: bool = false
 var sawBarFlashback: bool = false
 var sawRunningFlashBack: bool = false
 var sawSmellingFlashBack: bool = false
