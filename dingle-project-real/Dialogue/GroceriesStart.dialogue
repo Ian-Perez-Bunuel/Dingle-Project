@@ -5,14 +5,14 @@ else
 	=> preEvilChippy
 
 ~ preEvilChippy
-An Phiast: Seems closed for now...
+An Phiast: I don't think they're open yet...
 => moveAway
 
 ~ minigame
 Welcome to LesserValue!
-- Get groceries
+- Let's grab those groceries!
 	do MinigameManager.activate("groceriesGame")
-- I'll do it later...
+- I'll come back later
 	=> moveAway
 	
 ~ moveAway

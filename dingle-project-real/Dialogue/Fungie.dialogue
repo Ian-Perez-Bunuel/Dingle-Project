@@ -1,10 +1,10 @@
 ~ start
 if StoryFlags.sawRunningFlashBack
-	An Phiast: This is a cool statue (?)
+	An Phiast: I should check back in on him soon, I wonder what he's been up to.
 else
 	do FlashbackManager.display(FlashbackManager.FlashBack.Smelling)
 	do StoryFlags.sawSmellingFlashBack = true
-	An Phiast: Huh memory????? (man idk too tired for dialogue)
+	An Phiast: The smell of fish is making me hungry.. I think I felt the same last night...
 
 ~ end
 do CutSceneManager.end()
