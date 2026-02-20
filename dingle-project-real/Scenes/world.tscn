@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://bm4hj1y0q254c" path="res://Assets/Models/World/Backstreet1.glb" id="11_c5t2i"]
 [ext_resource type="PackedScene" uid="uid://d00d32xh76ix" path="res://Assets/Models/Boat.glb" id="12_1vso6"]
 [ext_resource type="Script" uid="uid://bwifi60ec7u1t" path="res://Scripts/scene_transition.gd" id="12_c5t2i"]
-[ext_resource type="Shader" path="res://Shaders/Water.gdshader" id="12_e0ngr"]
-[ext_resource type="PackedScene" uid="uid://ct3ngq0m2f83c" path="res://Scenes/seagull_game.tscn" id="13_c5t2i"]
+[ext_resource type="Shader" uid="uid://d3lkdk8f7w4nc" path="res://Shaders/Water.gdshader" id="12_e0ngr"]
+[ext_resource type="PackedScene" path="res://Scenes/seagull_game.tscn" id="13_c5t2i"]
 [ext_resource type="Shader" uid="uid://bscb7e5fasq7w" path="res://Shaders/screen_transition.gdshader" id="13_e0ngr"]
 [ext_resource type="PackedScene" uid="uid://cgyu3kxkm4rs8" path="res://Assets/Models/World/Docks1.glb" id="13_kn0ld"]
 [ext_resource type="PackedScene" uid="uid://crte5pffhmvf5" path="res://Scenes/ObjectDialogue.tscn" id="14_axeuq"]
@@ -31,7 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://cfoen85bbr3qb" path="res://Assets/Textures/Characters/Fisherman.png" id="26_pt3ps"]
 [ext_resource type="Texture2D" uid="uid://cvop7bm300lvl" path="res://Assets/Textures/Characters/GullOther.png" id="26_qebug"]
 [ext_resource type="Resource" uid="uid://cxggt6lkmgt0m" path="res://Dialogue/Seagull.dialogue" id="27_1vso6"]
-[ext_resource type="Script" uid="uid://b1r2lual8ouy7" path="res://Scripts/GullManager.gd" id="27_3ua1v"]
+[ext_resource type="Script" path="res://Scripts/GullManager.gd" id="27_3ua1v"]
 [ext_resource type="Texture2D" uid="uid://b4lgcev48b5q3" path="res://Assets/Textures/Characters/Band_Singer.png" id="27_hmc15"]
 [ext_resource type="Texture2D" uid="uid://da6eu338gu4ok" path="res://Assets/Textures/Characters/GullMain.png" id="27_o2rbt"]
 
@@ -139,7 +139,7 @@ size = Vector3(6.374653, 0.99609375, 11.575478)
 size = Vector3(54.625977, 21.571716, 11.4140625)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t2t4p"]
-size = Vector3(41.27321, 21.571716, 11.4140625)
+size = Vector3(46.87696, 21.571716, 11.4140625)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0pcbe"]
 size = Vector3(8.7164955, 21.571716, 7.234375)
@@ -476,7 +476,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.84094, 10.285858, -5.01367
 shape = SubResource("BoxShape3D_hgpy0")
 
 [node name="Wall2" type="CollisionShape3D" parent="Docks/DockCollision"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.089851, 10.285858, -5.013672)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.891724, 10.285858, -5.013672)
 shape = SubResource("BoxShape3D_t2t4p")
 
 [node name="Wall3" type="CollisionShape3D" parent="Docks/DockCollision"]
