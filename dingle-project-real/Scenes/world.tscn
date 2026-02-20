@@ -1,4 +1,4 @@
-[gd_scene load_steps=137 format=3 uid="uid://iysllbq6upr7"]
+[gd_scene load_steps=143 format=3 uid="uid://iysllbq6upr7"]
 
 [ext_resource type="PackedScene" uid="uid://bpgfead5netw3" path="res://Scenes/player.tscn" id="1_7yui6"]
 [ext_resource type="PackedScene" uid="uid://8t4uq2rp4c1o" path="res://Scenes/snap_game.tscn" id="1_c5t2i"]
@@ -52,7 +52,8 @@
 [ext_resource type="PackedScene" uid="uid://b5d8jdatiiiwe" path="res://Scenes/Fungie.glb" id="41_w5giw"]
 [ext_resource type="Resource" uid="uid://be85cg1x1mlg" path="res://Dialogue/Fungie.dialogue" id="42_jwdyn"]
 [ext_resource type="Texture2D" uid="uid://txjxxd6mty8p" path="res://Assets/Textures/Characters/Band_Saxophonist.png" id="52_13n8b"]
-[ext_resource type="Texture2D" uid="uid://6kb2dn3xin1c" path="res://Assets/Textures/Characters/Kids.png" id="53_uqdn7"]
+[ext_resource type="Resource" uid="uid://cjx3ouadj6dq8" path="res://Dialogue/Children.dialogue" id="53_gwaj6"]
+[ext_resource type="Texture2D" uid="uid://b1bmr5sh54wnv" path="res://Assets/Textures/Characters/Kids.png" id="53_uqdn7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kn0ld"]
 shader = ExtResource("13_e0ngr")
@@ -447,6 +448,50 @@ size = Vector3(11.221191, 1, 17.691406)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uq5fj"]
 size = Vector3(4.692383, 4.403076, 12.441162)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xm6am"]
+size = Vector3(34.29843, 5.305603, 28.011719)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tutfb"]
+size = Vector3(2.8988342, 1.9814453, 1)
+
+[sub_resource type="Animation" id="Animation_gwaj6"]
+resource_name = "running"
+length = 8.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.07, 2.6633334, 2.7333333, 4.5, 4.96, 5.03, 6.32, 6.38, 6.9333334, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-44.791702, -0.10505009, -2.1341286), Vector3(-47.49433, -0.10505009, -0.80293655), Vector3(-47.43127, -0.12146031, -0.20595264), Vector3(-46.656517, -0.32307148, 7.128415), Vector3(-46.593456, -0.10505009, 7.7253985), Vector3(-43.75832, -0.10505009, 10.06826), Vector3(-43.75832, -0.10505009, 10.06826), Vector3(-43.097965, -0.5708542, 7.106696), Vector3(-41.491, -0.105, -0.102), Vector3(-41.416214, -0.1050049, -0.43723536), Vector3(-40.72651, -0.10505009, -3.5288534), Vector3(-44.791702, -0.10505009, -2.1341286)]
+}
+
+[sub_resource type="Animation" id="Animation_36g3o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-44.791702, -0.10505009, -2.1341286)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vhf2b"]
+_data = {
+&"RESET": SubResource("Animation_36g3o"),
+&"running": SubResource("Animation_gwaj6")
+}
 
 [sub_resource type="BoxMesh" id="BoxMesh_hmc15"]
 size = Vector3(65, 12, 25)
@@ -1167,9 +1212,30 @@ transform = Transform3D(0.09, 0, 0, 0, 0.09, 0, 0, 0, 0.09, -252.51245, 2.536653
 billboard = 1
 texture = ExtResource("52_13n8b")
 
-[node name="NPC" parent="Random_NPCs" instance=ExtResource("4_8j60k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.791702, 0.7127576, -2.1341286)
+[node name="Children" parent="Random_NPCs" instance=ExtResource("4_8j60k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.791702, -0.10505009, -2.1341286)
+dialogue_resource = ExtResource("53_gwaj6")
 texture = ExtResource("53_uqdn7")
+
+[node name="ForcedInteraction" parent="Random_NPCs/Children" instance=ExtResource("14_kn0ld")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Random_NPCs/Children/ForcedInteraction"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0533295, 3.5889852, -2.3828735)
+shape = SubResource("BoxShape3D_xm6am")
+debug_color = Color(1, 0, 0, 1)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Random_NPCs/Children"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Random_NPCs/Children/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.117263794, 1.3178711, 0)
+shape = SubResource("BoxShape3D_tutfb")
+debug_color = Color(0, 0, 1, 1)
+
+[node name="AnimationRunning" type="AnimationPlayer" parent="Random_NPCs/Children"]
+libraries = {
+&"": SubResource("AnimationLibrary_vhf2b")
+}
+autoplay = "running"
 
 [node name="VoidBlockers" type="Node" parent="."]
 
@@ -1228,3 +1294,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.61219, -0.3113346, -34.862
 [connection signal="interacted" from="Main_NPCs/Seagulls/MainSeagull/InteractionBox" to="Main_NPCs/Seagulls/MainSeagull" method="speak"]
 [connection signal="interacted" from="Random_NPCs/Singer/InteractionBox" to="Random_NPCs/Singer" method="speak"]
 [connection signal="interacted" from="Random_NPCs/Fungie/ObjectDialogue/InteractionBox" to="Random_NPCs/Fungie/ObjectDialogue" method="speak"]
+[connection signal="interacted" from="Random_NPCs/Children/ForcedInteraction" to="Random_NPCs/Children" method="speak"]

@@ -17,7 +17,7 @@ var alertGiven: bool = false
 
 # Evil Chippy flags
 var evilChippyEvidence: Evidence = load("res://Resources/evilChippyEvidence.tres")
-var talkedToEvilChippy: bool = true
+var talkedToEvilChippy: bool = false
 var completedGroceries: bool = false
 
 # Seagull flags
