@@ -116,6 +116,7 @@ func addCard():
 			await capAnimator.animation_finished
 			
 			captainScore += 1
+			called = true
 			captainLabel.text = "Captain's Score: " + str(captainScore)
 			reset_pile()
 
@@ -145,7 +146,7 @@ func _process(delta: float) -> void:
 		end()
 	
 	if Input.is_action_just_pressed("minigameAction"):
-		if currentCard == previousCard && previousCard != Card.None:
+		if currentCard == previousCard && previousCard != Card.None && !called:
 			called = true
 			playerAnimator.play("snap")
 			$AudioStreamPlayerSnap.play()

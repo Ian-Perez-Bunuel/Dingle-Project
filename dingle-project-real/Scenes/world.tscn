@@ -1,4 +1,4 @@
-[gd_scene load_steps=158 format=3 uid="uid://iysllbq6upr7"]
+[gd_scene load_steps=161 format=3 uid="uid://iysllbq6upr7"]
 
 [ext_resource type="PackedScene" uid="uid://bpgfead5netw3" path="res://Scenes/player.tscn" id="1_7yui6"]
 [ext_resource type="PackedScene" uid="uid://8t4uq2rp4c1o" path="res://Scenes/snap_game.tscn" id="1_c5t2i"]
@@ -37,14 +37,17 @@
 [ext_resource type="Texture2D" uid="uid://cdgtyunotpvqv" path="res://Assets/Textures/LesserValuLogo.png" id="19_13n8b"]
 [ext_resource type="Resource" uid="uid://c7hrscjbuw1jn" path="res://Dialogue/Opening.dialogue" id="19_ochwf"]
 [ext_resource type="PackedScene" uid="uid://d0jryqh2qw82a" path="res://Scenes/NikNaks/lamp.tscn" id="20_36g3o"]
+[ext_resource type="Texture2D" uid="uid://cedloc6fkwrb2" path="res://Assets/Textures/PoliceTape.png" id="20_l4vrt"]
 [ext_resource type="Texture2D" uid="uid://bob0dxmd7w5m7" path="res://Assets/Textures/Characters/Chippy.png" id="21_i4fjy"]
 [ext_resource type="Texture2D" uid="uid://dl46p2wfa5fel" path="res://Assets/Textures/Badge.png" id="21_p5wkl"]
 [ext_resource type="Resource" uid="uid://bhyoa8rnfpo2g" path="res://Dialogue/Badge.dialogue" id="21_r74th"]
 [ext_resource type="PackedScene" uid="uid://qanw6pu7uldv" path="res://Scenes/NikNaks/fire_hydrant.tscn" id="21_vhf2b"]
 [ext_resource type="Resource" uid="uid://btma17emfv8o8" path="res://Dialogue/Bartender.dialogue" id="21_yq1aw"]
 [ext_resource type="Texture2D" uid="uid://y32mhwyuurat" path="res://Assets/Textures/Characters/EvilChippy.png" id="22_i4fjy"]
+[ext_resource type="Texture2D" uid="uid://c2xj7day8f4ox" path="res://Assets/Textures/NoelsChipsLogo.png" id="23_0d7cr"]
 [ext_resource type="Resource" uid="uid://ctaj2pv88ani6" path="res://Dialogue/Chippy.dialogue" id="23_opbav"]
 [ext_resource type="Script" uid="uid://ctt6lqahjhhiy" path="res://Scripts/DockAlert.gd" id="24_04jkj"]
+[ext_resource type="Texture2D" uid="uid://dwaxhv7ml517d" path="res://Assets/Textures/LeonsFishLogo.png" id="24_l4vrt"]
 [ext_resource type="Texture2D" uid="uid://jko5roo7lwat" path="res://Assets/Textures/Characters/Bartender.png" id="24_pt3ps"]
 [ext_resource type="Texture2D" uid="uid://cfoen85bbr3qb" path="res://Assets/Textures/Characters/Fisherman.png" id="26_pt3ps"]
 [ext_resource type="Texture2D" uid="uid://cvop7bm300lvl" path="res://Assets/Textures/Characters/GullOther.png" id="26_qebug"]
@@ -790,6 +793,22 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -67.
 [node name="ManHole2" parent="GlobalNikNaks" instance=ExtResource("17_g44x5")]
 transform = Transform3D(0.58185333, 0.81329376, 3.5550197e-08, 0, -4.371139e-08, 1, 0.81329376, -0.58185333, -2.5433616e-08, -104.55186, 0.33081675, -21.785946)
 
+[node name="TapeTop Right" type="Sprite3D" parent="GlobalNikNaks"]
+transform = Transform3D(-4.8082526e-08, 0, -1.1, 0, 1.1, 0, 1.1, 0, -4.8082526e-08, -41.320557, 2.7180772, 3.3386607)
+texture = ExtResource("20_l4vrt")
+
+[node name="TapeTop Left" type="Sprite3D" parent="GlobalNikNaks"]
+transform = Transform3D(-4.8082526e-08, 0, 1.1, 0, 1.1, 0, -1.1, 0, -4.8082526e-08, -108.962494, 2.7180772, 3.3386607)
+texture = ExtResource("20_l4vrt")
+
+[node name="TapeBot Right" type="Sprite3D" parent="GlobalNikNaks"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 121.698166, 1.9076633, 2.750863)
+texture = ExtResource("20_l4vrt")
+
+[node name="TapeBot Left" type="Sprite3D" parent="GlobalNikNaks"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 73.90388, 1.3301754, 2.3554897)
+texture = ExtResource("20_l4vrt")
+
 [node name="Backstreet NavMesh" type="NavigationRegion3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -98.742226, 0.3153448, -8.665022)
 navigation_mesh = SubResource("NavigationMesh_kn0ld")
@@ -868,6 +887,14 @@ texture = ExtResource("18_l33cg")
 [node name="lesservaluLogo" type="Sprite3D" parent="Backstreet NavMesh/Backstreet1/Logos"]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -74.54257, 9.704765, -2.9918032)
 texture = ExtResource("19_13n8b")
+
+[node name="Noels" type="Sprite3D" parent="Backstreet NavMesh/Backstreet1/Logos"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -89.25153, 10.168416, -5.633045)
+texture = ExtResource("23_0d7cr")
+
+[node name="Leons" type="Sprite3D" parent="Backstreet NavMesh/Backstreet1/Logos"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 88.76681, 9.988601, -1.0093584)
+texture = ExtResource("24_l4vrt")
 
 [node name="NikNaks" type="Node3D" parent="Backstreet NavMesh"]
 
@@ -1449,6 +1476,7 @@ texture = ExtResource("52_13n8b")
 [node name="Floor2" type="StaticBody3D" parent="FinalEncounterNavMesh/FinalenCounter"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FinalEncounterNavMesh/FinalenCounter/Floor2"]
+transform = Transform3D(0.9999999, 0, 3.5527137e-15, 0, 1, 0, -3.5527137e-15, 0, 0.9999999, 0.091677666, -0.49852562, 0)
 shape = SubResource("BoxShape3D_s73dv")
 debug_color = Color(0.102432765, 0.17149277, 0, 1)
 
@@ -1484,26 +1512,25 @@ billboard = 1
 shaded = true
 texture = ExtResource("18_xbk3s")
 
-[node name="FinalPlace" type="Node3D" parent="FinalEncounterNavMesh/FinalenCounter" groups=["place"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.315277, 0.7048626, 0.7939148)
-
 [node name="AnnePos" type="Node3D" parent="FinalEncounterNavMesh/FinalenCounter" groups=["place"]]
 transform = Transform3D(0.9999997, 0, 3.5527137e-15, 0, 1, 0, -3.5527137e-15, 0, 0.9999997, -1.4364529, 1.3397884, 1.8914185)
 
 [node name="Detective" parent="FinalEncounterNavMesh/FinalenCounter" groups=["object"] instance=ExtResource("4_8j60k")]
-transform = Transform3D(-0.18439725, 0, 0.9828513, 0, 1, 0, -0.9828513, 0, -0.18439725, -2.8212688, 0.24899292, 1.5849915)
+transform = Transform3D(-0.1843972, 0, 0.98285115, 0, 1, 0, -0.98285115, 0, -0.1843972, -1.7911043, 0.24899292, -1.0757751)
 visible = false
 
 [node name="Sprite3D2" type="Sprite3D" parent="FinalEncounterNavMesh/FinalenCounter/Detective"]
 transform = Transform3D(0.08000001, 0, 1.8626451e-09, 0, 0.08, 0, -1.8626451e-09, 0, 0.08000001, 0, 1.0404968, 0)
+flip_h = true
+shaded = true
 texture = ExtResource("60_5kw24")
 
 [node name="ObjectDialogue" parent="." instance=ExtResource("14_axeuq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -252.06915, -23.930807, 6.1879253)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -251.54597, -23.930807, 6.13221)
 dialogue_resource = ExtResource("30_w5giw")
 
 [node name="ForcedInteraction" parent="ObjectDialogue" instance=ExtResource("14_kn0ld")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.6378937, 0.9017925, 0.3044157)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.6378937, -0.003396988, 0.3044157)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ObjectDialogue/ForcedInteraction"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2698975, -3.2402878, -13.146721)
@@ -1538,6 +1565,9 @@ debug_color = Color(1, 0, 0.14999962, 1)
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 14.153898, 3.192871, -1.7626257)
 shape = SubResource("BoxShape3D_lxtj3")
 debug_color = Color(1, 0, 0.14999962, 1)
+
+[node name="FinalPlace" type="Node3D" parent="." groups=["place"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -251.42569, -24.357035, 3.3672757)
 
 [connection signal="pressed" from="UI/EvidenceButton" to="UI" method="show_evidence"]
 [connection signal="pressed" from="UI/SettingsButton" to="UI" method="show_settings"]
