@@ -802,12 +802,18 @@ transform = Transform3D(-4.8082526e-08, 0, 1.1, 0, 1.1, 0, -1.1, 0, -4.8082526e-
 texture = ExtResource("20_l4vrt")
 
 [node name="TapeBot Right" type="Sprite3D" parent="GlobalNikNaks"]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 121.698166, 1.9076633, 2.750863)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 121.698166, 2.5669909, 2.3121996)
 texture = ExtResource("20_l4vrt")
 
 [node name="TapeBot Left" type="Sprite3D" parent="GlobalNikNaks"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 73.90388, 1.3301754, 2.3554897)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 73.90388, 2.5110836, 2.3554897)
 texture = ExtResource("20_l4vrt")
+
+[node name="Lamp" parent="GlobalNikNaks" instance=ExtResource("20_36g3o")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 73.828735, 4.21474, 10.6526375)
+
+[node name="Lamp2" parent="GlobalNikNaks" instance=ExtResource("20_36g3o")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 121.68269, 4.21474, 10.6526375)
 
 [node name="Backstreet NavMesh" type="NavigationRegion3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -98.742226, 0.3153448, -8.665022)

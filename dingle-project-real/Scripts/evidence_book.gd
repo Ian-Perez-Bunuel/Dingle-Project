@@ -49,7 +49,7 @@ func close():
 	
 func next():
 	print("NEXT")
-	if (currentPage + 1) >= Inventory.ownedEvidence.size():
+	if (currentPage + 1) >= Inventory.ownedEvidence.size() - 1:
 		print("CANT GO NEXT")
 		return
 		

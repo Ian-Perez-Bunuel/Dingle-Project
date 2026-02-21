@@ -3,7 +3,7 @@ if not StoryFlags.completedIntro
 	=> intro
 elif StoryFlags.completedIntro and not StoryFlags.caughtGulls
 	=> postIntro
-elif StoryFlags.caughtGulls
+elif StoryFlags.caughtGulls and not StoryFlags.alertGiven
 	=> allDoneAlert
 elif StoryFlags.alertGiven
 	=> postAlert
@@ -68,6 +68,9 @@ Noel: Have you found the culprit yet
 Noel: So you think you know the culprit???
 - Yes
 	Noel: Alright lets go resolve this!
+	do CutSceneManager.transition_stage_1()
+	do CutSceneManager.teleport_to("Player", "FinalPlace")
+	do CutSceneManager.transition_stage_2()
 - No
 	Noel: Alright then. 
 	Noel: Just tell me when you have ok?
@@ -75,6 +78,7 @@ Noel: So you think you know the culprit???
 
 ~ specielEnd
 do CutSceneManager.teleport_to("Chippy", "ChipperEnterance")
+do StoryFlags.alertGiven = true
 
 ~ end
 do CutSceneManager.end()
