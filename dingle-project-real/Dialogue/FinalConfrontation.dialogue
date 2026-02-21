@@ -1,4 +1,5 @@
 ~ start
+do MinigameManager.play_bar_theme()
 An Phiast: [speed=0.5]So...
 An Phiast: You're probably wondering why I've gathered you all here.
 do wait(0.5)

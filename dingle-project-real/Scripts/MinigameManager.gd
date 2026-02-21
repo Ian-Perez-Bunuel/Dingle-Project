@@ -18,6 +18,8 @@ func _ready() -> void:
 		if n is Control:
 			minigames.append(n as Control)
 
+func play_bar_theme():
+	musicManager.set_music(MusicManager.Track.Bar)
 
 func activate(t_minigame: String):
 	trackBeforeMinigame = musicManager.currentTrack

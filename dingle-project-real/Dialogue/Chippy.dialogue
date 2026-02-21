@@ -45,21 +45,22 @@ Noel: Good luck Detective
 do StoryFlags.alertGiven = true
 do CutSceneManager.teleport_to("Chippy", "ChippyDocksStart")
 do CutSceneManager.move_to("Chippy", "ChippyDocksEnd")
-Noel: HEY!!!
-do wait(3.5)
+Noel: HEY!!! [do! wait(3.5)]
 
 Noel: Have you found the culprit yet
 - Yes
 	An Phiast: I've cracked the case!
 	Noel: Alright lets go finish this!
+	do CutSceneManager.transition_stage_1()
 	do CutSceneManager.teleport_to("Player", "FinalPlace")
+	do CutSceneManager.transition_stage_2()
 	=> end
 - Almost
 	An Phiast: I need a little more time to gather evidence.
 	Noel: Alright...
 	Noel: When you think you've figured it out come by shop.
 	do CutSceneManager.move_to("Chippy", "ChippyDocksStart")
-	do wait(5.0)
+	do wait(5.5)
 	=> specielEnd
 => end
 

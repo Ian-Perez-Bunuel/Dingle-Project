@@ -1205,7 +1205,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74, 0, -1)
 [node name="PostGullsChippy" type="Node" parent="Cutscene collisions"]
 
 [node name="ChippyDocksStart" type="Node3D" parent="Cutscene collisions/PostGullsChippy" groups=["place"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 101.64329, 0, -11.199166)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100.73848, 0, -10.555382)
 
 [node name="ChippyDocksEnd" type="Node3D" parent="Cutscene collisions/PostGullsChippy" groups=["place"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.92383, 9.536743e-07, 8.007994)
@@ -1239,7 +1239,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 113.46832, 0.9454727, 19.9888
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 452.83835, 0.026515484, 3.1091504)
 
 [node name="ChipperEnterance" type="Node3D" parent="Cutscene collisions" groups=["place"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84.11635, 0.686126, -2.3009734)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84.047134, 0.87730765, -2.3009734)
 
 [node name="Main_NPCs" type="Node" parent="."]
 

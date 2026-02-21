@@ -13,9 +13,6 @@ An Phiast: I don't think they're open yet...
 ~ minigame
 Welcome to LesserValue!
 - Let's grab those groceries!
-	# do CutSceneManager.transition_stage_1()
-	# do wait(0.55)
-	do CutSceneManager.transition_stage_2()
 	do MinigameManager.activate("groceriesGame")
 	=> moveAway
 - I'll come back later
