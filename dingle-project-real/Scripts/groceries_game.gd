@@ -47,11 +47,11 @@ func end():
 	Player.set_can_move(true)
 	Interactable.set_can_interact(true)
 	UI.canOpen = true
+	StoryFlags.completedGroceries = true
+	Inventory.add_evidence(reward)
 	process_mode = Node.PROCESS_MODE_DISABLED
 	visible = false
 	
-	StoryFlags.completedGroceries = true
-	Inventory.add_evidence(reward)
 	
 	# await CutSceneManager.transition_stage_2()
 	MinigameManager.endedGame()

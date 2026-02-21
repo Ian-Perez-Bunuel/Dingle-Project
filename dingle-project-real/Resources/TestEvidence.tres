@@ -1,11 +1,7 @@
-[gd_resource type="Resource" script_class="Evidence" load_steps=3 format=3 uid="uid://158iwhq64cex"]
+[gd_resource type="Resource" script_class="Evidence" load_steps=2 format=3 uid="uid://158iwhq64cex"]
 
 [ext_resource type="Script" uid="uid://i65gfwen11r0" path="res://Resources/EvidenceResource.gd" id="1_nl7sf"]
-[ext_resource type="Texture2D" uid="uid://cqrb0aqol3qk6" path="res://icon.svg" id="1_sqw3i"]
 
 [resource]
 script = ExtResource("1_nl7sf")
-description = "Test"
-image1 = ExtResource("1_sqw3i")
-image2 = ExtResource("1_sqw3i")
 metadata/_custom_type_script = "uid://i65gfwen11r0"

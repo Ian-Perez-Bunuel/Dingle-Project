@@ -18,8 +18,6 @@ var called: bool = false
 @export var timeBetweenCards: float
 @export var captainReactionTime: float
 
-@export var reward: Evidence
-
 @onready var pile: Control = $Pile
 @onready var playerLabel: Label = $PlayerScore
 @onready var captainLabel: Label = $CaptainScore
@@ -64,8 +62,6 @@ func end():
 	process_mode = Node.PROCESS_MODE_DISABLED
 	visible = false
 	playing = false
-	
-	Inventory.add_evidence(reward)
 	
 	MinigameManager.endedGame()
 
