@@ -94,7 +94,7 @@ elif StoryFlags.hasBeer
 		=> giveBeer
 	- No
 		An Phiast: No, sorry.
-		Captain: Hmmm, well let me know what you grab one for me okay!
+		Captain: Hmmm, well let me know when you grab one for me, okay!
 		=> end
 else
 	Captain: You got that drink yet? 
