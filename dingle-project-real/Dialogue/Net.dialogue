@@ -4,4 +4,9 @@ An Phiast: Let's do this!
 - Yeah!
 	do MinigameManager.activate("SeagullGame")
 - Wait a second..
+	An Phiast: Let me admire the view a little longer...
+=> end
+
+~ end
+do CutSceneManager.end()
 => END
