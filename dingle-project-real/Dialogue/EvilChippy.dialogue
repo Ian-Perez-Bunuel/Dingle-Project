@@ -9,7 +9,7 @@ else
 ~ firstConvo
 An Phiast: Hey there! Did you see anything around Noel's last night? Someone ran off with his fish and chips.
 do wait(0.5)
-Leon: Hmph! I'm surpirsed anyone would take something so worthless.
+Leon: Hmph! I'm surprised anyone would take something so worthless.
 Leon: Noel's always been scatterbrained but this is a new level.
 Leon: I suppose I could help provide some information, but first I need you to make it worth my while.
 do wait(0.5)
@@ -30,10 +30,8 @@ Leon: Fine, I'm a man of my word.
 Leon: I wouldn't take any of that slop that Noel considers food even with his permission.
 Leon: My fish and chips and far superior in every way, I have no need.
 do wait(0.5)
-Leon: But I know that the local seagulls love to steal everyone's chips, and I doubt they have as refinded of a palette as I do.
-Leon: Might be hard to talk to interrogate them with how far they are from coast, but find a way and you just might find your culprits!
-Leon: Here, take this for your effort. => ending
-do Inventory.add_evidence(StoryFlags.evilChippyEvidence)
+Leon: But I know that the local seagulls love to steal everyone's chips, and I doubt they have as refined of a palette as I do.
+Leon: Might be hard to talk to or interrogate them with how far they are from coast, but find a way and you just might find your culprits!
 
 ~ ending
 do CutSceneManager.end() 

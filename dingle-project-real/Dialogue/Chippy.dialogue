@@ -13,7 +13,7 @@ elif StoryFlags.alertGiven
 do CutSceneManager.move_to("Chippy", "RightOfAlley")
 do wait(1.0)
 Noel: YOU! DID YOU STEAL MY FISH AND CHIPS?!
-An Phiast: Me? No! I'm just a humble detective
+An Phiast: Me? No! I'm just a humble detective.
 Noel: A detective you say? Well you've gotta help me!
 Noel: I've been working hard to make the Perfect Fish and Chips, and I finally did it!
 do wait(0.5)
@@ -38,7 +38,7 @@ Noel: Have you found the culprit yet?
 - Almost
 	An Phiast: We're almost there! I can feel it!!
 	
-Noel: Good luck Detective
+Noel: Good luck Detective.
 => end
 
 ~ allDoneAlert
